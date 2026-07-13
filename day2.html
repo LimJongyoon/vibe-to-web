@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe to Web — Day 2 · 컨텍스트 관리 &amp; 웹앱 완성도 높이기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="badge">AXT CC · 2일차</div>
+      <h1>Vibe to Web</h1>
+      <p>Claude Code 입문 강의</p>
+      <div class="day-nav">
+        <a href="index.html">Day 1</a>
+        <a href="day2.html" class="active">Day 2</a>
+        <a href="day3.html">Day 3</a>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-section">
+        <span class="nav-title">A · 작업 원칙</span>
+        <a class="nav-link" href="#step8"><span class="step-num">8</span>한 세션 = 한 피처</a>
+        <a class="nav-link" href="#step9"><span class="step-num">9</span>Plan Mode 습관</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">B · 기억 시스템</span>
+        <a class="nav-link" href="#step10"><span class="step-num">10</span>기억 시스템 이해</a>
+        <a class="nav-link" href="#step11"><span class="step-num">11</span>/memory 활용</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">C · 파일 &amp; 설정 전략</span>
+        <a class="nav-link" href="#step12"><span class="step-num">12</span>멀티 파일로 쪼개기</a>
+        <a class="nav-link" href="#step13"><span class="step-num">13</span>CLAUDE.md 전략</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">D · 자동화 &amp; 실전 사이클</span>
+        <a class="nav-link" href="#step15"><span class="step-num">15</span>TODO.md 연속성</a>
+        <a class="nav-link" href="#step16"><span class="step-num">16</span>에러와 친구되기</a>
+        <a class="nav-link" href="#step17"><span class="step-num">17</span>스마트 사이클</a>
+        <a class="nav-link" href="#step18"><span class="step-num">18</span>종합 실습</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">참고</span>
+        <a class="nav-link" href="#appendix"><span class="step-num">📋</span>치트시트</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <!-- Hero -->
+    <div class="hero" id="top">
+      <div class="tag">✦ Vibe to Web Workshop · Day 2</div>
+      <h1>컨텍스트 관리 &amp;<br>웹앱 완성도 높이기</h1>
+      <p>같은 AI를 쓰는데도 결과가 다른 이유 — 오늘 그 차이를 만드는 습관을 배웁니다.</p>
+      <div class="hero-meta">
+        <div class="meta-item"><span class="dot"></span> 7월 15일 13:00–18:00 · 5시간</div>
+        <div class="meta-item"><span class="dot"></span> Mac / Windows 모두 대응</div>
+        <div class="meta-item"><span class="dot"></span> AXT CC 2일차</div>
+      </div>
+    </div>
+
+    <!-- Day 2 목표 -->
+    <div class="card accent" style="margin-bottom: 24px;">
+      <div class="card-title">🎯 Day 2가 끝나면 여러분은…</div>
+      <ul class="checklist" style="margin-bottom:0;">
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Claude의 기억력을 관리하는 법을 안다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Plan Mode로 큰 작업의 방향을 잡는다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> 멀티 파일 구조와 Skills로 반복 작업을 자동화한다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> 에러를 무서워하지 않고 Claude에게 던질 수 있다</li>
+      </ul>
+    </div>
+
+    <!-- Timetable -->
+    <div class="timetable" style="margin-bottom:80px;">
+      <div class="timetable-row timetable-header">
+        <span>시간</span><span>파트</span><span>내용</span><span>소요</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">13:00</span>
+        <span class="tt-part">A</span>
+        <span class="tt-title">작업 원칙 — 한 세션 = 한 피처, Plan Mode</span>
+        <span class="tt-dur">60분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">14:00</span>
+        <span class="tt-part">B</span>
+        <span class="tt-title">기억 시스템 — CLAUDE.md vs /memory</span>
+        <span class="tt-dur">60분</span>
+      </div>
+      <div class="timetable-row" style="opacity:.6;">
+        <span class="tt-time">15:00</span>
+        <span class="tt-part">—</span>
+        <span class="tt-title">휴식</span>
+        <span class="tt-dur">15분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">15:15</span>
+        <span class="tt-part">C</span>
+        <span class="tt-title">파일 &amp; 설정 전략 — 멀티 파일, CLAUDE.md 구조화</span>
+        <span class="tt-dur">60분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">16:15</span>
+        <span class="tt-part">D</span>
+        <span class="tt-title">자동화 &amp; 실전 사이클 — Skills, TODO, 에러, 종합 실습</span>
+        <span class="tt-dur">105분</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         PART A — 작업 원칙
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-a">
+      <div class="part-header">
+        <div class="part-badge">A</div>
+        <div class="part-title">작업 원칙</div>
+        <div class="part-duration">⏱ 60분</div>
+      </div>
+
+      <!-- ── 8단계 ── -->
+      <section class="step-section" id="step8">
+        <div class="step-header">
+          <div class="step-badge">8</div>
+          <div class="step-header-text">
+            <h2>한 세션 = 한 피처 원칙</h2>
+            <p class="step-sub">다른 거 다 까먹어도 이거 하나만</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>Claude는 모든 대화를 머릿속에 들고 다닙니다. 대화가 길어질수록 더 무거워지고 결국 헷갈리기 시작합니다. <strong>신선한 컨텍스트가 부풀어진 컨텍스트보다 항상 낫습니다.</strong></p>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 자주 하는 실수</div>
+            <pre><code>&gt; 자기소개 페이지 만들어줘
+&gt; 폰트 바꿔줘
+&gt; 다크모드 추가해줘
+&gt; 취미 섹션도 넣어줘
+&gt; 사진 갤러리 만들어줘
+&gt; ... (5시간 후)
+&gt; 처음에 만든 메인 제목 색깔 검정으로</code></pre>
+            <p style="font-size:13px; color:var(--text2);">→ 이 시점에서 Claude는 헛소리를 시작합니다.</p>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 올바른 워크플로우</div>
+            <pre><code>① 작업 1 시작
+   ↓
+② 작업 1 완료
+   ↓
+③ /clear  ← 여기 중요
+   ↓
+④ 작업 2 시작
+   ↓
+⑤ 작업 2 완료
+   ↓
+⑥ /clear → 반복</code></pre>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <pre><code>[작업 1] 자기소개 페이지 만들기
+   → 다 만들고 결과 확인
+   → /clear ✨
+
+[작업 2] 취미 갤러리 페이지 추가
+   → 다 만들고 결과 확인
+   → /clear ✨</code></pre>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div><code>/clear</code>는 파일을 지우지 않습니다. <strong>대화 기억만 지우고, 진짜 파일은 그대로 남습니다.</strong> 안심하고 자주 쓰세요.</div>
+        </div>
+
+        <h3>토큰 사용량 확인 — <code>/context</code></h3>
+        <pre><code>&gt; /context</code></pre>
+        <p>바(bar) 형태로 시각화됩니다. <strong>80% 이상이면 정리 타이밍</strong>.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>명령어</th><th>차이점</th><th>언제 쓰나</th></tr></thead>
+            <tbody>
+              <tr><td><code>/clear</code></td><td><strong>완전 초기화</strong>. 대화 다 잊음</td><td>새 작업 시작 시 (가장 많이 씀)</td></tr>
+              <tr><td><code>/compact</code></td><td><strong>요약해서 압축</strong>. 맥락은 유지</td><td>같은 작업 계속하되 공간 확보</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>"한 세션 = 한 피처" 원칙을 외웠다</li>
+          <li><span class="check-box"></span><code>/clear</code>가 파일을 안 지운다는 걸 안다</li>
+          <li><span class="check-box"></span><code>/context</code>로 토큰 사용량 확인했다</li>
+          <li><span class="check-box"></span><code>/clear</code> vs <code>/compact</code> 차이를 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 9단계 ── -->
+      <section class="step-section" id="step9">
+        <div class="step-header">
+          <div class="step-badge">9</div>
+          <div class="step-header-text">
+            <h2>Plan Mode를 습관처럼</h2>
+            <p class="step-sub">Day 1에서 잠깐 다뤘는데, 오늘 본격적으로 씁니다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>모드</th><th>의미</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Plan Mode</strong></td><td>계획만 세움 (실행 X) — 잘못된 방향을 30초에 잡을 수 있음</td></tr>
+              <tr><td><strong>Accept Mode</strong></td><td>계획 + 실행까지 함 (기본)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="compare">
+          <div class="compare-good">
+            <div class="compare-label">✅ Plan Mode가 필요한 경우</div>
+            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
+              <li>새 기능을 통째로 추가할 때 (갤러리, 게시판 등)</li>
+              <li>여러 파일을 동시에 건드리는 작업</li>
+              <li>30분 이상 걸릴 것 같은 작업</li>
+            </ul>
+          </div>
+          <div class="compare-bad">
+            <div class="compare-label">그냥 Accept Mode로 가도 되는 경우</div>
+            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
+              <li>색깔, 폰트 같은 단순 수정</li>
+              <li>에러 한두 줄 고치기</li>
+              <li>파일 한 곳만 살짝 만지기</li>
+            </ul>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>Plan Mode 실전 사용법</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">모드 전환</div>
+              <pre><code>[Shift + Tab 누름]</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">큰 작업 설명</div>
+              <pre><code>&gt; 내 자기소개 페이지에 다크/라이트 모드 토글 기능을 추가하고 싶어.
+  오른쪽 상단에 버튼 하나 두고, 클릭하면 전체 색상이 부드럽게 전환.
+  새로고침해도 마지막 선택이 유지되면 좋겠어.</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">Claude의 계획 받기</div>
+              <pre><code>다음과 같이 진행하려고 합니다:
+1. 색상 변수화 — :root와 .light-mode 두 군데에 정의
+2. 토글 버튼 추가 — 우상단 fixed, 클릭 시 body에 .light-mode 토글
+3. 상태 저장 — localStorage
+4. 전환 애니메이션 — CSS transition 0.3s
+
+이대로 진행할까요?</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">검토 후 결정</div>
+              <div class="compare">
+                <div class="compare-good">
+                  <div class="compare-label">마음에 들면</div>
+                  <pre><code>[Shift + Tab → Accept Mode]
+&gt; 좋아 진행해줘</code></pre>
+                </div>
+                <div class="compare-bad">
+                  <div class="compare-label">수정 요청</div>
+                  <pre><code>&gt; 좋은데, localStorage는 빼고
+  body 클래스만으로 가자.</code></pre>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div><strong>습관 팁</strong>: 새 채팅 시작할 때 첫 명령어로 <span class="inline-code">Shift+Tab</span>을 누르세요. 큰 작업이면 그대로, 작은 거면 다시 눌러서 Accept Mode로.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>Plan Mode와 Accept Mode 전환 가능</li>
+          <li><span class="check-box"></span>Plan Mode를 써야 할 상황을 안다</li>
+          <li><span class="check-box"></span>실제로 Plan을 받아보고 계획을 읽고 수정 요청해봤다</li>
+        </ul>
+      </section>
+    </div><!-- /part-a -->
+
+    <!-- ════════════════════════════════
+         PART B — 기억 시스템
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-b">
+      <div class="part-header">
+        <div class="part-badge">B</div>
+        <div class="part-title">기억 시스템</div>
+        <div class="part-duration">⏱ 60분</div>
+      </div>
+
+      <!-- ── 10단계 ── -->
+      <section class="step-section" id="step10">
+        <div class="step-header">
+          <div class="step-badge">10</div>
+          <div class="step-header-text">
+            <h2>Claude의 기억 시스템 이해하기</h2>
+            <p class="step-sub">무엇을 기억하고 무엇을 잊는지 알면 워크플로우가 완전히 달라집니다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <pre><code>┌─────────────────────────────────────────────────────────┐
+│  [1] 현재 대화 (Context Window)                          │
+│      ─ 한 세션 동안만 기억 · /clear 하면 사라짐           │
+│                                                         │
+│  [2] CLAUDE.md (프로젝트 메모)                           │
+│      ─ 폴더 안에 두는 파일                                │
+│      ─ 매 세션 시작할 때 자동으로 읽음 · 영구 보존         │
+│                                                         │
+│  [3] /memory (개인 메모리)                               │
+│      ─ "기억해줘"라고 말하면 저장됨 · 영구 보존            │
+└─────────────────────────────────────────────────────────┘</code></pre>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>정보</th><th>어디에?</th></tr></thead>
+            <tbody>
+              <tr><td>"이 프로젝트는 다크모드 디자인입니다"</td><td><strong>CLAUDE.md</strong> (프로젝트 단위)</td></tr>
+              <tr><td>"내 이름은 임종윤, Pretendard 폰트 좋아함"</td><td><strong>/memory</strong> (개인 단위)</td></tr>
+              <tr><td>"방금 Claude한테 시킨 작업"</td><td><strong>현재 대화</strong> (자동)</td></tr>
+              <tr><td>"API 키, 비밀번호"</td><td>❌ 어디에도 저장 금지</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 실수 1. 매번 같은 말 반복</div>
+            <pre><code>&gt; 안녕! 다크모드로, Pretendard 폰트로...
+[/clear]
+&gt; 안녕! 다크모드로, Pretendard 폰트로...</code></pre>
+          </div>
+          <div class="compare-bad">
+            <div class="compare-label">❌ 실수 2. CLAUDE.md에 모든 걸 넣음</div>
+            <pre><code># CLAUDE.md (2000줄)
+## 모든 색상 정의
+## 모든 API 엔드포인트 ...</code></pre>
+            <p style="font-size:13px; color:var(--text2);">매 세션마다 토큰 폭탄. 13단계에서 해결법.</p>
+          </div>
+        </div>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div><strong>절대 금지</strong>: <code>/memory</code>에 비밀번호, API 키 저장 금지.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>Claude의 기억 3종을 구분할 수 있다</li>
+          <li><span class="check-box"></span>CLAUDE.md와 /memory의 차이를 안다</li>
+          <li><span class="check-box"></span>비밀번호나 API 키를 저장하면 안 된다는 걸 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 11단계 ── -->
+      <section class="step-section" id="step11">
+        <div class="step-header">
+          <div class="step-badge">11</div>
+          <div class="step-header-text">
+            <h2>/memory로 나를 기억시키기</h2>
+            <p class="step-sub">Claude한테 나를 기억시켜봅시다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>기억 저장하기</h3>
+        <pre><code>&gt; 앞으로 모든 코드에 한국어 주석을 달아줘. 기억해.
+&gt; 내 이름은 임종윤이고, 서강대 아트앤테크놀로지 학생이야. 기억해줘.</code></pre>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div><strong>"기억해줘"</strong>라는 표현이 트리거예요. 이 단어를 쓰면 Claude가 알아서 저장합니다.</div>
+        </div>
+
+        <h3>기억된 내용 확인하기</h3>
+        <pre><code>&gt; /memory</code></pre>
+        <pre><code># Memory
+- 사용자 이름: 임종윤
+- 소속: 서강대 아트앤테크놀로지
+- 선호 폰트: Pretendard
+- 선호 컬러: 다크 모드, 오렌지 액센트
+- 코드 주석은 항상 한국어</code></pre>
+
+        <h3>기억 삭제 / 수정</h3>
+        <pre><code>&gt; 내가 Pretendard 폰트 좋아한다는 거 기억에서 지워줘.
+  이제 Noto Sans KR을 더 좋아해.</code></pre>
+
+        <h3>효과 검증 — 새 세션에서 확인</h3>
+        <pre><code>/clear
+
+&gt; 새 페이지 만들어줘. portfolio.html. 내 정보를 담은 포트폴리오 페이지로.</code></pre>
+        <div class="info">
+          <span class="info-icon">💡</span>
+          <div>→ 별 말 안 했는데도 "임종윤" 이름, 한국어 주석, 다크 모드로 만들어집니다. 🎉</div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-good">
+            <div class="compare-label">✅ 저장하면 좋은 것</div>
+            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
+              <li>내 이름, 학과</li>
+              <li>디자인 취향 (다크/라이트, 색감, 폰트)</li>
+              <li>코딩 스타일 (네이밍 규칙, 주석 언어)</li>
+            </ul>
+          </div>
+          <div class="compare-bad">
+            <div class="compare-label">❌ 저장하지 말 것</div>
+            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
+              <li>비밀번호, API 키, 토큰</li>
+              <li>개인정보 (전화번호, 주소)</li>
+              <li>프로젝트 한정 정보 → CLAUDE.md로</li>
+            </ul>
+          </div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>"기억해"로 정보 저장해봤다</li>
+          <li><span class="check-box"></span><code>/memory</code>로 저장된 내용 확인했다</li>
+          <li><span class="check-box"></span>새 세션에서 효과를 검증했다</li>
+        </ul>
+      </section>
+    </div><!-- /part-b -->
+
+    <!-- ════════════════════════════════
+         PART C — 파일 & 설정 전략
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-c">
+      <div class="part-header">
+        <div class="part-badge">C</div>
+        <div class="part-title">파일 &amp; 설정 전략</div>
+        <div class="part-duration">⏱ 60분</div>
+      </div>
+
+      <!-- ── 12단계 ── -->
+      <section class="step-section" id="step12">
+        <div class="step-header">
+          <div class="step-badge">12</div>
+          <div class="step-header-text">
+            <h2>멀티 파일로 쪼개기</h2>
+            <p class="step-sub">HTML 하나에 CSS, JS가 다 들어있는 구조를 깔끔하게 정리합니다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 단일 파일의 문제</div>
+            <pre><code>index.html (300줄)
+about.html (300줄)
+projects.html (300줄)</code></pre>
+            <p style="font-size:13px; color:var(--text2);">색깔 하나 바꾸려면 세 파일 다 수정.</p>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 멀티 파일의 해결</div>
+            <pre><code>index.html
+about.html
+projects.html
+assets/
+  style.css   ← 디자인은 한 곳에
+  script.js   ← 동작은 한 곳에</code></pre>
+            <p style="font-size:13px; color:var(--text2);">CSS 한 번 고치면 모든 페이지에 반영.</p>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>CSS 분리시키기</h3>
+        <pre><code>&gt; 지금 index.html에 들어있는 CSS를 별도 파일로 분리해줘.
+
+요구사항:
+- assets/ 폴더 새로 만들고 그 안에 style.css
+- index.html에는 &lt;link&gt;로 연결
+- CSS 변수(:root)로 색상을 관리하도록 정리
+- 한국어 주석 추가</code></pre>
+
+        <h3>새 페이지 추가하기</h3>
+        <pre><code>&gt; portfolio.html 페이지를 새로 만들어줘.
+- 기존 style.css를 동일하게 사용
+- 헤더에는 index.html과 동일한 네비게이션
+- 본문에는 3개의 프로젝트 카드 (hover 시 살짝 떠오르는 효과)</code></pre>
+
+        <h3>JavaScript도 분리</h3>
+        <pre><code>&gt; 다크/라이트 토글 기능을 추가하고 싶어.
+- assets/script.js 파일에 분리
+- 모든 페이지에서 동작하도록</code></pre>
+
+        <span class="section-label label-verify">확인</span>
+        <h3>결과 폴더 구조</h3>
+        <pre><code>my-first-web/
+├── index.html
+├── portfolio.html
+├── about.html
+└── assets/
+    ├── style.css
+    └── script.js</code></pre>
+
+        <ul class="checklist">
+          <li><span class="check-box"></span>CSS를 별도 파일로 분리해봤다</li>
+          <li><span class="check-box"></span>새 페이지를 추가하고 같은 CSS를 재사용했다</li>
+          <li><span class="check-box"></span>JS도 별도 파일로 분리해봤다</li>
+        </ul>
+      </section>
+
+      <!-- ── 13단계 ── -->
+      <section class="step-section" id="step13">
+        <div class="step-header">
+          <div class="step-badge">13</div>
+          <div class="step-header-text">
+            <h2>폴더별 CLAUDE.md 전략</h2>
+            <p class="step-sub">토큰 절약 + 정확도 향상</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>CLAUDE.md가 500줄이 되면? 매 세션마다 그 500줄을 다 읽습니다. 토큰이 줄줄 새요.</p>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 내용 직접 작성</div>
+            <pre><code># CLAUDE.md
+## API 엔드포인트
+- POST /api/auth/login - 로그인 처리...
+- GET /api/users/:id - 유저 조회...
+- ... (50줄 더)</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 참조 링크만</div>
+            <pre><code># CLAUDE.md
+## 프로젝트 문서
+- API 스펙: @docs/api-spec.md
+- DB 스키마: @docs/db-schema.md</code></pre>
+            <p style="font-size:13px; color:var(--text2);"><strong>@파일경로</strong>: 관련 작업이 생겼을 때만 읽음.</p>
+          </div>
+        </div>
+
+        <h3>폴더별 CLAUDE.md</h3>
+        <pre><code>my-first-web/
+├── CLAUDE.md             ← 프로젝트 전체 규칙
+├── assets/
+│   ├── CLAUDE.md         ← assets 폴더 규칙
+│   └── style.css
+└── pages/
+    ├── CLAUDE.md         ← pages 폴더 규칙
+    └── about.html</code></pre>
+        <p>Claude가 <code>pages/about.html</code>을 수정할 때 루트 CLAUDE.md + <code>pages/CLAUDE.md</code>도 같이 읽습니다. 해당 폴더 작업할 때만 그 규칙 적용.</p>
+
+        <span class="section-label label-practice">실습</span>
+        <pre><code>&gt; CLAUDE.md가 너무 길어졌어. 정리해줘.
+
+방향:
+- 루트 CLAUDE.md에는 핵심 원칙과 참조 링크만 (50줄 이내)
+- 상세 내용은 docs/ 폴더로 분리
+- @ 표기법으로 참조 연결</code></pre>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>비기너 프로젝트는 단일 CLAUDE.md로 충분합니다. <strong>너무 일찍 최적화하지 마세요.</strong> 200줄을 넘을 때 쪼갤 시점입니다.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>@파일경로 참조 표기법을 안다</li>
+          <li><span class="check-box"></span>폴더별 CLAUDE.md 개념을 이해했다</li>
+          <li><span class="check-box"></span>아직 안 쪼개도 된다는 것도 안다 (조기 최적화 X)</li>
+        </ul>
+      </section>
+    </div><!-- /part-c -->
+
+    <!-- ════════════════════════════════
+         PART D — 자동화 & 실전 사이클
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-d">
+      <div class="part-header">
+        <div class="part-badge">D</div>
+        <div class="part-title">자동화 &amp; 실전 사이클</div>
+        <div class="part-duration">⏱ 105분</div>
+      </div>
+
+      <!-- ── 15단계 ── -->
+      <section class="step-section" id="step15">
+        <div class="step-header">
+          <div class="step-badge">15</div>
+          <div class="step-header-text">
+            <h2>TODO.md로 작업 연속성 유지</h2>
+            <p class="step-sub">"어디까지 했더라?"를 없애는 법</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>며칠에 걸친 작업에서 컨텍스트를 이어가는 가장 간단한 방법 — TODO.md 파일 하나로 관리합니다.</p>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>TODO.md 만들기</h3>
+        <pre><code># 자기소개 페이지 작업 목록
+
+## 진행 중
+- [ ] 다크/라이트 모드 토글 버튼
+
+## 다음 할 일
+- [ ] 포트폴리오 페이지 추가
+- [ ] 연락처 양식 만들기
+- [ ] 반응형 디자인 (모바일)
+
+## 완료
+- [x] index.html 기본 구조
+- [x] CSS 별도 파일로 분리
+
+## 버그 / 이슈
+- 모바일에서 네비 메뉴 깨짐</code></pre>
+
+        <h3>Claude한테 TODO 관리시키기</h3>
+        <pre><code>&gt; TODO.md 읽고 "다음 할 일"의 첫 번째 항목부터 시작해줘.</code></pre>
+        <pre><code>&gt; 방금 완료한 작업을 TODO.md의 "완료" 섹션으로 옮겨줘.</code></pre>
+
+        <h3>세션 종료 시 루틴</h3>
+        <pre><code>&gt; 오늘 작업 마무리할게.
+  1. TODO.md를 현재 상태에 맞게 업데이트해줘
+  2. 내일 시작할 만한 첫 작업을 "다음 할 일" 맨 위에 추가해줘
+  3. 발견한 버그가 있다면 "버그/이슈"에 기록해줘</code></pre>
+
+        <div class="info">
+          <span class="info-icon">💡</span>
+          <div>내일 와서 "TODO.md 읽고 시작해줘"라고 하면 바로 이어서 진행 가능합니다.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>TODO.md를 만들어봤다</li>
+          <li><span class="check-box"></span>Claude한테 TODO 읽고 시작시켰다</li>
+          <li><span class="check-box"></span>세션 종료 시 루틴을 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 16단계 ── -->
+      <section class="step-section" id="step16">
+        <div class="step-header">
+          <div class="step-badge">16</div>
+          <div class="step-header-text">
+            <h2>에러와 친구되기</h2>
+            <p class="step-sub">에러를 어떻게 다루느냐가 실력 차이를 만들어요</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <h3>Thinking 로그 — Claude의 머리를 들여다보기</h3>
+        <pre><code>● 사용자가 다크모드 토글을 요청했습니다.
+
+  기존 CSS를 보니 색상이 :root 변수로 정의되어 있네요.
+  .light-mode 클래스를 body에 추가하면 변수를 오버라이드할 수 있겠습니다.
+  ...</code></pre>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">잘못된 가정 감지 예시</div>
+            <pre><code>● ...React로 만들면 깔끔하겠네요.
+  useState로 상태 관리하고...
+          ↑
+          우린 React 안 쓰는데? → [Escape]</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">즉시 수정</div>
+            <pre><code>&gt; 잠깐, 우린 바닐라 JavaScript만 써.
+  React 쓰지 마.</code></pre>
+            <p style="font-size:13px; color:var(--text2);">→ 30초 만에 잡음. 30분 헤매는 거 방지.</p>
+          </div>
+        </div>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>로그를 흘리지 마세요. Claude가 <strong>잘못된 가정</strong>을 하는 게 보이면, <strong>즉시 Escape</strong>로 중단하세요.</div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>에러 보고 — 그대로 붙여넣기</h3>
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 자기가 해석한 에러</div>
+            <pre><code>"버튼 클릭이 안 돼"
+"뭔가 깨졌어"</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 에러 로그 통째로</div>
+            <pre><code>토글 버튼 추가한 후에 에러 나. 콘솔에 이렇게 떠:
+
+Uncaught TypeError: Cannot read properties of
+null (reading 'addEventListener')
+    at script.js:12:23
+
+확인해줘.</code></pre>
+          </div>
+        </div>
+        <p>브라우저 콘솔(<span class="inline-code">F12</span>) → 빨간 글씨를 드래그 복사 → Claude에게 그대로 붙여넣기.</p>
+
+        <h3>자주 만나는 에러 4가지</h3>
+        <div class="card" style="margin-bottom:8px;">
+          <div class="card-title">① 파일을 못 찾을 때 (404)</div>
+          <pre><code>GET http://localhost:5500/style.css 404 (Not Found)</code></pre>
+          <p style="font-size:13px; color:var(--text2);">→ HTML에서 참조한 CSS 경로가 잘못됨.</p>
+        </div>
+        <div class="card" style="margin-bottom:8px;">
+          <div class="card-title">② 변수/함수가 없다고 할 때</div>
+          <pre><code>Uncaught ReferenceError: toggleMode is not defined</code></pre>
+          <p style="font-size:13px; color:var(--text2);">→ 함수 이름 오타거나 정의 순서 문제.</p>
+        </div>
+        <div class="card" style="margin-bottom:8px;">
+          <div class="card-title">③ null/undefined 에러</div>
+          <pre><code>Uncaught TypeError: Cannot read properties of null</code></pre>
+          <p style="font-size:13px; color:var(--text2);">→ 존재하지 않는 요소를 찾으려 함.</p>
+        </div>
+        <div class="card" style="margin-bottom:8px;">
+          <div class="card-title">④ 문법 에러</div>
+          <pre><code>Uncaught SyntaxError: Unexpected token</code></pre>
+          <p style="font-size:13px; color:var(--text2);">→ 괄호 안 닫힘, 세미콜론 누락 등.</p>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>Thinking 로그를 읽고 잘못된 가정을 발견해봤다</li>
+          <li><span class="check-box"></span>Escape로 잘못된 방향을 중단시켜봤다</li>
+          <li><span class="check-box"></span>에러 메시지를 통째로 복사해서 Claude한테 줬다</li>
+          <li><span class="check-box"></span>4가지 흔한 에러 유형을 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 17단계 ── -->
+      <section class="step-section" id="step17">
+        <div class="step-header">
+          <div class="step-badge">17</div>
+          <div class="step-header-text">
+            <h2>작은 변경 → 확인 → 반복</h2>
+            <p class="step-sub">오늘 배운 모든 걸 하나의 워크플로우로 묶기</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <pre><code>① Plan Mode로 작업 설계
+       ↓
+② 작은 단위로 쪼개기 (한 번에 1개 기능)
+       ↓
+③ Claude한테 첫 번째만 시키기
+       ↓
+④ 브라우저에서 결과 확인
+       ↓
+⑤ 잘 됐으면 → /clear 후 다음 작업
+   안 됐으면 → 에러 그대로 보고 후 수정
+       ↓
+   (반복)</code></pre>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 한 번에 다 시키는 경우</div>
+            <pre><code>&gt; 자기소개, 포트폴리오, 연락처,
+  다크모드, 모바일 반응형까지 다 해줘.</code></pre>
+            <p style="font-size:13px; color:var(--text2);">5개 중 어딘가는 깨짐. 어디서 문제인지 파악에 30분.</p>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 작은 단위로 하나씩</div>
+            <pre><code>① 자기소개만 → 확인 → ✅ → /clear
+② 포트폴리오만 → 확인 → ✅ → /clear
+③ 연락처만 → 확인 → ✅ → /clear
+④ 다크모드만 → 확인 → ❌
+   → 에러 보고 → 수정 → ✅ → /clear</code></pre>
+            <p style="font-size:13px; color:var(--text2);">디버깅 범위가 좁아서 빠름.</p>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div><strong>비기너 버전 백업</strong>: 잘 작동하는 시점에 폴더를 통째로 복사해두세요. (Git은 Day 3에서)<br>
+          <code>my-first-web-backup-0714/</code>, <code>my-first-web-backup-0715/</code></div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>작업을 작은 단위로 쪼개는 습관을 들였다</li>
+          <li><span class="check-box"></span>각 단위 사이에 /clear를 한다</li>
+          <li><span class="check-box"></span>"한 번에 다 시키지 않는다"는 원칙을 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 18단계 ── -->
+      <section class="step-section" id="step18">
+        <div class="step-header">
+          <div class="step-badge">18</div>
+          <div class="step-header-text">
+            <h2>Day 2 종합 실습</h2>
+            <p class="step-sub">자기소개 페이지를 멀티페이지 포트폴리오 사이트로 진화시키기</p>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>목표 구조</h3>
+        <pre><code>my-first-web/
+├── CLAUDE.md
+├── TODO.md
+├── index.html
+├── portfolio.html
+├── about.html
+├── assets/
+│   ├── style.css
+│   └── script.js
+└── .claude/
+    └── skills/
+        └── 새-페이지-만들기/
+            └── SKILL.md</code></pre>
+
+        <h3>단계별 가이드</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">준비 — <code>/clear</code>로 깨끗하게 시작</div>
+              <p style="color:var(--text2); font-size:14px;"><code>/memory</code>에 본인 정보 저장 → <code>TODO.md</code> 만들어서 오늘 할 일 정리.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">Plan Mode로 설계</div>
+              <p style="color:var(--text2); font-size:14px;"><span class="inline-code">Shift + Tab</span>으로 Plan Mode → "현재 index.html을 멀티 파일 구조로 분리하고 싶다" → 계획 검토 후 Accept Mode.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">멀티 파일 분리</div>
+              <p style="color:var(--text2); font-size:14px;">CSS → <code>assets/style.css</code> / JS → <code>assets/script.js</code> → 결과 확인 → <code>/clear</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">새 페이지 추가 (Skills 활용)</div>
+              <p style="color:var(--text2); font-size:14px;"><code>새-페이지-만들기</code> Skill 등록 → <code>portfolio.html</code> 추가 → <code>about.html</code> 추가 → 사이사이 <code>/clear</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">마무리</div>
+              <p style="color:var(--text2); font-size:14px;">CLAUDE.md 정비 (300줄 이하) → TODO.md 업데이트 → 폴더 백업.</p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>3개 페이지가 모두 작동한다</li>
+          <li><span class="check-box"></span>페이지 간 네비게이션이 동작한다</li>
+          <li><span class="check-box"></span>CSS/JS가 분리되어 있다</li>
+          <li><span class="check-box"></span>Skill 하나 이상 등록되어 있다</li>
+          <li><span class="check-box"></span>TODO.md가 정리되어 있다</li>
+          <li><span class="check-box"></span>CLAUDE.md가 깔끔하다 (300줄 이하)</li>
+        </ul>
+      </section>
+    </div><!-- /part-d -->
+
+    <hr class="divider">
+
+    <!-- ── Day 2 완료 ── -->
+    <section style="margin-bottom: 60px;">
+      <div class="card accent" style="text-align:center; padding: 32px;">
+        <div style="font-size:32px; margin-bottom:12px;">🎉</div>
+        <h2 style="font-size: 22px; margin-bottom: 16px;">Day 2 완료!</h2>
+        <div style="text-align:left; max-width: 540px; margin: 0 auto;">
+          <ul class="checklist">
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>한 세션 = 한 피처</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Plan Mode 먼저, Accept Mode 나중</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>CLAUDE.md = 프로젝트 규칙 / /memory = 나의 정보</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>멀티 파일 + Skills로 반복 작업 자동화</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>에러는 통째로 던지고, Claude의 생각을 읽어라</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>작은 변경 → 확인 → 반복</strong></li>
+          </ul>
+        </div>
+        <p style="margin-top: 20px; font-size: 15px; color: var(--text2);"><strong>내일(Day 3)은</strong> 처음부터 새 웹앱을 만들고, Vercel로 배포하고, 데모데이로 마무리합니다.</p>
+      </div>
+    </section>
+
+    <!-- ── 부록 치트시트 ── -->
+    <section class="step-section" id="appendix">
+      <div class="step-header">
+        <div class="step-badge" style="font-size:16px;">📋</div>
+        <div class="step-header-text">
+          <h2>Day 2 치트시트</h2>
+          <p class="step-sub">언제든 꺼내보는 빠른 참고 자료</p>
+        </div>
+      </div>
+
+      <div class="cheat-grid">
+        <div>
+          <h3>컨텍스트 관리 명령어</h3>
+          <pre><code>/clear     대화 완전 초기화 (새 작업 시작 시)
+/compact   대화 압축 (맥락 유지)
+/context   토큰 사용량 확인
+/memory    개인 메모리 열기/확인
+/skills    설치된 Skills 목록</code></pre>
+
+          <h3>워크플로우 핵심 원칙</h3>
+          <pre><code>1. 한 세션 = 한 피처  끝나면 /clear
+2. Plan Mode 먼저     큰 작업은 무조건
+3. 작은 변경 → 확인 → 반복
+4. 에러는 그대로 던지기
+5. Thinking 로그 읽기  잘못된 가정이면 Esc
+6. /context 자주 확인  80% 넘으면 정리</code></pre>
+        </div>
+        <div>
+          <h3>SKILL.md 템플릿</h3>
+          <pre><code>---
+name: 영-소문자-하이픈
+description: 사용자가 ~할 때 사용.
+             ~을 수행한다.
+---
+
+# 제목
+
+## 단계
+1. 첫 번째 단계
+2. 두 번째 단계
+
+## 주의사항
+- 흔히 하는 실수</code></pre>
+
+          <h3>파일 구조</h3>
+          <pre><code>project/
+├── CLAUDE.md       ← 규칙 (300줄 이하)
+├── TODO.md         ← 할 일 목록
+├── assets/
+│   ├── style.css
+│   └── script.js
+└── .claude/
+    ├── skills/     ← 자동 트리거 Skill
+    └── commands/   ← 명시 호출 명령어
+
+~/.claude/skills/   ← 개인용 Skills</code></pre>
+        </div>
+      </div>
+
+      <h3>막혔을 때 비상 매뉴얼</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>증상</th><th>처방</th></tr></thead>
+          <tbody>
+            <tr><td>Claude가 헷갈려해요</td><td><code>/clear</code> 후 재시작</td></tr>
+            <tr><td>잘못된 방향 같아요</td><td><code>Esc</code> 즉시 중단</td></tr>
+            <tr><td>어디까지 했는지 모름</td><td>TODO.md 확인</td></tr>
+            <tr><td>갑자기 화면 깨졌어요</td><td><code>Esc Esc</code>로 직전 상태 복원</td></tr>
+            <tr><td>터미널 닫아버렸어요</td><td><code>claude</code> 실행 후 <code>/resume</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Vibe to Web 워크샵 2일차 자료 &nbsp;·&nbsp; Sogang University · Art &amp; Technology · AXT CC</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

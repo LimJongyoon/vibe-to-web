@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe to Web — Day 1 · Claude Code AI 코딩 입문</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="badge">AXT CC · 1일차</div>
+      <h1>Vibe to Web</h1>
+      <p>Claude Code 입문 강의</p>
+      <div class="day-nav">
+        <a href="index.html" class="active">Day 1</a>
+        <a href="day2.html">Day 2</a>
+        <a href="day3.html">Day 3</a>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-section">
+        <span class="nav-title">A · 환경 준비</span>
+        <a class="nav-link" href="#step0"><span class="step-num">0</span>기본 용어</a>
+        <a class="nav-link" href="#step1"><span class="step-num">1</span>VS Code</a>
+        <a class="nav-link" href="#step2"><span class="step-num">2</span>프로젝트 폴더</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">B · Claude Code 설치</span>
+        <a class="nav-link" href="#step3"><span class="step-num">3</span>설치 &amp; 로그인</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">C · 첫 웹페이지</span>
+        <a class="nav-link" href="#step4"><span class="step-num">4</span>첫 프롬프트</a>
+        <a class="nav-link" href="#step5"><span class="step-num">5</span>로컬 서버</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">D · 수정 &amp; 레벨업</span>
+        <a class="nav-link" href="#step6"><span class="step-num">6</span>수정 사이클</a>
+        <a class="nav-link" href="#step7"><span class="step-num">7</span>레벨업</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">참고</span>
+        <a class="nav-link" href="#appendix"><span class="step-num">📋</span>치트시트</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <!-- Hero -->
+    <div class="hero" id="top">
+      <div class="tag">✦ Vibe to Web Workshop</div>
+      <h1>Claude Code로 배우는<br>AI 코딩 입문</h1>
+      <p>코딩 몰라도 OK. 아이디어를 말하면 AI가 웹페이지로 만들어줍니다.</p>
+      <div class="hero-meta">
+        <div class="meta-item"><span class="dot"></span> 7월 14일 13:00–18:00 · 5시간</div>
+        <div class="meta-item"><span class="dot"></span> Mac / Windows 모두 대응</div>
+        <div class="meta-item"><span class="dot"></span> AXT CC 1일차</div>
+      </div>
+    </div>
+
+    <!-- Day 1 목표 -->
+    <div class="card accent" style="margin-bottom: 24px;">
+      <div class="card-title">🎯 Day 1이 끝나면 여러분은…</div>
+      <ul class="checklist" style="margin-bottom:0;">
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Claude Code를 실행하고 첫 프롬프트를 던질 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Claude가 만든 웹페이지를 로컬 서버에서 확인할 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> 마음에 안 드는 부분을 명확히 말해서 고칠 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> CLAUDE.md와 단축키로 효율적으로 작업할 수 있다</li>
+      </ul>
+    </div>
+
+    <!-- Timetable -->
+    <div class="timetable" style="margin-bottom:80px;">
+      <div class="timetable-row timetable-header">
+        <span>시간</span><span>파트</span><span>내용</span><span>소요</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">13:00</span>
+        <span class="tt-part">A</span>
+        <span class="tt-title">기본 개념 &amp; 환경 준비</span>
+        <span class="tt-dur">60분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">14:00</span>
+        <span class="tt-part">B</span>
+        <span class="tt-title">Claude Code 설치</span>
+        <span class="tt-dur">60분</span>
+      </div>
+      <div class="timetable-row" style="opacity:.6;">
+        <span class="tt-time">15:00</span>
+        <span class="tt-part">—</span>
+        <span class="tt-title">휴식</span>
+        <span class="tt-dur">15분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">15:15</span>
+        <span class="tt-part">C</span>
+        <span class="tt-title">첫 웹페이지 만들기</span>
+        <span class="tt-dur">75분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">16:30</span>
+        <span class="tt-part">D</span>
+        <span class="tt-title">수정 사이클 &amp; 레벨업</span>
+        <span class="tt-dur">90분</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         PART A — 환경 준비
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-a">
+      <div class="part-header">
+        <div class="part-badge">A</div>
+        <div class="part-title">기본 개념 &amp; 환경 준비</div>
+        <div class="part-duration">⏱ 60분</div>
+      </div>
+
+      <!-- ── 0단계 ── -->
+      <section class="step-section" id="step0">
+        <div class="step-header">
+          <div class="step-badge">0</div>
+          <div class="step-header-text">
+            <h2>시작 전에 알아둘 기본 용어</h2>
+            <p class="step-sub">이 5가지만 알면 앞으로의 설명이 쏙쏙 들어옵니다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>단어</th><th>한 줄 설명</th><th>비유</th></tr></thead>
+            <tbody>
+              <tr><td><strong>브라우저</strong></td><td>인터넷 페이지를 보여주는 프로그램 (Chrome, Safari 등)</td><td>TV 화면</td></tr>
+              <tr><td><strong>에디터 (VS Code)</strong></td><td>코드를 쓰는 메모장 — 색깔 표시, 자동완성 포함</td><td>코딩용 Word</td></tr>
+              <tr><td><strong>터미널</strong></td><td>글자로 컴퓨터에 명령 내리는 검은 창</td><td>AI 스피커 키보드 버전</td></tr>
+              <tr><td><strong>Claude Code</strong></td><td>터미널 안에서 내 파일을 직접 만들고 고치는 AI</td><td>내 책상에 앉은 개발자 동료</td></tr>
+              <tr><td><strong>폴더 / 경로</strong></td><td>파일들을 담는 상자, 파일이 어디 있는지 알려주는 주소</td><td>서랍 / 집 주소</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card accent">
+          <div class="card-title">Claude.ai vs Claude Code — 이 차이가 핵심입니다</div>
+          <table>
+            <thead><tr><th>종류</th><th>어디서</th><th>무엇을</th></tr></thead>
+            <tbody>
+              <tr><td>Claude (웹/앱)</td><td>브라우저, 핸드폰</td><td>대화하며 글·코드 받기 (화면에 텍스트로 표시)</td></tr>
+              <tr><td><strong>Claude Code</strong></td><td>터미널</td><td><strong>내 컴퓨터에 진짜 파일을 만들고 저장</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── 1단계 ── -->
+      <section class="step-section" id="step1">
+        <div class="step-header">
+          <div class="step-badge">1</div>
+          <div class="step-header-text">
+            <h2>VS Code 설치하기</h2>
+            <p class="step-sub">코드를 쓰는 메모장 설치</p>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <div class="info">
+          <span class="info-icon">🔗</span>
+          <div>공식 다운로드: <a class="ext-link" href="https://code.visualstudio.com/download" target="_blank">code.visualstudio.com/download</a></div>
+        </div>
+
+        <div class="os-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(this, 'mac1')">🍎 Mac</button>
+            <button class="tab-btn" onclick="switchTab(this, 'win1')">🪟 Windows</button>
+          </div>
+          <div class="tab-content active" id="mac1">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">다운로드 &amp; 설치</div>
+                  <p><code>Mac</code> 버튼 → zip 다운로드 → 더블클릭 → 파란 아이콘을 <strong>응용 프로그램</strong> 폴더로 드래그</p>
+                  <div class="tip">
+                    <span class="tip-icon">💡</span>
+                    <div>Downloads에 두면 경고가 자꾸 뜹니다. 반드시 응용 프로그램 폴더로 이동하세요.</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">⭐ code 명령어 PATH 등록 — 필수</div>
+                  <ol class="sub-ol">
+                    <li>VS Code에서 <span class="inline-code">⌘ + Shift + P</span></li>
+                    <li><span class="inline-code">shell command</span> 입력</li>
+                    <li><strong>"Shell Command: Install 'code' command in PATH"</strong> 클릭</li>
+                    <li>비밀번호 입력 → 오른쪽 아래 성공 알림 확인</li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="tab-content" id="win1">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">다운로드 &amp; 설치</div>
+                  <p><code>Windows</code> 버튼 → <code>.exe</code> 다운로드 → 더블클릭 설치</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">⭐ PATH 체크박스 — 필수</div>
+                  <div class="warn">
+                    <span class="warn-icon">⚠️</span>
+                    <div>"추가 작업 선택" 화면에서 <strong>PATH에 추가</strong>를 반드시 체크하세요.</div>
+                  </div>
+                  <pre><code>☑ PATH에 추가  ← ⭐ 매우 중요</code></pre>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <p>한국어 팩 (선택): 왼쪽 🧩 Extensions → <code>Korean</code> 검색 → <strong>Korean Language Pack</strong> → Install → Restart</p>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>VS Code 열면 Welcome 탭 보임</li>
+          <li><span class="check-box"></span>(Mac) code 명령어 PATH 등록 완료</li>
+          <li><span class="check-box"></span>(Windows) "Code로 열기" 우클릭 메뉴 있음</li>
+        </ul>
+      </section>
+
+      <!-- ── 2단계 ── -->
+      <section class="step-section" id="step2">
+        <div class="step-header">
+          <div class="step-badge">2</div>
+          <div class="step-header-text">
+            <h2>프로젝트 폴더 만들고 열기</h2>
+            <p class="step-sub">하나의 프로젝트 = 하나의 폴더</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="card">
+          <div class="card-title">폴더 이름 규칙</div>
+          <div class="compare">
+            <div class="compare-bad">
+              <div class="compare-label">❌ 피하기</div>
+              <pre><code>내 첫 번째 웹앱
+포트폴리오 (2026)
+할 일 앱!</code></pre>
+            </div>
+            <div class="compare-good">
+              <div class="compare-label">✅ 좋은 예</div>
+              <pre><code>my-first-web
+portfolio-2026
+todo-app</code></pre>
+            </div>
+          </div>
+          <p style="font-size:13px; margin-top:8px; margin-bottom:0;">영어 소문자만 · 띄어쓰기 대신 하이픈(-) · 특수문자/한글 금지</p>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <div class="os-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(this, 'mac2')">🅰️ 마우스 (GUI)</button>
+            <button class="tab-btn" onclick="switchTab(this, 'term2')">🅱️ 터미널 (명령어)</button>
+          </div>
+          <div class="tab-content active" id="mac2">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">🍎 Mac</div>
+                  <p>바탕화면 우클릭 → <strong>새로운 폴더</strong> → 이름 <code>my-first-web</code> → Enter</p>
+                  <p>VS Code → <strong>File → Open Folder…</strong> → <code>my-first-web</code> 선택 → Open</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">🪟 Windows</div>
+                  <p>바탕화면 우클릭 → <strong>새로 만들기 → 폴더</strong> → 이름 <code>my-first-web</code></p>
+                  <p>폴더 우클릭 → <strong>"Code(으)로 열기"</strong></p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="tab-content" id="term2">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">기본 명령어 4개</div>
+                  <pre><code>pwd               # 현재 위치 확인
+cd 폴더이름        # 폴더 이동
+mkdir 폴더이름     # 새 폴더 만들기
+code .            # VS Code로 열기</code></pre>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">🍎 Mac</div>
+                  <pre><code>cd ~/Desktop
+mkdir my-first-web
+cd my-first-web
+code .</code></pre>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">🪟 Windows PowerShell</div>
+                  <pre><code>cd $HOME\Desktop
+mkdir my-first-web
+cd my-first-web
+code .</code></pre>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <div class="tip">
+          <span class="tip-icon">✅</span>
+          <div>VS Code 왼쪽 Explorer에 <code>▾ MY-FIRST-WEB</code> 이 표시되면 성공.</div>
+        </div>
+      </section>
+    </div><!-- /part-a -->
+
+    <!-- ════════════════════════════════
+         PART B — Claude Code 설치
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-b">
+      <div class="part-header">
+        <div class="part-badge">B</div>
+        <div class="part-title">Claude Code 설치</div>
+        <div class="part-duration">⏱ 60분</div>
+      </div>
+
+      <!-- ── 3단계 ── -->
+      <section class="step-section" id="step3">
+        <div class="step-header">
+          <div class="step-badge">3</div>
+          <div class="step-header-text">
+            <h2>Claude Code 설치하기</h2>
+            <p class="step-sub">AI를 내 터미널 안으로 모셔옵니다</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="card" style="margin-bottom:28px;">
+          <div class="card-title">설치 흐름</div>
+          <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:13px; color:var(--text2);">
+            <span class="inline-code">3-0</span><span>Node.js 확인</span>
+            <span style="color:var(--text3);">→</span>
+            <span class="inline-code">3-1</span><span>없으면 설치</span>
+            <span style="color:var(--text3);">→</span>
+            <span class="inline-code">3-2</span><span>Claude Code 설치</span>
+            <span style="color:var(--text3);">→</span>
+            <span class="inline-code">3-3</span><span>첫 실행 &amp; 로그인</span>
+            <span style="color:var(--text3);">→</span>
+            <span class="inline-code">3-4</span><span>첫 인사</span>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>3-0. Node.js 확인</h3>
+        <pre><code>node --version</code></pre>
+        <p><code>v20.18.0</code> 같은 버전이 나오면 → <strong>3-2로 건너뛰기</strong><br>
+        <code>command not found</code>가 나오면 → 아래 3-1에서 설치</p>
+
+        <h3>3-1. Node.js 설치</h3>
+        <p><a class="ext-link" href="https://nodejs.org" target="_blank">nodejs.org</a> → <strong>LTS</strong> 큰 버튼 클릭</p>
+
+        <div class="os-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(this, 'mac31')">🍎 Mac</button>
+            <button class="tab-btn" onclick="switchTab(this, 'win31')">🪟 Windows</button>
+          </div>
+          <div class="tab-content active" id="mac31">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">.pkg 다운로드 → 더블클릭</div>
+                  <p>"계속 → 계속 → 동의 → 설치" → Mac 비밀번호 입력</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">터미널 완전히 닫고 다시 열기</div>
+                  <pre><code>node --version</code></pre>
+                  <p>버전이 나오면 성공 → 3-2로</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="tab-content" id="win31">
+            <ol class="step-list">
+              <li>
+                <div>
+                  <div class="step-list-title">.msi 다운로드 → 더블클릭 → Next 계속</div>
+                  <div class="warn">
+                    <span class="warn-icon">⚠️</span>
+                    <div><strong>"Automatically install the necessary tools"</strong>는 <strong>체크하지 마세요</strong>.</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">PowerShell 닫고 다시 열기</div>
+                  <pre><code>node --version</code></pre>
+                  <p>버전이 나오면 성공 → 3-2로</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <h3>3-2. Claude Code 설치</h3>
+        <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+        <p>1~3분 후 <code>added 200 packages in 45s</code> 메시지 나오면 성공.</p>
+        <div class="info">
+          <span class="info-icon">🍎</span>
+          <div>Mac에서 <code>permission denied</code>가 나오면: <code>sudo npm install -g @anthropic-ai/claude-code</code></div>
+        </div>
+
+        <h3>3-3. 첫 실행 &amp; 로그인</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">작업 폴더로 이동 후 실행</div>
+              <pre><code>cd ~/Desktop/my-first-web
+claude</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">로그인</div>
+              <p><strong>"Claude account (recommended)"</strong> 선택 → Enter → 브라우저 로그인 → <strong>"Authorize Claude Code"</strong> 클릭</p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="section-label label-verify">확인</span>
+        <div class="card accent">
+          <div class="card-title">환영 화면이 뜨면 준비 완료! 🎉</div>
+          <pre style="background:transparent; border:none; padding:0; font-size:13px;"><code>╭───────────────────────────────────────────╮
+│   Welcome to Claude Code!                 │
+│   /help for help, /status for account     │
+╰───────────────────────────────────────────╯
+></code></pre>
+        </div>
+
+        <h3>첫 인사 해보기</h3>
+        <pre><code>&gt; 안녕! 너는 누구야?
+
+&gt; 지금 이 폴더 안에 뭐가 있어?</code></pre>
+
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>node --version</code> → v18 이상 출력</li>
+          <li><span class="check-box"></span>환영 화면 확인, 로그인 완료</li>
+          <li><span class="check-box"></span>인사 &amp; 폴더 내용 물어보기 성공</li>
+        </ul>
+      </section>
+    </div><!-- /part-b -->
+
+    <!-- ════════════════════════════════
+         PART C — 첫 웹페이지 만들기
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-c">
+      <div class="part-header">
+        <div class="part-badge">C</div>
+        <div class="part-title">첫 웹페이지 만들기</div>
+        <div class="part-duration">⏱ 75분</div>
+      </div>
+
+      <!-- ── 4단계 ── -->
+      <section class="step-section" id="step4">
+        <div class="step-header">
+          <div class="step-badge">4</div>
+          <div class="step-header-text">
+            <h2>첫 프롬프트로 웹페이지 만들기</h2>
+            <p class="step-sub">프롬프트 = AI한테 시키는 말</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 나쁜 프롬프트</div>
+            <pre><code>"웹페이지 만들어"
+→ 무슨 페이지? 어떤 디자인?</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 좋은 프롬프트</div>
+            <pre><code>무엇을 / 어떻게 / 어떤 형태로
+세 가지를 챙긴다</code></pre>
+          </div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <pre><code>내 자기소개 웹페이지를 만들어줘.
+
+요구사항:
+- 파일은 index.html 하나만
+- 제목은 "안녕, 나는 [본인 이름]"
+- 짧은 자기소개 한 문단
+- 좋아하는 것 3가지 리스트
+- 다크모드 디자인 (검은 배경, 밝은 글자)
+- 가운데 정렬
+
+CSS는 같은 HTML 파일 안에 &lt;style&gt; 태그로 넣어줘.</code></pre>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>권한 창이 뜨면 <strong>"Yes, and don't ask again for this session"</strong> 선택.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <div class="info">
+          <span class="info-icon">✨</span>
+          <div>VS Code Explorer에 <code>📄 index.html</code>이 생기면 성공. 내가 안 쓴 코드가 폴더에 진짜로 생겼습니다 — 이게 바이브 코딩의 시작입니다.</div>
+        </div>
+
+        <h3>보너스 — 스크린샷으로 디자인 보여주기</h3>
+        <p>말로 설명하기 어려운 디자인은 스크린샷을 Claude Code 터미널에 드래그하면 됩니다.</p>
+        <div class="os-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(this, 'ss_mac')">🍎 Mac 캡처</button>
+            <button class="tab-btn" onclick="switchTab(this, 'ss_win')">🪟 Windows 캡처</button>
+          </div>
+          <div class="tab-content active" id="ss_mac">
+            <p><span class="inline-code">⌘ + Shift + 4</span> → 드래그 → 바탕화면 PNG 저장 → 터미널에 드래그</p>
+          </div>
+          <div class="tab-content" id="ss_win">
+            <p><span class="inline-code">Win + Shift + S</span> → 영역 선택 → 파일로 저장 후 터미널에 드래그</p>
+          </div>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>이미지만 던지지 말고 <strong>"이런 스타일로 내 자기소개 페이지를 만들어줘. 색감과 레이아웃을 비슷하게."</strong>처럼 설명을 같이 적으세요.</div>
+        </div>
+      </section>
+
+      <!-- ── 5단계 ── -->
+      <section class="step-section" id="step5">
+        <div class="step-header">
+          <div class="step-badge">5</div>
+          <div class="step-header-text">
+            <h2>로컬 서버로 결과 보기</h2>
+            <p class="step-sub">개발 중에는 로컬 서버 — 배포는 Day 3에</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title">로컬 서버 vs 파일 더블클릭</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>항목</th><th>파일 더블클릭</th><th>로컬 서버</th></tr></thead>
+              <tbody>
+                <tr><td>주소</td><td><code>file:///Users/…</code></td><td><code>http://localhost:5500</code></td></tr>
+                <tr><td>자동 새로고침</td><td>❌ 수동 F5</td><td>✅ (Live Server)</td></tr>
+                <tr><td>실제 환경과 유사</td><td>❌</td><td>✅</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin:8px 0 0; font-size:13px;"><strong>localhost</strong> = 내 컴퓨터를 가리키는 별명. 인터넷 없어도 작동.</p>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>방법 1. Live Server ⭐ 추천</h3>
+        <div class="os-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(this, 'ls_install')">설치</button>
+            <button class="tab-btn" onclick="switchTab(this, 'ls_use')">사용</button>
+          </div>
+          <div class="tab-content active" id="ls_install">
+            <ol class="step-list">
+              <li><div><div class="step-list-title">VS Code 왼쪽 🧩 Extensions 클릭</div></div></li>
+              <li>
+                <div>
+                  <div class="step-list-title"><code>Live Server</code> 검색</div>
+                  <p>만든 사람 <strong>Ritwick Dey</strong> → <strong>Install</strong></p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="tab-content" id="ls_use">
+            <ol class="step-list">
+              <li><div><div class="step-list-title">VS Code에서 <code>index.html</code> 파일 열기</div></div></li>
+              <li>
+                <div>
+                  <div class="step-list-title">오른쪽 아래 <strong>[ Go Live ]</strong> 클릭</div>
+                  <p>브라우저에서 <code>http://127.0.0.1:5500/index.html</code> 자동 열림</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="step-list-title">파일 저장 시 자동 새로고침 ✨</div>
+                  <div class="tip" style="margin-top:8px;">
+                    <span class="tip-icon">💡</span>
+                    <div>종료: 오른쪽 아래 <strong>"Port: 5500"</strong> 클릭</div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <h3>방법 2. npx serve (터미널)</h3>
+        <p>VS Code 터미널: 메뉴 <strong>터미널 → 새 터미널</strong> (자동으로 현재 폴더에서 시작)</p>
+        <pre><code>npx serve</code></pre>
+        <p>처음 실행 시 <code>Ok to proceed? (y)</code> → <code>y</code>. <code>http://localhost:3000</code>에서 접속. 종료: <span class="inline-code">Ctrl + C</span></p>
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>방법 2는 자동 새로고침 없음. <strong>F5 (또는 ⌘+R)</strong>로 수동 새로고침 필요.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>브라우저에서 자기소개 페이지를 봤다</li>
+          <li><span class="check-box"></span>Live Server 자동 새로고침이 작동한다</li>
+          <li><span class="check-box"></span>새로고침 단축키를 안다 (F5 / ⌘+R)</li>
+        </ul>
+
+        <div class="tip">
+          <span class="tip-icon">🆘</span>
+          <div><strong>"Go Live" 안 보임</strong> → HTML 파일이 열려 있어야 합니다 &nbsp;·&nbsp; <strong>디렉토리 목록만 뜸</strong> → 파일명이 <code>index.html</code>인지 확인</div>
+        </div>
+      </section>
+    </div><!-- /part-c -->
+
+    <!-- ════════════════════════════════
+         PART D — 수정 사이클 & 레벨업
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-d">
+      <div class="part-header">
+        <div class="part-badge">D</div>
+        <div class="part-title">수정 사이클 &amp; 레벨업</div>
+        <div class="part-duration">⏱ 90분</div>
+      </div>
+
+      <!-- ── 6단계 ── -->
+      <section class="step-section" id="step6">
+        <div class="step-header">
+          <div class="step-badge">6</div>
+          <div class="step-header-text">
+            <h2>수정 사이클</h2>
+            <p class="step-sub">바이브 코딩의 핵심 — 피드백 → 수정 → 확인</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="cycle">
+          <div class="cycle-item">
+            <div class="cycle-left"><div class="cycle-num">①</div><div class="cycle-line"></div></div>
+            <div class="cycle-text">Claude에게 시킨다</div>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-left"><div class="cycle-num">②</div><div class="cycle-line"></div></div>
+            <div class="cycle-text">결과를 본다 (브라우저 확인)</div>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-left"><div class="cycle-num">③</div><div class="cycle-line"></div></div>
+            <div class="cycle-text">마음에 안 드는 부분을 찾는다</div>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-left"><div class="cycle-num">④</div><div class="cycle-line"></div></div>
+            <div class="cycle-text">구체적으로 말한다 ("OO을 OO로 바꿔줘")</div>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-left"><div class="cycle-num">⑤</div></div>
+            <div class="cycle-text">새로고침해서 확인 → 다시 ①로</div>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 나쁜 피드백</div>
+            <pre><code>"별로야"
+"좀 더 예쁘게 해줘"
+"뭔가 이상해"</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 좋은 피드백</div>
+            <pre><code>"제목이 너무 작아. 두 배로 키워줘."
+"배경색을 짙은 남색(#1a1a2e)으로."
+"카드 사이 간격 20px씩 띄워줘."</code></pre>
+          </div>
+        </div>
+
+        <div class="card accent">
+          <div class="card-title">피드백 3원칙</div>
+          <p style="margin:0; color:var(--text2);">① <strong>어디를</strong> (제목? 배경?) &nbsp;·&nbsp; ② <strong>어떻게</strong> (크게? 색 바꾸기?) &nbsp;·&nbsp; ③ <strong>얼마나</strong> (두 배? 20px?)</p>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>⚡ <code>!</code> 접두사 — 터미널 명령 바로 실행</h3>
+        <pre><code>&gt; !ls                    # 폴더 내용 확인
+&gt; !open index.html       # 브라우저로 열기 (Mac)
+&gt; !start index.html      # 브라우저로 열기 (Windows)
+&gt; !git status            # Git 상태 확인</code></pre>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>Claude Code 대화를 끊지 않고 터미널 명령을 바로 실행할 수 있어요.</div>
+        </div>
+
+        <h3>에러가 나면?</h3>
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌ 나쁜 에러 보고</div>
+            <pre><code>"화면이 이상해"
+"안 돼"</code></pre>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅ 좋은 에러 보고</div>
+            <pre><code>방금 수정 후 제목이 사라졌어.
+콘솔 에러: "Uncaught SyntaxError: ..."
+확인하고 고쳐줘.</code></pre>
+          </div>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">🔍</span>
+          <div>브라우저 콘솔: F12 → Console 탭. 빨간 글씨를 그대로 복사해서 Claude에게 주세요.</div>
+        </div>
+
+        <h3>되돌리기</h3>
+        <div class="shortcuts" style="grid-template-columns:1fr 1fr; margin-bottom:16px;">
+          <div class="shortcut-card">
+            <div class="shortcut-key">Esc × 1</div>
+            <div class="shortcut-desc">작업 중단<br><span style="color:var(--text3); font-size:12px;">잘못된 방향이면 바로</span></div>
+          </div>
+          <div class="shortcut-card">
+            <div class="shortcut-key">Esc × 2</div>
+            <div class="shortcut-desc">체크포인트 복원<br><span style="color:var(--text3); font-size:12px;">이미 끝난 작업 되돌리기</span></div>
+          </div>
+        </div>
+
+        <h3>🚨 터미널 닫았을 때 — <code>/resume</code></h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">같은 폴더로 이동 후 Claude 실행</div>
+              <pre><code>cd ~/Desktop/my-first-web
+claude</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">이전 세션 복구</div>
+              <pre><code>/resume</code></pre>
+              <p>이전 대화 내용이 그대로 복원됩니다. 🎉</p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>3번 이상의 수정 사이클을 돌려봤다</li>
+          <li><span class="check-box"></span><code>!</code> 접두사로 터미널 명령 실행해봤다</li>
+          <li><span class="check-box"></span>에러 메시지를 복사해서 Claude에 전달해봤다</li>
+          <li><span class="check-box"></span><span class="inline-code">Esc × 2</span>로 되돌리기 시도해봤다</li>
+        </ul>
+
+        <div class="card accent">
+          <div class="card-title">강사 포인트</div>
+          <p style="margin:0; font-style:italic; color:var(--text2);">"여러분이 오늘 배워가야 할 건 코딩 문법이 아닙니다. <strong>AI한테 명확하게 말하는 능력</strong>입니다. '어디를, 어떻게, 얼마나' — 이게 바이브 코딩의 전부예요."</p>
+        </div>
+      </section>
+
+      <!-- ── 7단계 ── -->
+      <section class="step-section" id="step7">
+        <div class="step-header">
+          <div class="step-badge">7</div>
+          <div class="step-header-text">
+            <h2>CLAUDE.md와 단축키로 레벨업</h2>
+            <p class="step-sub">더 빠르고 스마트하게 작업하기</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <div class="info">
+          <span class="info-icon">📝</span>
+          <div>Claude Code를 끄고 다시 켜면 이전 대화를 기억 못합니다. <strong>CLAUDE.md</strong>는 폴더 안의 메모 파일 — 매번 자동으로 먼저 읽어서 항상 기억한 상태로 일해줍니다.</div>
+        </div>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>7-1. CLAUDE.md 만들기</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">자동 생성</div>
+              <pre><code>/init</code></pre>
+              <p>Claude가 폴더를 둘러보고 <code>CLAUDE.md</code>를 만들어줍니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">또는 직접 만들기</div>
+              <p>대화하면서 "방금 정한 규칙, CLAUDE.md에 추가해줘"라고 시키면 Claude가 자연스럽게 병합해줍니다.</p>
+            </div>
+          </li>
+        </ol>
+
+        <pre><code># 절대 규칙 ⚠️
+- 답변은 항상 한국어로
+- !important 사용 금지
+- 외부 라이브러리 최소화
+
+# 아키텍처
+- HTML, CSS, JS 파일 분리
+
+# 작성자 &amp; 디자인 취향
+- 이름: 홍길동
+- 다크 모드 (배경: #1a1a2e, 글자: #f5f5f7)
+- 액센트: 오렌지 (#ff6b35)
+
+# 코드 규칙
+- CSS 변수(:root)로 색상 관리
+- 클래스 이름: kebab-case</code></pre>
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div><strong>300줄 이하</strong>로 유지하세요. 짧고 명확하게.</div>
+        </div>
+
+        <h3>7-2. 필수 단축키</h3>
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-title">⭐ Plan → 검토 → Accept 패턴</div>
+          <p style="margin:0; color:var(--text2); font-size:14px;"><span class="inline-code">Shift + Tab</span>으로 Plan Mode 진입 → 요구사항 전달 → 계획 확인 → 다시 <span class="inline-code">Shift + Tab</span>으로 실행</p>
+        </div>
+        <div class="shortcuts">
+          <div class="shortcut-card">
+            <div class="shortcut-key">Shift + Tab</div>
+            <div class="shortcut-desc">Plan ↔ Accept 전환<br><span style="color:var(--text3); font-size:12px;">Plan: 계획만 · Accept: 실행까지</span></div>
+          </div>
+          <div class="shortcut-card">
+            <div class="shortcut-key">Esc × 1</div>
+            <div class="shortcut-desc">작업 중단</div>
+          </div>
+          <div class="shortcut-card">
+            <div class="shortcut-key">Esc × 2</div>
+            <div class="shortcut-desc">체크포인트 복원</div>
+          </div>
+          <div class="shortcut-card">
+            <div class="shortcut-key">↑ 화살표</div>
+            <div class="shortcut-desc">이전 명령어 가져오기</div>
+          </div>
+        </div>
+
+        <h3>7-3. 슬래시 명령어</h3>
+        <h4>컨텍스트 관리 — 가장 중요</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>명령어</th><th>기능</th><th>언제</th></tr></thead>
+            <tbody>
+              <tr><td><code>/clear</code></td><td>대화 완전 초기화 (파일은 유지)</td><td>새 작업 시작 시 습관적으로</td></tr>
+              <tr><td><code>/compact</code></td><td>대화 압축 (맥락 유지)</td><td>같은 작업 계속하되 공간 확보</td></tr>
+              <tr><td><code>/context</code></td><td>토큰 사용량 확인</td><td>80% 넘으면 /clear 타이밍</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>세션 관리</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>명령어</th><th>기능</th></tr></thead>
+            <tbody>
+              <tr><td><code>/resume</code></td><td>이전 세션 복구 (터미널 닫았을 때)</td></tr>
+              <tr><td><code>/init</code></td><td>CLAUDE.md 자동 생성</td></tr>
+              <tr><td><code>/help</code></td><td>도움말</td></tr>
+              <tr><td><code>/status</code></td><td>계정 / 사용량 확인</td></tr>
+              <tr><td><code>/exit</code></td><td>종료</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info">
+          <span class="info-icon">💡</span>
+          <div>대화가 길어지면 응답 품질이 떨어집니다. <strong>새 작업 시작 = <code>/clear</code></strong>를 습관으로 만드세요.</div>
+        </div>
+
+        <h3>7-4. 커스텀 명령어 만들기 (고급)</h3>
+        <pre><code>my-first-web/
+└── .claude/
+    └── commands/
+        └── 배포준비.md   ← /배포준비 로 실행됨</code></pre>
+        <pre><code>다음을 순서대로 해주세요:
+1. 모든 console.log 제거
+2. HTML 메타 태그 점검 (viewport, charset, description)
+3. 깨진 링크 확인
+4. README.md 업데이트</code></pre>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>CLAUDE.md 생성 (절대 규칙 / 취향 / 코드 규칙)</li>
+          <li><span class="check-box"></span><span class="inline-code">Shift + Tab</span>으로 Plan ↔ Accept 전환 시도</li>
+          <li><span class="check-box"></span><code>/clear</code>, <code>/compact</code>, <code>/context</code> 사용해봄</li>
+          <li><span class="check-box"></span><code>/resume</code>이 뭔지 안다</li>
+        </ul>
+      </section>
+    </div><!-- /part-d -->
+
+    <hr class="divider">
+
+    <!-- ── Day 1 완료 ── -->
+    <section style="margin-bottom: 60px;">
+      <div class="card accent" style="text-align:center; padding: 32px;">
+        <div style="font-size:32px; margin-bottom:12px;">🎉</div>
+        <h2 style="font-size: 22px; margin-bottom: 16px;">Day 1 완료!</h2>
+        <div style="text-align:left; max-width: 480px; margin: 0 auto;">
+          <ul class="checklist">
+            <li><span style="color:var(--green); font-size:16px;">✓</span> 개발 환경 세팅 완료</li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> Claude Code로 웹페이지 생성</li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> 로컬 서버에서 결과 확인</li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> 피드백 → 수정 → 확인 사이클 경험</li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> CLAUDE.md와 단축키로 레벨업</li>
+          </ul>
+        </div>
+        <p style="margin-top: 20px; font-size: 15px; color: var(--text2);"><strong>Day 2에서는</strong> 컨텍스트 관리, Skills, 멀티 파일 프로젝트로 한 단계 더 깊이 들어갑니다.</p>
+      </div>
+    </section>
+
+    <!-- ── 부록 치트시트 ── -->
+    <section class="step-section" id="appendix">
+      <div class="step-header">
+        <div class="step-badge" style="font-size:16px;">📋</div>
+        <div class="step-header-text">
+          <h2>치트시트</h2>
+          <p class="step-sub">언제든 꺼내보는 빠른 참고 자료</p>
+        </div>
+      </div>
+
+      <div class="cheat-grid">
+        <div>
+          <h3>터미널 기본 명령어</h3>
+          <pre><code>pwd         # 현재 위치 확인
+ls          # 폴더 내용 보기 (Mac)
+dir         # 폴더 내용 보기 (Windows)
+cd 폴더     # 폴더 이동
+cd ..       # 한 단계 위로
+mkdir 폴더  # 폴더 생성
+code .      # VS Code로 열기</code></pre>
+        </div>
+        <div>
+          <h3>단축키 요약</h3>
+          <pre><code>Shift + Tab    Plan ↔ Accept 전환
+Esc            작업 중단
+Esc Esc        체크포인트 복원
+↑              이전 명령어
+Ctrl+C (×2)    종료
+이미지 드래그   스크린샷 인식</code></pre>
+
+          <h3>슬래시 명령어</h3>
+          <pre><code>/init      CLAUDE.md 생성
+/clear     대화 초기화 (새 작업 시작 시)
+/compact   대화 압축 (맥락 유지)
+/context   토큰 사용량 확인
+/resume    이전 세션 복구
+/help      도움말
+/status    계정 확인
+/exit      종료</code></pre>
+
+          <h3>! 터미널 명령 (Claude Code 안에서)</h3>
+          <pre><code>!ls               폴더 내용 보기
+!open index.html  브라우저로 열기 (Mac)
+!start index.html 브라우저로 열기 (Windows)
+!git status       Git 상태 확인</code></pre>
+        </div>
+      </div>
+
+      <h3>프롬프트 원칙</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>상황</th><th>3가지 원칙</th></tr></thead>
+          <tbody>
+            <tr><td>만들 때</td><td><strong>무엇을</strong> / <strong>어떻게</strong> / <strong>어떤 형태로</strong></td></tr>
+            <tr><td>수정할 때</td><td><strong>어디를</strong> / <strong>어떻게</strong> / <strong>얼마나</strong></td></tr>
+            <tr><td>에러 보고</td><td><strong>언제</strong> / <strong>무슨 일</strong> / <strong>에러 메시지</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>막혔을 때 체크리스트</h3>
+      <ul class="checklist">
+        <li><span class="check-box"></span>새로고침 했는지? (F5 / ⌘+R)</li>
+        <li><span class="check-box"></span>에러 메시지를 Claude에게 복사해서 줬는지?</li>
+        <li><span class="check-box"></span><code>Esc × 2</code>로 되돌리기 해봤는지?</li>
+        <li><span class="check-box"></span><code>/clear</code>로 초기화 후 재시도했는지?</li>
+        <li><span class="check-box"></span>실수로 터미널 닫았으면 <code>/resume</code>!</li>
+      </ul>
+
+      <h3>권장 폴더 구조</h3>
+      <pre><code>my-first-web/
+├── CLAUDE.md          # Claude에게 주는 메모
+├── index.html         # 메인 페이지
+├── assets/
+│   ├── style.css      # 디자인
+│   └── script.js      # 동작
+└── .claude/
+    └── commands/      # 커스텀 슬래시 명령어
+        └── 배포준비.md</code></pre>
+    </section>
+
+    <footer>
+      <p>Vibe to Web 워크샵 1일차 자료 &nbsp;·&nbsp; Sogang University · Art &amp; Technology · AXT CC</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
