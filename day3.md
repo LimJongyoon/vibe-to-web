@@ -1,12 +1,11 @@
-# Day 3 — 배포 & Claude Code 고급 자동화 마스터
+# Day 3 — 배포 & 데모데이
 
-> AXT CC · 7월 16일 13:00–18:00 · 5시간 · Mac / Windows 모두 대응
+> AXT CC · 7월 16일 13:00–17:00 · 4시간 · Mac / Windows 모두 대응
 
 **오늘의 목표:**
-- Git + Vercel로 만든 사이트를 인터넷에 올릴 수 있다
-- Skills로 반복 프롬프트를 재사용 가능한 매뉴얼로 만들 수 있다
-- Sub-Agent로 여러 작업을 동시에 병렬 실행할 수 있다
-- Hooks로 이벤트 기반 자동화를 구성할 수 있다
+- Vercel로 만든 사이트를 실제 인터넷에 배포할 수 있다
+- Git Worktree와 멀티인스턴스로 병렬 작업을 심화 운영할 수 있다
+- 데모데이에서 내가 만든 결과물을 자신 있게 발표할 수 있다
 
 ---
 
@@ -14,70 +13,25 @@
 
 | 시간 | 파트 | 내용 | 소요 |
 |------|------|------|------|
-| 13:00 | A | 배포 — Git & Vercel | 60분 |
-| 14:00 | B | Skills — AI 업무 매뉴얼 | 75분 |
-| 15:15 | — | 휴식 | 15분 |
-| 15:30 | C | Sub-Agent — 병렬 실행 | 60분 |
-| 16:30 | D | Hooks & 고급 팁 | 90분 |
+| 13:00 | A | 배포 — Vercel | 30분 |
+| 13:30 | B | 운영 심화 — 멀티인스턴스 & Git Worktree | 45분 |
+| 14:15 | — | 휴식 | 15분 |
+| 14:30 | C | 종합 실습 & 데모데이 | 150분 |
 
 ---
 
-## Part A — 배포 ⏱ 60분
+## Part A — 배포 ⏱ 30분
 
-### Step 1. Git에 올리기
+### Step 23. Vercel 배포
 
 **[이론]**
 
-| 이름 | 뭐 |
-|------|-----|
-| **Git** | 내 컴퓨터에서 돌아가는 버전 관리 프로그램 |
-| **GitHub** | Git 코드를 인터넷에 보관해주는 사이트 |
+| 종류 | 의미 |
+|------|------|
+| 로컬 서버 | 내 컴퓨터에서만 보이는 미리보기 (Live Server) |
+| Vercel 배포 | 인터넷에 올려서 누구나 볼 수 있게 ← 지금 |
 
-**[실습]**
-
-GitHub 가입: https://github.com → Sign up
-
-Git 설치 확인:
-```bash
-git --version
-# Mac: xcode-select --install
-# Windows: git-scm.com/download/win
-```
-
-초기 설정 (한 번만):
-```bash
-git config --global user.name "본인이름"
-git config --global user.email "github이메일"
-```
-
-**방법 A. GitHub Desktop:**
-1. desktop.github.com → 설치 → 로그인
-2. File → Add Local Repository → Create a Repository
-3. Summary: `첫 커밋` → Commit to main
-4. Publish repository → "Keep private" 체크 해제 → Publish
-
-**방법 B. 터미널:**
-```bash
-git init && git add . && git commit -m "첫 커밋"
-git branch -M main
-git remote add origin https://github.com/내아이디/프로젝트.git
-git push -u origin main
-```
-
-이후 업데이트:
-```bash
-git add . && git commit -m "수정 내용" && git push
-```
-
-⚠️ 비밀번호/API 키 코드에 있으면 올리지 말 것. `.gitignore` 만들어달라고 Claude에게 시키기.
-
-**[확인]**
-- [ ] GitHub 계정 생성
-- [ ] 코드 올리고 브라우저에서 저장소 확인
-
----
-
-### Step 2. Vercel 배포
+어제(Day 2) GitHub에 이미 올려둔 코드를 그대로 가져와서 배포합니다.
 
 **[실습]**
 
@@ -86,7 +40,15 @@ git add . && git commit -m "수정 내용" && git push
 3. 내 저장소 → Import
 4. Framework: Other (기본값) → Deploy
 
-자동 재배포: `git push` → Vercel 자동 감지 → 자동 배포
+자동 재배포: 어제 만든 `/commit` 슬래시 커맨드로 커밋 → `git push` → Vercel 자동 감지 → 자동 배포.
+
+배포 옵션 조금 더:
+
+| 설정 | 위치 | 용도 |
+|------|------|------|
+| 커스텀 도메인 | Settings → Domains | 내 도메인 연결 |
+| Preview Deployment | 자동 (main 외 브랜치 push 시) | 브랜치별 미리보기 URL |
+| 환경변수 | Settings → Environment Variables | API 키 등 민감정보 관리 |
 
 **[확인]**
 - [ ] 프로젝트가 인터넷에 배포됨
@@ -95,268 +57,126 @@ git add . && git commit -m "수정 내용" && git push
 
 ---
 
-## Part B — Skills — AI 업무 매뉴얼 ⏱ 75분
+## Part B — 운영 심화 — 멀티인스턴스 & Git Worktree ⏱ 45분
 
-### Step 3. Skills
-
-**[이론]**
-
-| | 프롬프트 | Skills |
-|--|---------|--------|
-| 입력 | 매번 | 한 번 만들면 자동 호출 |
-| 품질 | 들쭉날쭉 | 일관 |
-| 공유 | 어려움 | Git으로 팀 공유 |
-
-**2단계 로딩 방식:**
-- 1단계: 스킬 이름 + description만 로드 (항상, ~50-100바이트)
-- 2단계: 실제 호출 시 SKILL.md 본문 전체 로드
-
-| 도구 | 평소 공간 | 언제 |
-|------|----------|------|
-| CLAUDE.md | 전체 매번 | 항상 적용 규칙 |
-| **Skills** | 설명만 (~50-100B) | 특정 작업할 때만 |
-| Sub-Agent | 에이전트 설명 매번 | 대량 탐색/격리 |
-
-**[실습]**
-
-SKILL.md 구조:
-```yaml
----
-name: ppt-generator
-description: "PPT 발표자료 자동 생성.
-  'PPT 만들어줘', '발표자료 작성' 요청 시 트리거."
----
-
-## 목적
-주제와 핵심 내용을 입력하면 PPT 발표자료를 자동 생성합니다.
-
-## 절차
-1. 발표 주제, 청중, 시간 확인
-2. 목차 및 슬라이드 구성 설계
-3. 각 슬라이드 내용 작성
-
-## 체크리스트
-- [ ] 슬라이드 수가 적절한가?
-- [ ] 핵심 메시지가 있는가?
-```
-
-description 작성 팁:
-- ❌ "문서를 생성하는 스킬" — 너무 추상적
-- ✅ "PPT 발표자료 자동 생성. 'PPT 만들어줘', '발표자료 작성' 요청 시 트리거."
-- 핵심 기능 첫 문장 + 트리거 표현 3개 이상
-
-만들기:
-```bash
-# 수동
-mkdir -p ~/.claude/skills/ppt-generator
-# SKILL.md 작성
-
-# skill-creator (추천)
-> /install-plugin skill-creator
-> "스킬 만들어줘"  # 자동 트리거
-```
-
-| 위치 | 경로 | 적용 |
-|------|------|------|
-| 개인용 | `~/.claude/skills/<name>/SKILL.md` | 내 모든 프로젝트 |
-| 프로젝트용 | `.claude/skills/<name>/SKILL.md` | 이 프로젝트만 (Git 공유) |
-
-**[확인]**
-- [ ] SKILL.md frontmatter 구조를 안다
-- [ ] description이 트리거 조건임을 안다
-- [ ] Skill 하나 만들고 자동 발동 확인
-
----
-
-## Part C — Sub-Agent & 병렬 실행 ⏱ 60분
-
-### Step 4. Sub-Agent
+### Step 24. 멀티인스턴스 & Git Worktree
 
 **[이론]**
-
-메인 Claude 안에서 별도 작업 공간을 가진 도우미를 더 띄우는 것. 조사 결과는 Sub-Agent 쪽에만 남고 메인에는 **요약만** 돌아옴.
-
-핵심 장점:
-- **병렬 처리** — 여러 작업 동시 실행
-- **컨텍스트 보호** — 메인 컨텍스트 오염 없음
-- **전문화** — 각 Sub-Agent에 전문 역할 부여
-
-| Sub-Agent | 모델 | 권한 | 용도 |
-|-----------|------|------|------|
-| Explore | Haiku (빠름) | 읽기전용 | 코드 탐색, 파일 검색 |
-| Plan | 상속 | 읽기전용 | Plan Mode 계획 수립 |
-| General-purpose | 상속 | 모든 도구 | 복잡한 다단계 작업 |
-| Bash | 상속 | Bash만 | 터미널 명령 실행 |
-| Claude Code Guide | Haiku | 읽기전용 | Claude Code 기능 답변 |
-
-⚠️ Sub-Agent는 다른 Sub-Agent를 생성할 수 없음. 메인에서 체인으로 연결.
-
-**[실습]**
-
-커스텀 에이전트 만들기 (`/agents`):
-1. `/agents` 입력
-2. Create new agent
-3. User-level / Project-level 선택
-4. Generate with Claude → 설명 입력
-5. 도구 선택 → 모델 선택 → 저장
-
-```yaml
----
-name: code-reviewer
-description: "코드 리뷰 전문가. 품질, 보안, 모범 사례를 검토."
-tools: Read, Grep, Glob, Bash
-model: sonnet
----
-
-피드백 우선순위:
-- 🔴 크리티컬 (반드시 수정)
-- 🟡 경고 (수정 권장)
-- 🟢 제안 (개선 고려)
-```
-
-저장 위치:
-- `~/.claude/agents/` — 내 모든 프로젝트 (개인용)
-- `.claude/agents/` — 이 프로젝트만 (팀 공유)
-
-실전 패턴:
-- **대량 출력 격리** — 테스트 로그를 Sub-Agent에 위임하고 요약만 받기
-- **병렬 연구** — 독립 모듈을 각각 동시 분석
-- **에이전트 체인** — code-reviewer → optimizer 순차 연결
-
-**[확인]**
-- [ ] Sub-Agent와 메인 대화의 차이를 안다
-- [ ] 내장 Sub-Agent 5종의 역할을 안다
-- [ ] /agents로 커스텀 에이전트 만들어봤다
-
----
-
-## Part D — Hooks & 고급 팁 ⏱ 90분
-
-### Step 5. Hooks — 자동화 엔진
-
-**[이론]**
-
-이벤트 → Hook 감지 → 액션 실행
-
-| 이벤트 | 타이밍 | 설명 |
-|--------|--------|------|
-| **PreToolUse** | 도구 호출 직전 | 검증, 승인/차단/수정 |
-| **PostToolUse** | 도구 실행 직후 | 린트, 포맷팅 등 후처리 |
-| **Notification** | 사용자 응답 대기 시 | 알림 전송, 로깅 |
-| **Stop** | 에이전트 턴 종료 시 | 최종 정리, 보고서 생성 |
-
-**[실습]**
-
-방법 1 — Claude에게 요청 (추천):
-```
-> 알림 Hook 만들어줘. 작업이 끝나면 소리랑 알림 띄워줘.
-```
-
-방법 2 — settings.json 직접 편집:
-```json
-{
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message '알림' && afplay /System/Library/Sounds/Ping.aiff &"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-⚠️ Hook 실행 중 Claude는 멈춤. timeout 설정하고 무거운 작업은 `&` 백그라운드로.
-
-**[확인]**
-- [ ] 이벤트 타입 4가지를 안다
-- [ ] 알림 Hook 하나 만들고 실행 확인
-
----
-
-### Step 6. 고급 팁 & 통합 워크플로우
-
-**[이론 & 실습]**
 
 **멀티 인스턴스:**
 ```
 탭 1: "Feature-Auth" — 인증 개발
 탭 2: "Bug-Fix"      — 버그 수정
 ```
+사람이 직접 탭을 스위칭한다는 점이 Sub-Agent(Claude가 알아서 위임, Day 2에서 배움)와의 차이입니다.
 
 **Git Worktree:**
+하나의 저장소에서 여러 개의 작업 디렉토리를 만드는 기능. 커밋 히스토리는 공유, 파일 시스템은 완전히 분리.
 ```bash
 claude -w feature-auth  # 워크트리 생성 + 브랜치 + 세션 자동
 ```
 
-**음성 입력:**
-```
-> /voice   # 스페이스바 누르고 말하기. 한국어 지원.
-```
-
-**MCP 대신 로컬 Bash 스크립트:**
+**심화 — 워크트리 여러 개 동시 운영:**
 ```bash
-# scripts/check-db.sh
-psql -h localhost -U dev -d mydb -c "SELECT count(*) FROM users;"
-```
-```
-> check-db.sh 실행해줘   # MCP 연결 불필요
-```
+claude -w feature-auth      # 워크트리 1: 인증 기능
+claude -w bugfix-navbar     # 워크트리 2: 네비 버그 수정 (동시에!)
 
-**통합 파이프라인 — 8단계 워크플로우:**
+git worktree list                     # 목록 확인
+git worktree remove ../feature-auth   # 정리
+```
+터미널 탭마다 서로 다른 워크트리에서 Claude를 띄우면, 브랜치 전환 없이 진짜 병렬로 작업할 수 있습니다.
 
-| # | 기능 | 시너지 |
-|---|------|--------|
-| 1 | 음성 입력 | 피드백 10개를 30초에 전달 |
-| 2 | 커스텀 MCP (review_plan) | 경쟁 모델로 플랜 검증 |
-| 3 | Sub-Agent 병렬 실행 | 프론트/백엔드 동시 작업 |
-| 4 | 번들 Skills (/batch) | 우선순위 파일 병렬 수정 |
-| 5 | 로컬 Bash 스크립트 | pytest + lint 원커맨드 |
-| 6 | Hooks | 작업 완료 자동 알림 |
-| 7 | 코드 리뷰 에이전트 | 전체 변경사항 품질 검증 |
-| 8 | 커스텀 Skills (client-report) | 보고서 자동 생성 |
+⚠️ 워크트리마다 `npm install` 등 의존성 설치가 따로 필요할 수 있습니다. 무거운 프로젝트라면 2-3개로 제한.
 
-수동이면 반나절 → Claude Code 파이프라인으로 30분.
+**[실습]**
+1. 터미널 탭 2개를 열고 각각 다른 작업 지시해보기
+2. `claude -w bugfix-navbar` 실행해서 워크트리 체험
+3. `git worktree list`로 확인 → `git worktree remove`로 정리
 
 **[확인]**
-- [ ] 멀티 인스턴스 + Git Worktree 개념을 안다
-- [ ] /voice 써봤다
-- [ ] 로컬 Bash vs MCP 차이를 안다
-- [ ] 통합 파이프라인의 흐름을 안다
+- [ ] 멀티 인스턴스와 Sub-Agent의 차이를 안다
+- [ ] 상황에 따라 어떤 걸 쓸지 판단할 수 있다
+- [ ] Worktree를 만들고 정리까지 해봤다
+- [ ] 워크트리 여러 개를 동시에 운영하는 법을 안다
+
+---
+
+## Part C — 종합 실습 & 데모데이 ⏱ 150분
+
+### Step 25. 종합 실습 & 데모데이 준비
+
+**[이론]**
+
+오늘의 대부분은 **자유 작업 시간**입니다. 3일간 배운 모든 도구(Plan Mode, Skills, 슬래시 커맨드, Sub-Agent, MCP, Hooks, Git, Vercel, Worktree)를 자유롭게 조합해서 프로젝트를 마무리하고, 마지막에 다 함께 발표합니다.
+
+**[실습]**
+
+**1부 — 자유 작업 (약 90분)**
+1. Plan Mode로 오늘 마무리할 기능 목록 정리
+2. 작은 단위로 쪼개서 하나씩 완성 → 확인 → `/clear`
+3. 디자인이 아쉬우면 `frontend-design` 등 Skill로 다듬기
+4. code-reviewer Sub-Agent로 전체 코드 리뷰
+5. (선택) Hook으로 "배포 완료" 알림 설정
+
+**2부 — 배포 & 최종 점검 (약 30분)**
+1. 최종 커밋 정리 후 `/commit` → `git push`
+2. Vercel 배포가 최신 상태인지 확인
+3. 다른 기기에서 실제 배포 URL 접속해보기
+
+**3부 — 데모데이 (약 30분)**
+1. 1분 피치 준비: 무엇을 만들었나 / 무엇을 배웠나 / 가장 재미있었던 순간
+2. 배포 URL을 화면에 띄우고 순서대로 발표
+3. 서로 피드백 주고받기
+
+💡 시간이 빠듯하면 1부를 줄이고 2부·3부(배포 확인 + 데모데이)는 꼭 지키세요. 데모데이가 오늘의 하이라이트입니다.
+
+**[확인]**
+- [ ] 최신 코드가 Vercel에 배포되어 있다
+- [ ] Sub-Agent 리뷰를 받아봤다
+- [ ] 1분 피치가 준비됐다
+- [ ] 공유할 배포 URL을 확보했다
+- [ ] 발표를 마쳤다 🎉
+
+---
+
+## Day 3 완료 & 워크샵 전체 완료 🎉
+
+- Git + GitHub으로 버전 관리 & 업로드 (Day 2)
+- Vercel로 실제 인터넷에 배포
+- Skills · 슬래시 커맨드 · Sub-Agent · MCP · Hooks로 자동화 (Day 2)
+- 멀티인스턴스 · Worktree로 병렬 작업 심화
+- 데모데이에서 내 결과물 발표
+
+3일간 정말 고생 많았습니다! 오늘 배포한 사이트는 계속 인터넷에 살아있습니다. 앞으로도 Claude Code와 함께 계속 만들어보세요. 🎉
 
 ---
 
 ## 치트시트
 
-**도구 선택 기준:**
+**Vercel 배포:**
+```
+vercel.com → Sign up with GitHub
+→ Add New Project → Import → Deploy
+# 이후엔 git push만 하면 자동 재배포
+```
 
-| 도구 | 평소 공간 | 언제 |
-|------|----------|------|
-| CLAUDE.md | 전체 매번 | 항상 적용 규칙 |
-| Skills | 설명만 (~50-100B) | 특정 작업 매뉴얼 |
-| Sub-Agent | 에이전트 설명 매번 | 대량 탐색/격리 |
-| Hooks | — | 이벤트 기반 자동 실행 |
-| 로컬 Bash | — | MCP 불필요한 간단 도구 |
+**Worktree:**
+```bash
+claude -w feature-auth   # 생성 + 세션 시작
+git worktree list        # 목록 확인
+git worktree remove ../feature-auth   # 정리
+```
 
-**Hook 이벤트:**
-- `PreToolUse` — 도구 호출 직전 (검증/차단)
-- `PostToolUse` — 실행 직후 (린트/포맷)
-- `Notification` — 응답 대기 시 (알림)
-- `Stop` — 턴 종료 시 (정리)
+**데모데이 1분 피치 구조:**
+```
+1. 무엇을 만들었나
+2. 무엇을 배웠나
+3. 가장 재미있었던 순간
+```
 
-**SKILL.md 템플릿:**
-```yaml
----
-name: 영-소문자-하이픈
-description: "핵심 기능 첫 문장. '트리거1', '트리거2' 요청 시."
----
-
-## 절차
-1. 단계 1
-2. 단계 2
+**3일 전체 로드맵:**
+```
+Day 1: 첫 웹페이지, Claude Code 기본기
+Day 2: 기억 관리 + Git + Skills/슬래시/Sub-Agent/MCP/Hooks 자동화
+Day 3: Vercel 배포 + Worktree 심화 + 데모데이
 ```

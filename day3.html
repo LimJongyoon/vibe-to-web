@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe to Web — Day 3 · 배포 &amp; 고급 자동화 마스터</title>
+  <title>Vibe to Web — Day 3 · 배포 &amp; 데모데이</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,21 +25,15 @@
     <nav>
       <div class="nav-section">
         <span class="nav-title">A · 배포</span>
-        <a class="nav-link" href="#step-git"><span class="step-num">1</span>Git에 올리기</a>
-        <a class="nav-link" href="#step-vercel"><span class="step-num">2</span>Vercel 배포</a>
+        <a class="nav-link" href="#step23"><span class="step-num">23</span>Vercel 배포</a>
       </div>
       <div class="nav-section">
-        <span class="nav-title">B · Skills</span>
-        <a class="nav-link" href="#step-skills"><span class="step-num">3</span>AI 업무 매뉴얼</a>
+        <span class="nav-title">B · 운영 심화</span>
+        <a class="nav-link" href="#step24"><span class="step-num">24</span>멀티인스턴스 &amp; Worktree</a>
       </div>
       <div class="nav-section">
-        <span class="nav-title">C · Sub-Agent</span>
-        <a class="nav-link" href="#step-agent"><span class="step-num">4</span>병렬 실행</a>
-      </div>
-      <div class="nav-section">
-        <span class="nav-title">D · Hooks &amp; 고급 팁</span>
-        <a class="nav-link" href="#step-hooks"><span class="step-num">5</span>자동화 엔진</a>
-        <a class="nav-link" href="#step-tips"><span class="step-num">6</span>고급 팁</a>
+        <span class="nav-title">C · 데모데이</span>
+        <a class="nav-link" href="#step25"><span class="step-num">25</span>종합실습 &amp; 데모데이</a>
       </div>
       <div class="nav-section">
         <span class="nav-title">참고</span>
@@ -54,10 +48,10 @@
     <!-- Hero -->
     <div class="hero" id="top">
       <div class="tag">✦ Vibe to Web Workshop · Day 3</div>
-      <h1>배포 &amp; Claude Code<br>고급 자동화 마스터</h1>
-      <p>Git · Vercel로 세상에 공개하고, Skills · Sub-Agent · Hooks로 파워유저가 됩니다.</p>
+      <h1>배포 &amp;<br>데모데이</h1>
+      <p>Vercel로 세상에 공개하고, Git Worktree로 병렬 작업까지 심화한 뒤, 데모데이로 3일을 마무리합니다.</p>
       <div class="hero-meta">
-        <div class="meta-item"><span class="dot"></span> 7월 16일 13:00–18:00 · 5시간</div>
+        <div class="meta-item"><span class="dot"></span> 7월 16일 13:00–17:00 · 4시간</div>
         <div class="meta-item"><span class="dot"></span> Mac / Windows 모두 대응</div>
         <div class="meta-item"><span class="dot"></span> AXT CC 3일차</div>
       </div>
@@ -67,10 +61,9 @@
     <div class="card accent" style="margin-bottom: 24px;">
       <div class="card-title">🎯 Day 3이 끝나면 여러분은…</div>
       <ul class="checklist" style="margin-bottom:0;">
-        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Git + Vercel로 만든 사이트를 인터넷에 올릴 수 있다</li>
-        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Skills로 반복 프롬프트를 재사용 가능한 매뉴얼로 만들 수 있다</li>
-        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Sub-Agent로 여러 작업을 동시에 병렬 실행할 수 있다</li>
-        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Hooks로 이벤트 기반 자동화를 구성할 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Vercel로 만든 사이트를 실제 인터넷에 배포할 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Git Worktree와 멀티인스턴스로 병렬 작업을 심화 운영할 수 있다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> 데모데이에서 내가 만든 결과물을 자신 있게 발표할 수 있다</li>
       </ul>
     </div>
 
@@ -82,32 +75,26 @@
       <div class="timetable-row">
         <span class="tt-time">13:00</span>
         <span class="tt-part">A</span>
-        <span class="tt-title">배포 — Git &amp; Vercel</span>
-        <span class="tt-dur">60분</span>
+        <span class="tt-title">배포 — Vercel</span>
+        <span class="tt-dur">30분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">14:00</span>
+        <span class="tt-time">13:30</span>
         <span class="tt-part">B</span>
-        <span class="tt-title">Skills — AI 업무 매뉴얼</span>
-        <span class="tt-dur">75분</span>
+        <span class="tt-title">운영 심화 — 멀티인스턴스 &amp; Git Worktree</span>
+        <span class="tt-dur">45분</span>
       </div>
       <div class="timetable-row" style="opacity:.6;">
-        <span class="tt-time">15:15</span>
+        <span class="tt-time">14:15</span>
         <span class="tt-part">—</span>
         <span class="tt-title">휴식</span>
         <span class="tt-dur">15분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">15:30</span>
+        <span class="tt-time">14:30</span>
         <span class="tt-part">C</span>
-        <span class="tt-title">Sub-Agent — 병렬 실행</span>
-        <span class="tt-dur">60분</span>
-      </div>
-      <div class="timetable-row">
-        <span class="tt-time">16:30</span>
-        <span class="tt-part">D</span>
-        <span class="tt-title">Hooks &amp; 고급 팁</span>
-        <span class="tt-dur">90분</span>
+        <span class="tt-title">종합 실습 &amp; 데모데이</span>
+        <span class="tt-dur">150분</span>
       </div>
     </div>
 
@@ -118,115 +105,13 @@
       <div class="part-header">
         <div class="part-badge">A</div>
         <div class="part-title">배포</div>
-        <div class="part-duration">⏱ 60분</div>
+        <div class="part-duration">⏱ 30분</div>
       </div>
 
-      <!-- ── Step 1: Git ── -->
-      <section class="step-section" id="step-git">
+      <!-- ── Step 23: Vercel ── -->
+      <section class="step-section" id="step23">
         <div class="step-header">
-          <div class="step-badge">1</div>
-          <div class="step-header-text">
-            <h2>Git에 올리기</h2>
-            <p class="step-sub">코드의 시간 여행 머신</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <div class="card" style="margin-bottom:20px;">
-          <div class="card-title">Git vs GitHub</div>
-          <div class="table-wrap" style="margin-bottom:0;">
-            <table>
-              <thead><tr><th>이름</th><th>뭐</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Git</strong></td><td>내 컴퓨터에서 돌아가는 버전 관리 프로그램</td></tr>
-                <tr><td><strong>GitHub</strong></td><td>Git으로 관리되는 코드를 인터넷에 보관해주는 사이트</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p style="margin-top:10px; color:var(--text2); font-size:14px;">Git이 USB라면, GitHub은 클라우드 드라이브.</p>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>GitHub 가입</h3>
-        <ol class="step-list">
-          <li><div><div class="step-list-title"><a class="ext-link" href="https://github.com" target="_blank">github.com</a> 접속 → Sign up</div></div></li>
-          <li>
-            <div>
-              <div class="step-list-title">이메일, 비밀번호, 아이디 입력</div>
-              <p style="color:var(--text2); font-size:14px;">아이디는 신중하게 — <code>github.com/내아이디/프로젝트</code> 주소로 쓰입니다.</p>
-            </div>
-          </li>
-          <li><div><div class="step-list-title">이메일 인증 → 무료 플랜 선택</div></div></li>
-        </ol>
-
-        <h3>Git 설치 확인</h3>
-        <pre><code>git --version</code></pre>
-        <div class="os-tabs">
-          <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab(this, 'git-mac')">Mac</button>
-            <button class="tab-btn" onclick="switchTab(this, 'git-win')">Windows</button>
-          </div>
-          <div class="tab-content active" id="git-mac">
-            <pre><code>xcode-select --install</code></pre>
-          </div>
-          <div class="tab-content" id="git-win">
-            <p style="color:var(--text2); font-size:14px;"><a class="ext-link" href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a> → 다운로드 → Next 계속 (기본값)</p>
-          </div>
-        </div>
-
-        <pre><code># 처음 한 번만 설정
-git config --global user.name "본인이름"
-git config --global user.email "github이메일"</code></pre>
-
-        <h3>GitHub에 올리기</h3>
-        <div class="os-tabs">
-          <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab(this, 'git-desktop')">GitHub Desktop (GUI)</button>
-            <button class="tab-btn" onclick="switchTab(this, 'git-cli')">터미널</button>
-          </div>
-          <div class="tab-content active" id="git-desktop">
-            <ol class="step-list">
-              <li><div><div class="step-list-title"><a class="ext-link" href="https://desktop.github.com" target="_blank">desktop.github.com</a> → 설치 → GitHub 로그인</div></div></li>
-              <li><div><div class="step-list-title">File → Add Local Repository → 본인 폴더 → Create a Repository</div></div></li>
-              <li><div><div class="step-list-title">Summary에 <code>첫 커밋: 작업 완성</code> 입력 → Commit to main</div></div></li>
-              <li><div><div class="step-list-title">Publish repository → <strong>"Keep this code private" 체크 해제</strong> → Publish</div></div></li>
-            </ol>
-          </div>
-          <div class="tab-content" id="git-cli">
-            <pre><code>git init
-git add .
-git commit -m "첫 커밋"
-git branch -M main
-git remote add origin https://github.com/내아이디/내-프로젝트.git
-git push -u origin main</code></pre>
-            <div class="tip" style="margin-top:12px;">
-              <span class="tip-icon">💡</span>
-              <div>Claude한테 시키는 방법: <code>"이 프로젝트를 GitHub에 처음 올리려고 해. 내 아이디는 ___. 순서대로 알려줘."</code></div>
-            </div>
-          </div>
-        </div>
-
-        <h3>이후 업데이트</h3>
-        <pre><code>git add .
-git commit -m "수정 내용 설명"
-git push</code></pre>
-
-        <div class="warn">
-          <span class="warn-icon">⚠️</span>
-          <div>비밀번호, API 키가 코드에 있으면 GitHub에 올리지 마세요. Claude한테 <code>.gitignore</code> 만들어달라고 하세요.</div>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>GitHub 계정 생성</li>
-          <li><span class="check-box"></span>코드 올리고 브라우저에서 저장소 확인</li>
-        </ul>
-      </section>
-
-      <!-- ── Step 2: Vercel ── -->
-      <section class="step-section" id="step-vercel">
-        <div class="step-header">
-          <div class="step-badge">2</div>
+          <div class="step-badge">23</div>
           <div class="step-header-text">
             <h2>Vercel 배포</h2>
             <p class="step-sub">코드를 받아서 인터넷에 띄워주는 서비스</p>
@@ -243,6 +128,7 @@ git push</code></pre>
             </tbody>
           </table>
         </div>
+        <p style="color:var(--text2); font-size:14px;">어제(Day 2) GitHub에 이미 올려둔 코드를 그대로 가져와서 배포합니다.</p>
 
         <span class="section-label label-practice">실습</span>
         <ol class="step-list">
@@ -265,7 +151,19 @@ git push</code></pre>
 
         <h3>자동 재배포 — Vercel의 마법</h3>
         <pre><code>[코드 수정] → [git push] → [Vercel 자동 감지] → [자동 배포 완료]</code></pre>
-        <p>코드만 GitHub에 올리면 끝. 따로 뭘 안 해도 됩니다.</p>
+        <p>코드만 GitHub에 올리면 끝. 어제 만든 <code>/commit</code> 슬래시 커맨드로 커밋하고 <code>git push</code>만 하면 자동으로 재배포됩니다.</p>
+
+        <h3>배포 옵션 조금 더 — 커스텀 도메인 &amp; 환경변수</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>설정</th><th>위치</th><th>용도</th></tr></thead>
+            <tbody>
+              <tr><td>커스텀 도메인</td><td>프로젝트 → Settings → Domains</td><td><code>내도메인.com</code> 연결</td></tr>
+              <tr><td>Preview Deployment</td><td>자동 (main 외 브랜치 push 시)</td><td>브랜치별 미리보기 URL 자동 생성</td></tr>
+              <tr><td>환경변수</td><td>프로젝트 → Settings → Environment Variables</td><td>API 키 등 코드에 넣으면 안 되는 값 관리</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <span class="section-label label-verify">확인</span>
         <ul class="checklist">
@@ -277,381 +175,22 @@ git push</code></pre>
     </div><!-- /part-a -->
 
     <!-- ════════════════════════════════
-         PART B — Skills
+         PART B — 운영 심화
     ═════════════════════════════════ -->
     <div class="part-section" id="part-b">
       <div class="part-header">
         <div class="part-badge">B</div>
-        <div class="part-title">Skills — AI 업무 매뉴얼</div>
-        <div class="part-duration">⏱ 75분</div>
+        <div class="part-title">운영 심화 — 멀티인스턴스 &amp; Git Worktree</div>
+        <div class="part-duration">⏱ 45분</div>
       </div>
 
-      <!-- ── Step 3: Skills ── -->
-      <section class="step-section" id="step-skills">
+      <!-- ── Step 24: 멀티인스턴스 & Worktree ── -->
+      <section class="step-section" id="step24">
         <div class="step-header">
-          <div class="step-badge">3</div>
+          <div class="step-badge">24</div>
           <div class="step-header-text">
-            <h2>Skills — AI에게 주는 업무 매뉴얼</h2>
-            <p class="step-sub">반복 프롬프트를 재사용 가능한 시스템으로</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <div class="compare">
-          <div class="compare-bad">
-            <div class="compare-label">프롬프트</div>
-            <pre><code>매번 입력
-결과 들쭉날쭉
-공유 어려움</code></pre>
-          </div>
-          <div class="compare-good">
-            <div class="compare-label">Skills</div>
-            <pre><code>한 번 만들면 자동 호출
-품질 일관
-Git으로 팀 공유</code></pre>
-          </div>
-        </div>
-
-        <div class="card accent" style="margin-bottom:20px;">
-          <div class="card-title">2단계 로딩 방식</div>
-          <p style="margin:0; color:var(--text2); font-size:14px;">
-            <strong>1단계</strong>: 스킬 이름 + description만 로드 (항상, ~50-100바이트)<br>
-            <strong>2단계</strong>: 실제 호출 시 SKILL.md 본문 전체 로드<br>
-            평소에는 가볍게, 쓸 때만 전체를 불러오는 구조입니다.
-          </p>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>도구</th><th>평소 공간</th><th>언제 쓰나</th></tr></thead>
-            <tbody>
-              <tr><td><strong>CLAUDE.md</strong></td><td>전체 내용 매번</td><td>항상 적용되는 핵심 규칙</td></tr>
-              <tr><td><strong>Skills</strong></td><td>설명만 (~50-100B)</td><td>특정 작업할 때만 필요한 매뉴얼</td></tr>
-              <tr><td><strong>Sub-Agent</strong></td><td>에이전트 설명 매번</td><td>대량 탐색 / 격리된 작업</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>스킬 폴더 구조</h3>
-        <pre><code>.claude/skills/
-└── ppt-generator/            ← 스킬 폴더 이름
-    ├── SKILL.md               ← 핵심 파일 (필수)
-    ├── template.md            ← 템플릿 (선택)
-    └── examples/              ← 예제 (선택)</code></pre>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>SKILL.md 작성법</h3>
-        <pre><code>---
-name: ppt-generator
-description: "PPT 발표자료 자동 생성.
-  'PPT 만들어줘', '발표자료 작성', '슬라이드 제작' 요청 시 트리거."
----
-
-## 목적
-주제와 핵심 내용을 입력하면 PPT 발표자료를 자동 생성합니다.
-
-## 절차
-1. 발표 주제, 대상 청중, 발표 시간 확인
-2. 목차 및 슬라이드 구성 설계
-3. 각 슬라이드별 내용 작성
-
-## 자체 검증 체크리스트
-- [ ] 슬라이드 수가 적절한가?
-- [ ] 핵심 메시지가 있는가?</code></pre>
-
-        <div class="compare">
-          <div class="compare-bad">
-            <div class="compare-label">❌ 나쁜 description</div>
-            <pre><code>description: "문서를 생성하는 스킬"</code></pre>
-            <p style="font-size:13px; color:var(--text2);">너무 추상적. Claude가 언제 쓸지 모름.</p>
-          </div>
-          <div class="compare-good">
-            <div class="compare-label">✅ 좋은 description</div>
-            <pre><code>description: "PPT 발표자료 자동 생성.
-  'PPT 만들어줘', '발표자료 작성' 요청 시 트리거."</code></pre>
-            <p style="font-size:13px; color:var(--text2);">핵심 기능 첫 문장 + 트리거 표현 3개 이상.</p>
-          </div>
-        </div>
-
-        <h3>스킬 만들기</h3>
-        <div class="os-tabs">
-          <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab(this, 'skill-manual')">수동</button>
-            <button class="tab-btn" onclick="switchTab(this, 'skill-creator')">skill-creator (추천)</button>
-          </div>
-          <div class="tab-content active" id="skill-manual">
-            <pre><code>mkdir -p ~/.claude/skills/ppt-generator
-# SKILL.md 직접 작성</code></pre>
-          </div>
-          <div class="tab-content" id="skill-creator">
-            <pre><code>&gt; /install-plugin skill-creator</code></pre>
-            <p style="color:var(--text2); font-size:14px;">설치 후 "스킬 만들어줘"라고 말하면 자동 트리거. description 최적화, frontmatter 설정까지 모범 사례를 자동 적용해서 SKILL.md를 만들어줍니다.</p>
-          </div>
-        </div>
-
-        <h3>스킬 저장 위치</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>위치</th><th>경로</th><th>적용 대상</th></tr></thead>
-            <tbody>
-              <tr><td><strong>개인용</strong></td><td><code>~/.claude/skills/&lt;name&gt;/SKILL.md</code></td><td>내 모든 프로젝트</td></tr>
-              <tr><td><strong>프로젝트용</strong></td><td><code>.claude/skills/&lt;name&gt;/SKILL.md</code></td><td>이 프로젝트만 (Git 공유 가능)</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="tip">
-          <span class="tip-icon">💡</span>
-          <div>팀 공유: <code>.claude/skills/</code>를 Git에 커밋하면 팀원이 pull 받는 순간 바로 사용 가능합니다.</div>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>SKILL.md의 frontmatter 구조 (name, description)를 안다</li>
-          <li><span class="check-box"></span>description이 트리거 조건이라는 걸 안다</li>
-          <li><span class="check-box"></span>Skill 하나 만들어봤다</li>
-          <li><span class="check-box"></span>만든 Skill이 자동 발동되는 걸 확인했다</li>
-        </ul>
-      </section>
-    </div><!-- /part-b -->
-
-    <!-- ════════════════════════════════
-         PART C — Sub-Agent
-    ═════════════════════════════════ -->
-    <div class="part-section" id="part-c">
-      <div class="part-header">
-        <div class="part-badge">C</div>
-        <div class="part-title">Sub-Agent — 병렬 실행</div>
-        <div class="part-duration">⏱ 60분</div>
-      </div>
-
-      <!-- ── Step 4: Sub-Agent ── -->
-      <section class="step-section" id="step-agent">
-        <div class="step-header">
-          <div class="step-badge">4</div>
-          <div class="step-header-text">
-            <h2>Sub-Agent &amp; 병렬 실행</h2>
-            <p class="step-sub">메인 Claude 안에서 도우미를 하나 더 띄우는 것</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <div class="card accent" style="margin-bottom:20px;">
-          <div class="card-title">핵심 장점 4가지</div>
-          <ul style="margin:0; padding-left:20px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:8px;">
-            <li><strong>병렬 처리</strong> — 여러 작업을 동시에 실행해 전체 소요 시간 단축</li>
-            <li><strong>컨텍스트 보호</strong> — 조사 결과가 Sub-Agent 쪽에만 남고, 메인에는 <strong>요약만</strong> 돌아옴</li>
-            <li><strong>전문화</strong> — 각 Sub-Agent에 전문 역할 부여</li>
-            <li><strong>재사용</strong> — 한 번 만든 에이전트를 여러 워크플로우에서 활용</li>
-          </ul>
-        </div>
-
-        <div class="compare">
-          <div class="compare-good">
-            <div class="compare-label">✅ Sub-Agent로 분배하기 좋은 것</div>
-            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
-              <li>독립적인 작업을 병렬로 분배</li>
-              <li>대량 출력이 나오는 작업 격리</li>
-              <li>명확한 역할과 범위가 있는 작업</li>
-            </ul>
-          </div>
-          <div class="compare-bad">
-            <div class="compare-label">❌ 적합하지 않은 것</div>
-            <ul style="margin:0; padding-left:16px; color:var(--text2); font-size:14px; display:flex; flex-direction:column; gap:6px;">
-              <li>의존성 있는 작업 무리하게 병렬화</li>
-              <li>하나의 Sub-Agent에 너무 많은 역할</li>
-              <li>Sub-Agent 간 직접 통신 (불가)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="warn">
-          <span class="warn-icon">⚠️</span>
-          <div>Sub-Agent는 <strong>다른 Sub-Agent를 생성할 수 없습니다</strong>. 메인에서 체인으로 연결하세요.</div>
-        </div>
-
-        <h3>내장 Sub-Agent 5종</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Sub-Agent</th><th>모델</th><th>권한</th><th>용도</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Explore</strong></td><td>Haiku (빠름)</td><td>읽기전용</td><td>코드 탐색, 파일 검색, 구조 파악</td></tr>
-              <tr><td><strong>Plan</strong></td><td>상속</td><td>읽기전용</td><td>Plan Mode에서 계획 수립 연구</td></tr>
-              <tr><td><strong>General-purpose</strong></td><td>상속</td><td>모든 도구</td><td>탐색+수정 필요한 복잡한 작업</td></tr>
-              <tr><td><strong>Bash</strong></td><td>상속</td><td>Bash만</td><td>별도 컨텍스트에서 터미널 명령</td></tr>
-              <tr><td><strong>Claude Code Guide</strong></td><td>Haiku</td><td>읽기전용</td><td>Claude Code 기능 질문 답변</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>커스텀 에이전트 만들기 — <code>/agents</code></h3>
-        <ol class="step-list">
-          <li><div><div class="step-list-title"><code>/agents</code> 입력</div></div></li>
-          <li><div><div class="step-list-title"><strong>Create new agent</strong> 선택</div></div></li>
-          <li><div><div class="step-list-title">User-level (모든 프로젝트) 또는 Project-level 선택</div></div></li>
-          <li><div><div class="step-list-title">Generate with Claude → 에이전트 설명 입력</div></div></li>
-          <li><div><div class="step-list-title">도구 선택 (Read-only / 전체) → 모델 선택 → 저장</div></div></li>
-        </ol>
-
-        <pre><code># 에이전트 파일 구조 (YAML + Markdown)
----
-name: code-reviewer
-description: "코드 리뷰 전문가. 품질, 보안, 모범 사례를 검토."
-tools: Read, Grep, Glob, Bash
-model: sonnet
----
-
-호출되면:
-1. git diff로 최근 변경 확인
-2. 수정된 파일에 집중하여 리뷰
-
-피드백 우선순위:
-- 🔴 크리티컬 (반드시 수정)
-- 🟡 경고 (수정 권장)
-- 🟢 제안 (개선 고려)</code></pre>
-
-        <h3>에이전트 저장 위치</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>저장 위치</th><th>어디서 쓸 수 있나</th></tr></thead>
-            <tbody>
-              <tr><td><code>~/.claude/agents/</code></td><td>내 모든 프로젝트 (개인용)</td></tr>
-              <tr><td><code>.claude/agents/</code></td><td>이 프로젝트에서만 (팀 공유)</td></tr>
-              <tr><td><code>--agents</code> CLI 플래그</td><td>지금 이 세션만 (일회용)</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <pre><code># CLI에서 즉석으로 에이전트 정의 (일회성)
-claude --agents '{
-  "quick-reviewer": {
-    "description": "빠른 코드 리뷰어",
-    "prompt": "변경된 코드를 리뷰하고 핵심 이슈만 보고하세요.",
-    "tools": ["Read", "Grep"],
-    "model": "haiku"
-  }
-}'</code></pre>
-
-        <h3>실전 패턴</h3>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">대량 출력 격리</div>
-          <p style="font-size:14px; color:var(--text2);">테스트 로그처럼 출력이 많은 작업을 Sub-Agent에 위임하고 요약만 받기 → 메인 컨텍스트 보호.</p>
-        </div>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">병렬 연구</div>
-          <p style="font-size:14px; color:var(--text2);">독립적인 모듈을 각각 별도 Sub-Agent로 동시 분석 → 순차로 30분 걸릴 일이 10분에 끝남.</p>
-        </div>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">에이전트 체인</div>
-          <p style="font-size:14px; color:var(--text2);">code-reviewer → optimizer 순서로 순차 연결.</p>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>Sub-Agent와 메인 대화의 차이를 안다</li>
-          <li><span class="check-box"></span>내장 Sub-Agent 5종의 역할을 안다</li>
-          <li><span class="check-box"></span>/agents로 커스텀 에이전트 만들어봤다</li>
-        </ul>
-      </section>
-    </div><!-- /part-c -->
-
-    <!-- ════════════════════════════════
-         PART D — Hooks & 고급 팁
-    ═════════════════════════════════ -->
-    <div class="part-section" id="part-d">
-      <div class="part-header">
-        <div class="part-badge">D</div>
-        <div class="part-title">Hooks &amp; 고급 팁</div>
-        <div class="part-duration">⏱ 90분</div>
-      </div>
-
-      <!-- ── Step 5: Hooks ── -->
-      <section class="step-section" id="step-hooks">
-        <div class="step-header">
-          <div class="step-badge">5</div>
-          <div class="step-header-text">
-            <h2>Hooks — 자동화 엔진</h2>
-            <p class="step-sub">이벤트가 발생하면 자동으로 실행되는 명령어</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <div class="card" style="margin-bottom:20px;">
-          <div class="card-title">이벤트 → Hook 감지 → 액션 실행</div>
-          <p style="font-size:14px; color:var(--text2);">
-            파일 저장, 도구 호출, 알림 수신 등의 이벤트 발생<br>
-            → matcher가 조건 검사 (와일드카드 <code>*</code> 또는 특정 패턴)<br>
-            → lint 실행, 포맷 적용, 알림 전송 등 자동 실행
-          </p>
-        </div>
-
-        <h3>이벤트 타입 4가지</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>이벤트</th><th>타이밍</th><th>설명</th></tr></thead>
-            <tbody>
-              <tr><td><strong>PreToolUse</strong></td><td>도구 호출 직전</td><td>입력값 검증, 승인/차단/수정 가능</td></tr>
-              <tr><td><strong>PostToolUse</strong></td><td>도구 실행 직후</td><td>결과 검증, 후처리 (린트, 포맷팅 등)</td></tr>
-              <tr><td><strong>Notification</strong></td><td>사용자 응답 대기 시</td><td>알림 전송, 로깅, 외부 서비스 연동</td></tr>
-              <tr><td><strong>Stop</strong></td><td>에이전트 턴 종료 시</td><td>최종 정리, 보고서 생성, 상태 저장</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>Hook 만들기</h3>
-        <div class="os-tabs">
-          <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab(this, 'hook-claude')">Claude에게 요청 (추천)</button>
-            <button class="tab-btn" onclick="switchTab(this, 'hook-json')">settings.json 직접 편집</button>
-          </div>
-          <div class="tab-content active" id="hook-claude">
-            <pre><code>&gt; 알림 Hook 만들어줘.
-  작업이 끝나면 소리랑 알림 띄워줘.</code></pre>
-            <p style="color:var(--text2); font-size:14px;">Claude가 <code>settings.json</code>에 자동 추가해줍니다.</p>
-          </div>
-          <div class="tab-content" id="hook-json">
-            <p style="color:var(--text2); font-size:14px; margin-bottom:12px;">개인용: <code>~/.claude/settings.json</code> / 프로젝트용: <code>.claude/settings.json</code></p>
-            <pre><code>{
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message '알림이 있습니다' && afplay /System/Library/Sounds/Ping.aiff &"
-          }
-        ]
-      }
-    ]
-  }
-}</code></pre>
-            <p style="color:var(--text2); font-size:13px; margin-top:8px;"><code>matcher: "*"</code> = 모든 상황에 매칭. 특정 도구만 매칭하려면 도구 이름 지정.</p>
-          </div>
-        </div>
-
-        <div class="warn">
-          <span class="warn-icon">⚠️</span>
-          <div>Hook 실행 중 Claude는 멈춰서 기다립니다. <code>timeout</code>을 꼭 설정하고, 무거운 작업은 백그라운드(<code>&amp;</code>)로 돌리세요.</div>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>이벤트 타입 4가지를 안다</li>
-          <li><span class="check-box"></span>알림 Hook 하나 만들어봤다</li>
-          <li><span class="check-box"></span>Hook이 실행되는 걸 확인했다</li>
-        </ul>
-      </section>
-
-      <!-- ── Step 6: 고급 팁 ── -->
-      <section class="step-section" id="step-tips">
-        <div class="step-header">
-          <div class="step-badge">6</div>
-          <div class="step-header-text">
-            <h2>고급 팁 &amp; 통합 워크플로우</h2>
-            <p class="step-sub">파워유저로 가는 길</p>
+            <h2>멀티인스턴스 &amp; Git Worktree</h2>
+            <p class="step-sub">동시에 여러 작업을 진행하는 두 가지 방법</p>
           </div>
         </div>
 
@@ -661,6 +200,19 @@ claude --agents '{
 탭 2: "Bug-Fix"      — 버그 수정
 탭 3: "Refactor"     — 리팩토링</code></pre>
         <p>터미널 탭 여러 개를 열고 각 탭에서 다른 Claude 인스턴스를 돌리세요. 탭 이름을 바꿔두면 한눈에 관리 가능합니다.</p>
+
+        <div class="compare">
+          <div class="compare-good">
+            <div class="compare-label">멀티 인스턴스</div>
+            <pre><code>사람이 탭을 직접 스위칭
+각각 완전히 독립된 세션</code></pre>
+          </div>
+          <div class="compare-bad">
+            <div class="compare-label">Sub-Agent (Day 2에서 배운 것)</div>
+            <pre><code>Claude가 알아서 위임
+한 세션 안에서 자동 실행</code></pre>
+          </div>
+        </div>
 
         <h3>Git Worktree — 병렬 브랜치 작업</h3>
         <p>하나의 Git 저장소에서 여러 개의 작업 디렉토리를 만드는 기능. 커밋 히스토리는 공유하면서 파일 시스템은 완전히 분리됩니다.</p>
@@ -672,61 +224,126 @@ claude -w feature-auth</code></pre>
           <div><code>claude -w</code> 한 줄이면 워크트리 생성 → 브랜치 체크아웃 → 세션 시작까지 자동. 변경 없으면 세션 종료 시 자동 정리.</div>
         </div>
 
-        <h3>음성 입력 — <code>/voice</code></h3>
-        <pre><code>&gt; /voice</code></pre>
-        <p>Push-to-talk 모드. 스페이스바 누르고 있는 동안 말함, 떼면 변환. 한국어 포함 20개 이상 언어 지원. 복잡한 요구사항을 키보드로 5분 걸릴 프롬프트를 말로 1분에 전달.</p>
+        <h3>심화 — 워크트리 여러 개 동시 운영</h3>
+        <pre><code>claude -w feature-auth      # 워크트리 1: 인증 기능
+claude -w bugfix-navbar     # 워크트리 2: 네비 버그 수정 (동시에!)
 
-        <h3>MCP 대신 로컬 Bash 스크립트</h3>
-        <p>간단한 작업이라면 MCP보다 로컬 bash 스크립트가 훨씬 가볍습니다. 연결 없이 바로 실행되고 컨텍스트 공간도 절약됩니다.</p>
-        <pre><code>#!/bin/bash
-# scripts/check-db.sh
-psql -h localhost -U dev -d mydb -c "SELECT count(*) FROM users;"</code></pre>
-        <pre><code>&gt; check-db.sh 실행해줘</code></pre>
-        <p>MCP 연결 불필요. Claude가 Bash로 스크립트를 바로 실행합니다.</p>
+# 현재 워크트리 목록 확인
+git worktree list
 
-        <h3>커스텀 MCP 서버 빌드</h3>
-        <p>Claude가 작업 중에 자동으로 호출해야 하는 도구가 필요하면 MCP 서버를 만드세요.</p>
-        <pre><code>&gt; Gemini API를 사용하는 plan-review MCP 서버를 만들어줘.
-  review_plan 도구 하나만 있으면 돼.
-  plan 텍스트를 받아서 Gemini에 리뷰를 요청하고 결과를 반환하게.</code></pre>
-        <p style="color:var(--text2); font-size:14px;">Claude가 MCP 서버 코드를 작성하고 <code>settings.json</code>에 등록까지 도와줍니다.</p>
+# 다 쓴 워크트리 정리
+git worktree remove ../feature-auth</code></pre>
+        <p style="color:var(--text2); font-size:14px;">터미널 탭마다 서로 다른 워크트리에서 Claude를 띄우면, 완전히 독립된 파일 시스템에서 진짜 병렬로 작업할 수 있습니다 — 브랜치 전환 없이, 컨텍스트 섞임 없이.</p>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>워크트리마다 <code>npm install</code> 등 의존성 설치가 따로 필요할 수 있습니다. 무거운 프로젝트라면 워크트리 개수를 2-3개로 제한하세요.</div>
+        </div>
 
         <span class="section-label label-practice">실습</span>
-        <h3>통합 파이프라인 — 8단계 워크플로우</h3>
-        <p>클라이언트 피드백 10개를 한큐에 처리하는 실전 워크플로우. 수동이면 반나절 → Claude Code 파이프라인으로 30분.</p>
+        <ol class="step-list">
+          <li><div><div class="step-list-title">터미널 탭 2개를 열고 각각 다른 작업을 지시해보기</div></div></li>
+          <li><div><div class="step-list-title"><code>claude -w bugfix-navbar</code> 실행해서 워크트리 체험해보기</div></div></li>
+          <li><div><div class="step-list-title"><code>git worktree list</code>로 목록 확인 → 다 쓴 워크트리 <code>git worktree remove</code>로 정리</div></div></li>
+        </ol>
 
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>#</th><th>기능</th><th>시너지</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td><strong>음성 입력</strong></td><td>복잡한 피드백 10개를 30초에 전달</td></tr>
-              <tr><td>2</td><td><strong>커스텀 MCP</strong> (review_plan)</td><td>경쟁 모델로 플랜 품질 검증</td></tr>
-              <tr><td>3</td><td><strong>Sub-Agent 병렬 실행</strong></td><td>프론트/백엔드 동시 작업</td></tr>
-              <tr><td>4</td><td><strong>번들 Skills</strong> (/batch)</td><td>우선순위 파일 병렬 수정</td></tr>
-              <tr><td>5</td><td><strong>로컬 Bash 스크립트</strong></td><td>pytest + typecheck + lint 원커맨드</td></tr>
-              <tr><td>6</td><td><strong>Hooks</strong></td><td>작업 완료 자동 알림</td></tr>
-              <tr><td>7</td><td><strong>코드 리뷰 에이전트</strong></td><td>전체 변경사항 품질 검증</td></tr>
-              <tr><td>8</td><td><strong>커스텀 Skills</strong> (client-report)</td><td>클라이언트 보고서 자동 생성</td></tr>
-            </tbody>
-          </table>
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>멀티 인스턴스와 Sub-Agent의 차이를 안다</li>
+          <li><span class="check-box"></span>상황에 따라 어떤 걸 쓸지 판단할 수 있다</li>
+          <li><span class="check-box"></span>Worktree를 하나 만들고 정리까지 해봤다</li>
+          <li><span class="check-box"></span>워크트리 여러 개를 동시에 운영하는 법을 안다</li>
+        </ul>
+      </section>
+    </div><!-- /part-b -->
+
+    <!-- ════════════════════════════════
+         PART C — 데모데이
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-c">
+      <div class="part-header">
+        <div class="part-badge">C</div>
+        <div class="part-title">종합 실습 &amp; 데모데이</div>
+        <div class="part-duration">⏱ 150분</div>
+      </div>
+
+      <!-- ── Step 25: 종합 실습 & 데모데이 ── -->
+      <section class="step-section" id="step25">
+        <div class="step-header">
+          <div class="step-badge">25</div>
+          <div class="step-header-text">
+            <h2>종합 실습 &amp; 데모데이 준비</h2>
+            <p class="step-sub">3일간 배운 모든 걸 하나로 모아서 발표까지</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>오늘의 대부분은 <strong>자유 작업 시간</strong>입니다. 지금까지 배운 모든 도구(Plan Mode, Skills, 슬래시 커맨드, Sub-Agent, MCP, Hooks, Git, Vercel, Worktree)를 자유롭게 조합해서 내 프로젝트를 마무리하고, 마지막에 다 함께 발표합니다.</p>
+
+        <span class="section-label label-practice">실습</span>
+        <h3>1부 — 자유 작업 (약 90분)</h3>
+        <ol class="step-list">
+          <li><div><div class="step-list-title">Plan Mode로 오늘 마무리할 기능 목록 정리</div></div></li>
+          <li><div><div class="step-list-title">작은 단위로 쪼개서 하나씩 완성 → 확인 → <code>/clear</code></div></div></li>
+          <li><div><div class="step-list-title">디자인이 아쉬우면 <code>frontend-design</code> 등 Skill로 다듬기</div></div></li>
+          <li><div><div class="step-list-title">code-reviewer Sub-Agent로 전체 코드 리뷰 한 번 받기</div></div></li>
+          <li><div><div class="step-list-title">(선택) Hook으로 "배포 완료" 알림 설정</div></div></li>
+        </ol>
+
+        <h3>2부 — 배포 &amp; 최종 점검 (약 30분)</h3>
+        <ol class="step-list">
+          <li><div><div class="step-list-title">최종 커밋 정리 후 <code>/commit</code> → <code>git push</code></div></div></li>
+          <li><div><div class="step-list-title">Vercel 배포가 최신 상태인지 확인 (자동 재배포 확인)</div></div></li>
+          <li><div><div class="step-list-title">핸드폰 등 다른 기기에서 실제 배포 URL 접속해보기</div></div></li>
+        </ol>
+
+        <h3>3부 — 데모데이 (약 30분)</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">1분 피치 준비</div>
+              <p style="color:var(--text2); font-size:14px;">무엇을 만들었나 / 무엇을 배웠나 / 가장 재미있었던 순간, 세 가지로 정리.</p>
+            </div>
+          </li>
+          <li><div><div class="step-list-title">배포 URL을 화면에 띄우고 순서대로 발표</div></div></li>
+          <li><div><div class="step-list-title">서로 피드백 주고받기</div></div></li>
+        </ol>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>시간이 빠듯하면 1부를 줄이고 2부·3부(배포 확인 + 데모데이)는 꼭 지키세요. 데모데이가 오늘의 하이라이트입니다.</div>
         </div>
 
         <span class="section-label label-verify">확인</span>
         <ul class="checklist">
-          <li><span class="check-box"></span>멀티 인스턴스 + Git Worktree 개념을 안다</li>
-          <li><span class="check-box"></span>/voice를 한 번이라도 써봤다</li>
-          <li><span class="check-box"></span>로컬 Bash 스크립트 vs MCP 차이를 안다</li>
-          <li><span class="check-box"></span>통합 파이프라인의 흐름을 안다</li>
+          <li><span class="check-box"></span>최신 코드가 Vercel에 배포되어 있다</li>
+          <li><span class="check-box"></span>Sub-Agent 리뷰를 받아봤다</li>
+          <li><span class="check-box"></span>1분 피치가 준비됐다</li>
+          <li><span class="check-box"></span>공유할 배포 URL을 확보했다</li>
+          <li><span class="check-box"></span>발표를 마쳤다 🎉</li>
         </ul>
-
-        <div class="card accent">
-          <div class="card-title">파워유저 요약</div>
-          <p style="margin:0; color:var(--text2); font-size:14px;">Skills + Sub-Agent + Hooks를 조합하면 1인 개발자가 팀급 생산성을 낼 수 있습니다. 오늘 배운 것들은 각각 독립적으로 쓰이지만, 함께 연결했을 때 진짜 위력이 나옵니다.</p>
-        </div>
       </section>
-    </div><!-- /part-d -->
+    </div><!-- /part-c -->
 
     <hr class="divider">
+
+    <!-- ── Day 3 완료 ── -->
+    <section style="margin-bottom: 60px;">
+      <div class="card accent" style="text-align:center; padding: 32px;">
+        <div style="font-size:32px; margin-bottom:12px;">🎉</div>
+        <h2 style="font-size: 22px; margin-bottom: 16px;">Day 3 완료! 그리고 워크샵 전체 완료!</h2>
+        <div style="text-align:left; max-width: 540px; margin: 0 auto;">
+          <ul class="checklist">
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Git + GitHub으로 버전 관리 &amp; 업로드 (Day 2)</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Vercel로 실제 인터넷에 배포</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Skills · 슬래시 커맨드 · Sub-Agent · MCP · Hooks로 자동화 (Day 2)</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>멀티인스턴스 · Worktree로 병렬 작업 심화</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>데모데이에서 내 결과물 발표</strong></li>
+          </ul>
+        </div>
+        <p style="margin-top: 20px; font-size: 15px; color: var(--text2);">3일간 정말 고생 많았습니다! 오늘 배포한 사이트는 계속 인터넷에 살아있습니다. 앞으로도 Claude Code와 함께 계속 만들어보세요. 🎉</p>
+      </div>
+    </section>
 
     <!-- ── 부록 치트시트 ── -->
     <section class="step-section" id="appendix">
@@ -740,76 +357,30 @@ psql -h localhost -U dev -d mydb -c "SELECT count(*) FROM users;"</code></pre>
 
       <div class="cheat-grid">
         <div>
-          <h3>Git / Vercel 명령어</h3>
-          <pre><code># Git 초기 설정 (한 번만)
-git config --global user.name "이름"
-git config --global user.email "이메일"
+          <h3>Vercel 배포</h3>
+          <pre><code>vercel.com → Sign up with GitHub
+→ Add New Project → Import → Deploy
 
-# 새 저장소 올리기
-git init && git add .
-git commit -m "첫 커밋"
-git branch -M main
-git remote add origin https://github.com/아이디/저장소.git
-git push -u origin main
-
-# 이후 업데이트
-git add . && git commit -m "내용" && git push</code></pre>
+# 이후엔 그냥 git push만 하면 자동 재배포</code></pre>
 
           <h3>Worktree</h3>
-          <pre><code>claude -w feature-auth   # 브랜치 생성 + 세션 시작
-# 변경 없으면 세션 종료 시 자동 정리</code></pre>
+          <pre><code>claude -w feature-auth   # 생성 + 세션 시작
+git worktree list        # 목록 확인
+git worktree remove ../feature-auth   # 정리</code></pre>
         </div>
         <div>
-          <h3>SKILL.md 템플릿</h3>
-          <pre><code>---
-name: 영-소문자-하이픈
-description: "핵심 기능 첫 문장.
-  '트리거 표현 1', '트리거 표현 2' 요청 시."
----
+          <h3>데모데이 1분 피치 구조</h3>
+          <pre><code>1. 무엇을 만들었나
+2. 무엇을 배웠나
+3. 가장 재미있었던 순간</code></pre>
 
-## 목적
-한 문장 설명
-
-## 절차
-1. 단계 1
-2. 단계 2
-
-## 체크리스트
-- [ ] 조건 1
-- [ ] 조건 2</code></pre>
-
-          <h3>Hook 이벤트 타입</h3>
-          <pre><code>PreToolUse   도구 호출 직전 (검증/차단)
-PostToolUse  도구 실행 직후 (린트/포맷)
-Notification 사용자 응답 대기 시 (알림)
-Stop         에이전트 턴 종료 시 (정리)</code></pre>
+          <h3>3일 전체 로드맵</h3>
+          <pre><code>Day 1: 첫 웹페이지, Claude Code 기본기
+Day 2: 기억 관리 + Git + Skills/슬래시/
+       Sub-Agent/MCP/Hooks 자동화
+Day 3: Vercel 배포 + Worktree 심화 +
+       데모데이</code></pre>
         </div>
-      </div>
-
-      <h3>도구 선택 기준</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>도구</th><th>평소 공간</th><th>언제</th></tr></thead>
-          <tbody>
-            <tr><td><strong>CLAUDE.md</strong></td><td>전체 내용 매번 로드</td><td>항상 적용되는 핵심 규칙</td></tr>
-            <tr><td><strong>Skills</strong></td><td>설명만 (~50-100B)</td><td>특정 작업할 때만 필요한 매뉴얼</td></tr>
-            <tr><td><strong>Sub-Agent</strong></td><td>에이전트 설명 매번</td><td>대량 탐색 / 격리된 작업</td></tr>
-            <tr><td><strong>Hooks</strong></td><td>—</td><td>이벤트 기반 자동 실행</td></tr>
-            <tr><td><strong>로컬 Bash</strong></td><td>—</td><td>MCP 불필요한 간단한 도구</td></tr>
-            <tr><td><strong>MCP</strong></td><td>전체 설명 매번</td><td>외부 서비스 연동</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Sub-Agent 판단 기준</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>질문</th><th>Yes</th><th>No</th></tr></thead>
-          <tbody>
-            <tr><td>작업이 독립적인가?</td><td>Sub-Agent 추천</td><td>메인 대화로 진행</td></tr>
-            <tr><td>컨텍스트 오염이 우려되는가?</td><td>Sub-Agent 추천</td><td>메인 대화로 진행</td></tr>
-          </tbody>
-        </table>
       </div>
     </section>
 

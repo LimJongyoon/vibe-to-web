@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe to Web — Day 2 · 컨텍스트 관리 &amp; 웹앱 완성도 높이기</title>
+  <title>Vibe to Web — Day 2 · 컨텍스트 관리 &amp; 자동화 도구 마스터</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,11 +39,19 @@
         <a class="nav-link" href="#step13"><span class="step-num">13</span>CLAUDE.md 전략</a>
       </div>
       <div class="nav-section">
-        <span class="nav-title">D · 자동화 &amp; 실전 사이클</span>
-        <a class="nav-link" href="#step15"><span class="step-num">15</span>TODO.md 연속성</a>
-        <a class="nav-link" href="#step16"><span class="step-num">16</span>에러와 친구되기</a>
-        <a class="nav-link" href="#step17"><span class="step-num">17</span>스마트 사이클</a>
-        <a class="nav-link" href="#step18"><span class="step-num">18</span>종합 실습</a>
+        <span class="nav-title">D · 버전관리 &amp; 확장 도구</span>
+        <a class="nav-link" href="#step14"><span class="step-num">14</span>Git에 올리기</a>
+        <a class="nav-link" href="#step15"><span class="step-num">15</span>Skills &amp; 슬래시 커맨드</a>
+        <a class="nav-link" href="#step16"><span class="step-num">16</span>Sub-Agent &amp; 병렬실행</a>
+        <a class="nav-link" href="#step17"><span class="step-num">17</span>MCP</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">E · 자동화 &amp; 마무리</span>
+        <a class="nav-link" href="#step18"><span class="step-num">18</span>Hooks</a>
+        <a class="nav-link" href="#step19"><span class="step-num">19</span>보이스 입력</a>
+        <a class="nav-link" href="#step20"><span class="step-num">20</span>한국어 설정</a>
+        <a class="nav-link" href="#step21"><span class="step-num">21</span>에러 대응하기</a>
+        <a class="nav-link" href="#step22"><span class="step-num">22</span>종합 실습</a>
       </div>
       <div class="nav-section">
         <span class="nav-title">참고</span>
@@ -58,10 +66,10 @@
     <!-- Hero -->
     <div class="hero" id="top">
       <div class="tag">✦ Vibe to Web Workshop · Day 2</div>
-      <h1>컨텍스트 관리 &amp;<br>웹앱 완성도 높이기</h1>
-      <p>같은 AI를 쓰는데도 결과가 다른 이유 — 오늘 그 차이를 만드는 습관을 배웁니다.</p>
+      <h1>컨텍스트 관리 &amp;<br>자동화 도구 마스터</h1>
+      <p>같은 AI를 쓰는데도 결과가 다른 이유 — 오늘 그 차이를 만드는 습관과 자동화 도구를 배웁니다.</p>
       <div class="hero-meta">
-        <div class="meta-item"><span class="dot"></span> 7월 15일 13:00–18:00 · 5시간</div>
+        <div class="meta-item"><span class="dot"></span> 7월 15일 13:00–18:15 · 5시간 15분</div>
         <div class="meta-item"><span class="dot"></span> Mac / Windows 모두 대응</div>
         <div class="meta-item"><span class="dot"></span> AXT CC 2일차</div>
       </div>
@@ -73,7 +81,8 @@
       <ul class="checklist" style="margin-bottom:0;">
         <li><span style="color:var(--accent2); font-size:15px;">✦</span> Claude의 기억력을 관리하는 법을 안다</li>
         <li><span style="color:var(--accent2); font-size:15px;">✦</span> Plan Mode로 큰 작업의 방향을 잡는다</li>
-        <li><span style="color:var(--accent2); font-size:15px;">✦</span> 멀티 파일 구조와 Skills로 반복 작업을 자동화한다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Git으로 버전 관리하고, Skills·슬래시 커맨드·Sub-Agent·MCP로 반복 작업을 자동화한다</li>
+        <li><span style="color:var(--accent2); font-size:15px;">✦</span> Hooks·보이스 입력·한국어 설정까지 Claude Code를 내 손에 맞게 다룬다</li>
         <li><span style="color:var(--accent2); font-size:15px;">✦</span> 에러를 무서워하지 않고 Claude에게 던질 수 있다</li>
       </ul>
     </div>
@@ -87,31 +96,37 @@
         <span class="tt-time">13:00</span>
         <span class="tt-part">A</span>
         <span class="tt-title">작업 원칙 — 한 세션 = 한 피처, Plan Mode</span>
-        <span class="tt-dur">60분</span>
+        <span class="tt-dur">45분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">14:00</span>
+        <span class="tt-time">13:45</span>
         <span class="tt-part">B</span>
         <span class="tt-title">기억 시스템 — CLAUDE.md vs /memory</span>
-        <span class="tt-dur">60분</span>
+        <span class="tt-dur">45분</span>
       </div>
       <div class="timetable-row" style="opacity:.6;">
-        <span class="tt-time">15:00</span>
+        <span class="tt-time">14:30</span>
         <span class="tt-part">—</span>
         <span class="tt-title">휴식</span>
         <span class="tt-dur">15분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">15:15</span>
+        <span class="tt-time">14:45</span>
         <span class="tt-part">C</span>
         <span class="tt-title">파일 &amp; 설정 전략 — 멀티 파일, CLAUDE.md 구조화</span>
-        <span class="tt-dur">60분</span>
+        <span class="tt-dur">45분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">16:15</span>
+        <span class="tt-time">15:30</span>
         <span class="tt-part">D</span>
-        <span class="tt-title">자동화 &amp; 실전 사이클 — Skills, TODO, 에러, 종합 실습</span>
-        <span class="tt-dur">105분</span>
+        <span class="tt-title">버전관리 &amp; 확장 도구 — Git, Skills, Sub-Agent, MCP</span>
+        <span class="tt-dur">90분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">17:00</span>
+        <span class="tt-part">E</span>
+        <span class="tt-title">자동화 &amp; 마무리 — Hooks, 보이스, 한국어설정, 에러대응, 종합실습</span>
+        <span class="tt-dur">75분</span>
       </div>
     </div>
 
@@ -122,7 +137,7 @@
       <div class="part-header">
         <div class="part-badge">A</div>
         <div class="part-title">작업 원칙</div>
-        <div class="part-duration">⏱ 60분</div>
+        <div class="part-duration">⏱ 45분</div>
       </div>
 
       <!-- ── 8단계 ── -->
@@ -312,7 +327,7 @@
       <div class="part-header">
         <div class="part-badge">B</div>
         <div class="part-title">기억 시스템</div>
-        <div class="part-duration">⏱ 60분</div>
+        <div class="part-duration">⏱ 45분</div>
       </div>
 
       <!-- ── 10단계 ── -->
@@ -455,7 +470,7 @@
       <div class="part-header">
         <div class="part-badge">C</div>
         <div class="part-title">파일 &amp; 설정 전략</div>
-        <div class="part-duration">⏱ 60분</div>
+        <div class="part-duration">⏱ 45분</div>
       </div>
 
       <!-- ── 12단계 ── -->
@@ -592,290 +607,601 @@ assets/
       </section>
     </div><!-- /part-c -->
 
+    <!-- ── 이 문서를 보는 법 ── -->
+    <div class="guide-note">
+      <h2>📖 이 문서를 보는 법</h2>
+      <p>D, E 파트는 처음 보면 어렵게 느껴질 수 있는 개념(Git, Skills, Sub-Agent, MCP, Hooks)이 몰려 있습니다. 그래서 각 항목을 이렇게 나눴습니다.</p>
+      <ul>
+        <li>💚 <strong>꼭 필요한 것</strong> — 여기까지만 따라 해도 오늘 실습을 끝까지 완주할 수 있습니다.</li>
+        <li>📎 <strong>선택 심화</strong> — 시간이 남거나 더 깊이 알고 싶을 때만 열어보면 됩니다. 안 열어봐도 오늘 실습에는 지장이 없습니다.</li>
+      </ul>
+      <p>각 단계는 "왜 하는지 → 그대로 따라하기 → 확인" 순서로 되어 있습니다. 중간에 막히면 바로 위 단계로 돌아가서 다시 확인하세요.</p>
+    </div>
+
     <!-- ════════════════════════════════
-         PART D — 자동화 & 실전 사이클
+         PART D — 버전관리 & 확장 도구
     ═════════════════════════════════ -->
     <div class="part-section" id="part-d">
       <div class="part-header">
         <div class="part-badge">D</div>
-        <div class="part-title">자동화 &amp; 실전 사이클</div>
-        <div class="part-duration">⏱ 105분</div>
+        <div class="part-title">버전관리 &amp; 확장 도구</div>
+        <div class="part-duration">⏱ 90분</div>
       </div>
 
-      <!-- ── 15단계 ── -->
+      <!-- ── 14단계: Git ── -->
+      <section class="step-section" id="step14">
+        <div class="step-header">
+          <div class="step-badge">14</div>
+          <div class="step-header-text">
+            <h2>Git에 올리기</h2>
+            <p class="step-sub">코드의 시간 여행 머신</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>지금까지 만든 파일은 내 컴퓨터에만 있습니다. 컴퓨터가 고장 나거나 실수로 파일을 지우면 다 사라집니다. <strong>Git</strong>은 "이 시점의 파일 상태를 저장해두는 기능"이고, <strong>GitHub</strong>은 그렇게 저장한 걸 인터넷에 보관해주는 사이트입니다.</p>
+        <p>비유하자면, Git으로 저장하는 행위(커밋)는 게임의 "세이브 포인트"를 만드는 것과 같습니다. 나중에 뭔가 잘못돼도 그 세이브 포인트로 돌아갈 수 있습니다. GitHub은 그 세이브 파일을 클라우드에 백업해두는 것입니다.</p>
+        <p>앞으로 나올 용어 3개만 먼저 알아두면 됩니다.</p>
+
+        <div class="term-list">
+          <div class="term"><span class="term-name">저장소</span><span class="term-desc">(repository) — 내 프로젝트 폴더를 Git이 추적하는 상태로 만든 것</span></div>
+          <div class="term"><span class="term-name">커밋</span><span class="term-desc">(commit) — 지금 이 순간의 파일 상태를 저장하는 것 (세이브 포인트)</span></div>
+          <div class="term"><span class="term-name">푸시</span><span class="term-desc">(push) — 내 컴퓨터에 저장한 커밋을 GitHub(인터넷)로 올려보내는 것</span></div>
+        </div>
+
+        <div class="info">
+          <span class="info-icon">💡</span>
+          <div>오늘은 GitHub에 코드를 안전하게 올려두는 것까지만 합니다. 실제로 인터넷에 <strong>배포(Vercel)</strong>하는 건 내일 Day 3에서 합니다.</div>
+        </div>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">GitHub 계정 만들기</div>
+              <ol class="sub-ol">
+                <li>브라우저에서 github.com 접속</li>
+                <li>오른쪽 위 Sign up 클릭</li>
+                <li>이메일, 비밀번호, 아이디 입력 (아이디는 나중에 <code>github.com/내아이디</code>로 쓰이니 신중하게)</li>
+                <li>이메일 인증 → 무료 플랜 선택</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">GitHub Desktop 설치 <span style="color:var(--text3); font-weight:400;">(터미널 명령어 없이 마우스로만 진행)</span></div>
+              <ol class="sub-ol">
+                <li>desktop.github.com 접속 → 다운로드 → 설치</li>
+                <li>실행 후 GitHub 계정으로 로그인</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">내 프로젝트 폴더를 저장소로 등록</div>
+              <ol class="sub-ol">
+                <li>GitHub Desktop에서 <code>File → Add Local Repository</code></li>
+                <li>지금 작업 중인 폴더(<code>my-first-web</code> 등) 선택</li>
+                <li>"이 폴더는 아직 Git 저장소가 아닙니다"라는 메시지가 뜨면 <code>Create a Repository</code> 클릭</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">첫 커밋 만들기</div>
+              <ol class="sub-ol">
+                <li>왼쪽에 변경된 파일 목록이 보입니다</li>
+                <li>아래 Summary 칸에 <code>작업 완성</code> 같은 짧은 설명 입력</li>
+                <li><code>Commit to main</code> 클릭 → 이게 세이브 포인트 1개가 만들어진 것입니다</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">GitHub에 올리기(푸시)</div>
+              <ol class="sub-ol">
+                <li>위쪽 <code>Publish repository</code> 클릭</li>
+                <li>"Keep this code private" 체크 <strong>해제</strong> (공개로 올려야 나중에 배포 링크 공유 가능)</li>
+                <li><code>Publish</code> 클릭</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">확인</div>
+              <p style="color:var(--text2); font-size:14px;">브라우저에서 <code>github.com/내아이디</code> 접속 → 방금 올린 저장소가 보이면 성공입니다.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3>이후 수정할 때마다</h3>
+        <p>파일을 고친 뒤 GitHub Desktop을 열면 왼쪽에 바뀐 부분이 자동으로 표시됩니다. Summary 입력 → <code>Commit to main</code> → 위쪽 <code>Push origin</code> 버튼만 누르면 됩니다. 이 세 단계(수정 → 커밋 → 푸시)가 앞으로 계속 반복되는 전체 흐름입니다.</p>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>비밀번호나 API 키가 들어있는 파일은 절대 올리지 마세요. Claude에게 "<code>.gitignore</code> 파일 만들어줘, 비밀번호 파일은 Git에 안 올라가게 해줘"라고 요청하면 자동으로 처리해줍니다.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>GitHub 계정을 만들었다</li>
+          <li><span class="check-box"></span>GitHub Desktop으로 내 폴더를 저장소로 등록했다</li>
+          <li><span class="check-box"></span>커밋 → 푸시를 한 번 해봤다</li>
+          <li><span class="check-box"></span>브라우저에서 내 코드가 GitHub에 올라간 걸 확인했다</li>
+        </ul>
+
+        <details>
+          <summary>📎 선택 심화 — 터미널로 하는 방법 (마우스 방식이 익숙해진 뒤에)</summary>
+          <pre><code># 최초 한 번만 설정
+git config --global user.name "본인이름"
+git config --global user.email "github이메일"
+
+# 새 저장소 만들어서 올리기
+git init
+git add .
+git commit -m "첫 커밋"
+git branch -M main
+git remote add origin https://github.com/아이디/저장소.git
+git push -u origin main
+
+# 이후 수정할 때마다
+git add .
+git commit -m "수정 내용 설명"
+git push</code></pre>
+          <p>GitHub Desktop과 하는 일은 완전히 똑같습니다. 마우스로 누르던 버튼이 명령어로 바뀐 것뿐입니다.</p>
+        </details>
+      </section>
+
+      <!-- ── 15단계: Skills & 슬래시 커맨드 ── -->
       <section class="step-section" id="step15">
         <div class="step-header">
           <div class="step-badge">15</div>
           <div class="step-header-text">
-            <h2>TODO.md로 작업 연속성 유지</h2>
-            <p class="step-sub">"어디까지 했더라?"를 없애는 법</p>
+            <h2>Skills &amp; 슬래시 커맨드 — 반복 작업 자동화</h2>
+            <p class="step-sub">반복 작업을 AI에게 위임하는 두 가지 방법</p>
           </div>
         </div>
 
-        <span class="section-label label-theory">이론</span>
-        <p>며칠에 걸친 작업에서 컨텍스트를 이어가는 가장 간단한 방법 — TODO.md 파일 하나로 관리합니다.</p>
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>같은 요청을 매번 길게 타이핑하고 계신가요? 예를 들어 "다크모드로, Pretendard 폰트로, 반응형으로 만들어줘"를 새 페이지 만들 때마다 반복 입력한다면, 그걸 파일 하나로 저장해두고 재사용하는 기능이 Skills와 슬래시 커맨드입니다.</p>
+        <p>둘의 차이는 딱 하나입니다.</p>
 
-        <span class="section-label label-practice">실습</span>
-        <h3>TODO.md 만들기</h3>
-        <pre><code># 자기소개 페이지 작업 목록
-
-## 진행 중
-- [ ] 다크/라이트 모드 토글 버튼
-
-## 다음 할 일
-- [ ] 포트폴리오 페이지 추가
-- [ ] 연락처 양식 만들기
-- [ ] 반응형 디자인 (모바일)
-
-## 완료
-- [x] index.html 기본 구조
-- [x] CSS 별도 파일로 분리
-
-## 버그 / 이슈
-- 모바일에서 네비 메뉴 깨짐</code></pre>
-
-        <h3>Claude한테 TODO 관리시키기</h3>
-        <pre><code>&gt; TODO.md 읽고 "다음 할 일"의 첫 번째 항목부터 시작해줘.</code></pre>
-        <pre><code>&gt; 방금 완료한 작업을 TODO.md의 "완료" 섹션으로 옮겨줘.</code></pre>
-
-        <h3>세션 종료 시 루틴</h3>
-        <pre><code>&gt; 오늘 작업 마무리할게.
-  1. TODO.md를 현재 상태에 맞게 업데이트해줘
-  2. 내일 시작할 만한 첫 작업을 "다음 할 일" 맨 위에 추가해줘
-  3. 발견한 버그가 있다면 "버그/이슈"에 기록해줘</code></pre>
-
-        <div class="info">
-          <span class="info-icon">💡</span>
-          <div>내일 와서 "TODO.md 읽고 시작해줘"라고 하면 바로 이어서 진행 가능합니다.</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th></th><th>Skill</th><th>슬래시 커맨드</th></tr></thead>
+            <tbody>
+              <tr><td>실행 방법</td><td>Claude가 상황 보고 <strong>알아서</strong> 실행</td><td>내가 <code>/이름</code>을 <strong>직접</strong> 입력해야 실행</td></tr>
+              <tr><td>비유</td><td>상황 되면 자동으로 켜지는 센서등</td><td>내가 눌러야 켜지는 스위치</td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>TODO.md를 만들어봤다</li>
-          <li><span class="check-box"></span>Claude한테 TODO 읽고 시작시켰다</li>
-          <li><span class="check-box"></span>세션 종료 시 루틴을 안다</li>
-        </ul>
-      </section>
+        <span class="section-label label-practice">그대로 따라하기</span>
 
-      <!-- ── 16단계 ── -->
-      <section class="step-section" id="step16">
-        <div class="step-header">
-          <div class="step-badge">16</div>
-          <div class="step-header-text">
-            <h2>에러와 친구되기</h2>
-            <p class="step-sub">에러를 어떻게 다루느냐가 실력 차이를 만들어요</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <h3>Thinking 로그 — Claude의 머리를 들여다보기</h3>
-        <pre><code>● 사용자가 다크모드 토글을 요청했습니다.
-
-  기존 CSS를 보니 색상이 :root 변수로 정의되어 있네요.
-  .light-mode 클래스를 body에 추가하면 변수를 오버라이드할 수 있겠습니다.
-  ...</code></pre>
-
-        <div class="compare">
-          <div class="compare-bad">
-            <div class="compare-label">잘못된 가정 감지 예시</div>
-            <pre><code>● ...React로 만들면 깔끔하겠네요.
-  useState로 상태 관리하고...
-          ↑
-          우린 React 안 쓰는데? → [Escape]</code></pre>
-          </div>
-          <div class="compare-good">
-            <div class="compare-label">즉시 수정</div>
-            <pre><code>&gt; 잠깐, 우린 바닐라 JavaScript만 써.
-  React 쓰지 마.</code></pre>
-            <p style="font-size:13px; color:var(--text2);">→ 30초 만에 잡음. 30분 헤매는 거 방지.</p>
-          </div>
-        </div>
-
-        <div class="tip">
-          <span class="tip-icon">💡</span>
-          <div>로그를 흘리지 마세요. Claude가 <strong>잘못된 가정</strong>을 하는 게 보이면, <strong>즉시 Escape</strong>로 중단하세요.</div>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>에러 보고 — 그대로 붙여넣기</h3>
-        <div class="compare">
-          <div class="compare-bad">
-            <div class="compare-label">❌ 자기가 해석한 에러</div>
-            <pre><code>"버튼 클릭이 안 돼"
-"뭔가 깨졌어"</code></pre>
-          </div>
-          <div class="compare-good">
-            <div class="compare-label">✅ 에러 로그 통째로</div>
-            <pre><code>토글 버튼 추가한 후에 에러 나. 콘솔에 이렇게 떠:
-
-Uncaught TypeError: Cannot read properties of
-null (reading 'addEventListener')
-    at script.js:12:23
-
-확인해줘.</code></pre>
-          </div>
-        </div>
-        <p>브라우저 콘솔(<span class="inline-code">F12</span>) → 빨간 글씨를 드래그 복사 → Claude에게 그대로 붙여넣기.</p>
-
-        <h3>자주 만나는 에러 4가지</h3>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">① 파일을 못 찾을 때 (404)</div>
-          <pre><code>GET http://localhost:5500/style.css 404 (Not Found)</code></pre>
-          <p style="font-size:13px; color:var(--text2);">→ HTML에서 참조한 CSS 경로가 잘못됨.</p>
-        </div>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">② 변수/함수가 없다고 할 때</div>
-          <pre><code>Uncaught ReferenceError: toggleMode is not defined</code></pre>
-          <p style="font-size:13px; color:var(--text2);">→ 함수 이름 오타거나 정의 순서 문제.</p>
-        </div>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">③ null/undefined 에러</div>
-          <pre><code>Uncaught TypeError: Cannot read properties of null</code></pre>
-          <p style="font-size:13px; color:var(--text2);">→ 존재하지 않는 요소를 찾으려 함.</p>
-        </div>
-        <div class="card" style="margin-bottom:8px;">
-          <div class="card-title">④ 문법 에러</div>
-          <pre><code>Uncaught SyntaxError: Unexpected token</code></pre>
-          <p style="font-size:13px; color:var(--text2);">→ 괄호 안 닫힘, 세미콜론 누락 등.</p>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>Thinking 로그를 읽고 잘못된 가정을 발견해봤다</li>
-          <li><span class="check-box"></span>Escape로 잘못된 방향을 중단시켜봤다</li>
-          <li><span class="check-box"></span>에러 메시지를 통째로 복사해서 Claude한테 줬다</li>
-          <li><span class="check-box"></span>4가지 흔한 에러 유형을 안다</li>
-        </ul>
-      </section>
-
-      <!-- ── 17단계 ── -->
-      <section class="step-section" id="step17">
-        <div class="step-header">
-          <div class="step-badge">17</div>
-          <div class="step-header-text">
-            <h2>작은 변경 → 확인 → 반복</h2>
-            <p class="step-sub">오늘 배운 모든 걸 하나의 워크플로우로 묶기</p>
-          </div>
-        </div>
-
-        <span class="section-label label-theory">이론</span>
-        <pre><code>① Plan Mode로 작업 설계
-       ↓
-② 작은 단위로 쪼개기 (한 번에 1개 기능)
-       ↓
-③ Claude한테 첫 번째만 시키기
-       ↓
-④ 브라우저에서 결과 확인
-       ↓
-⑤ 잘 됐으면 → /clear 후 다음 작업
-   안 됐으면 → 에러 그대로 보고 후 수정
-       ↓
-   (반복)</code></pre>
-
-        <div class="compare">
-          <div class="compare-bad">
-            <div class="compare-label">❌ 한 번에 다 시키는 경우</div>
-            <pre><code>&gt; 자기소개, 포트폴리오, 연락처,
-  다크모드, 모바일 반응형까지 다 해줘.</code></pre>
-            <p style="font-size:13px; color:var(--text2);">5개 중 어딘가는 깨짐. 어디서 문제인지 파악에 30분.</p>
-          </div>
-          <div class="compare-good">
-            <div class="compare-label">✅ 작은 단위로 하나씩</div>
-            <pre><code>① 자기소개만 → 확인 → ✅ → /clear
-② 포트폴리오만 → 확인 → ✅ → /clear
-③ 연락처만 → 확인 → ✅ → /clear
-④ 다크모드만 → 확인 → ❌
-   → 에러 보고 → 수정 → ✅ → /clear</code></pre>
-            <p style="font-size:13px; color:var(--text2);">디버깅 범위가 좁아서 빠름.</p>
-          </div>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <div class="tip">
-          <span class="tip-icon">💡</span>
-          <div><strong>비기너 버전 백업</strong>: 잘 작동하는 시점에 폴더를 통째로 복사해두세요. (Git은 Day 3에서)<br>
-          <code>my-first-web-backup-0714/</code>, <code>my-first-web-backup-0715/</code></div>
-        </div>
-
-        <span class="section-label label-verify">확인</span>
-        <ul class="checklist">
-          <li><span class="check-box"></span>작업을 작은 단위로 쪼개는 습관을 들였다</li>
-          <li><span class="check-box"></span>각 단위 사이에 /clear를 한다</li>
-          <li><span class="check-box"></span>"한 번에 다 시키지 않는다"는 원칙을 안다</li>
-        </ul>
-      </section>
-
-      <!-- ── 18단계 ── -->
-      <section class="step-section" id="step18">
-        <div class="step-header">
-          <div class="step-badge">18</div>
-          <div class="step-header-text">
-            <h2>Day 2 종합 실습</h2>
-            <p class="step-sub">자기소개 페이지를 멀티페이지 포트폴리오 사이트로 진화시키기</p>
-          </div>
-        </div>
-
-        <span class="section-label label-practice">실습</span>
-        <h3>목표 구조</h3>
-        <pre><code>my-first-web/
-├── CLAUDE.md
-├── TODO.md
-├── index.html
-├── portfolio.html
-├── about.html
-├── assets/
-│   ├── style.css
-│   └── script.js
-└── .claude/
-    └── skills/
-        └── 새-페이지-만들기/
-            └── SKILL.md</code></pre>
-
-        <h3>단계별 가이드</h3>
+        <h3>슬래시 커맨드부터 (더 쉬운 쪽)</h3>
         <ol class="step-list">
           <li>
             <div>
-              <div class="step-list-title">준비 — <code>/clear</code>로 깨끗하게 시작</div>
-              <p style="color:var(--text2); font-size:14px;"><code>/memory</code>에 본인 정보 저장 → <code>TODO.md</code> 만들어서 오늘 할 일 정리.</p>
+              <div class="step-list-title">폴더와 파일 만들기</div>
+              <p style="color:var(--text2); font-size:14px;">프로젝트 폴더 안에 <code>.claude/commands/commit.md</code> 파일을 만듭니다. (Claude에게 "<code>.claude/commands/commit.md</code> 파일 만들어줘"라고 시켜도 됩니다.)</p>
             </div>
           </li>
           <li>
             <div>
-              <div class="step-list-title">Plan Mode로 설계</div>
-              <p style="color:var(--text2); font-size:14px;"><span class="inline-code">Shift + Tab</span>으로 Plan Mode → "현재 index.html을 멀티 파일 구조로 분리하고 싶다" → 계획 검토 후 Accept Mode.</p>
+              <div class="step-list-title">내용 채우기</div>
+              <pre><code>1. git status/git diff로 변경사항 확인
+2. 변경 내용을 요약한 한국어 커밋 메시지 초안 작성
+3. 사용자에게 확인 요청
+4. 승인되면 git add -A && git commit -m ... 실행</code></pre>
             </div>
           </li>
           <li>
             <div>
-              <div class="step-list-title">멀티 파일 분리</div>
-              <p style="color:var(--text2); font-size:14px;">CSS → <code>assets/style.css</code> / JS → <code>assets/script.js</code> → 결과 확인 → <code>/clear</code>.</p>
+              <div class="step-list-title">실행해보기</div>
+              <pre><code>&gt; /commit</code></pre>
+              <p style="color:var(--text2); font-size:14px;">입력하면 Claude가 위 4단계를 순서대로 실행합니다. 방금 14단계에서 마우스로 하던 커밋 작업을 이제 이 한 줄로 대체할 수 있습니다.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3>이어서 Skill (자동 트리거)</h3>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">폴더와 파일 만들기</div>
+              <p style="color:var(--text2); font-size:14px;"><code>.claude/skills/새-페이지-만들기/SKILL.md</code> 파일을 만듭니다.</p>
             </div>
           </li>
           <li>
             <div>
-              <div class="step-list-title">새 페이지 추가 (Skills 활용)</div>
-              <p style="color:var(--text2); font-size:14px;"><code>새-페이지-만들기</code> Skill 등록 → <code>portfolio.html</code> 추가 → <code>about.html</code> 추가 → 사이사이 <code>/clear</code>.</p>
+              <div class="step-list-title">맨 위에 이렇게 채우기 (이 형식이 고정입니다)</div>
+              <pre><code>---
+name: 새-페이지-만들기
+description: "새 HTML 페이지를 만들 때 자동 트리거.
+  기존 style.css와 헤더 네비게이션을 그대로 재사용."
+---
+
+## 절차
+1. 기존 index.html의 헤더 구조를 그대로 복사
+2. assets/style.css를 &lt;link&gt;로 연결
+3. 본문만 요청받은 내용으로 채움</code></pre>
+              <p style="color:var(--text2); font-size:14px;"><code>description</code> 줄이 핵심입니다. Claude는 이 한 줄을 보고 "지금 이 Skill을 써야 하나?"를 판단합니다. 그래서 "언제 쓰는지"가 최대한 구체적으로 적혀 있어야 합니다.</p>
             </div>
           </li>
           <li>
             <div>
-              <div class="step-list-title">마무리</div>
-              <p style="color:var(--text2); font-size:14px;">CLAUDE.md 정비 (300줄 이하) → TODO.md 업데이트 → 폴더 백업.</p>
+              <div class="step-list-title">확인해보기</div>
+              <p style="color:var(--text2); font-size:14px;">새 페이지를 만들어달라고 평소처럼 요청해보세요.</p>
+              <pre><code>&gt; portfolio.html 페이지 만들어줘. 프로젝트 카드 3개 넣어서.</code></pre>
+              <p style="color:var(--text2); font-size:14px;">명령어를 직접 안 쳤는데도, 방금 만든 Skill의 description과 맞아떨어지면 Claude가 알아서 그 규칙을 적용합니다.</p>
             </div>
           </li>
         </ol>
 
         <span class="section-label label-verify">확인</span>
         <ul class="checklist">
-          <li><span class="check-box"></span>3개 페이지가 모두 작동한다</li>
-          <li><span class="check-box"></span>페이지 간 네비게이션이 동작한다</li>
-          <li><span class="check-box"></span>CSS/JS가 분리되어 있다</li>
-          <li><span class="check-box"></span>Skill 하나 이상 등록되어 있다</li>
-          <li><span class="check-box"></span>TODO.md가 정리되어 있다</li>
-          <li><span class="check-box"></span>CLAUDE.md가 깔끔하다 (300줄 이하)</li>
+          <li><span class="check-box"></span><code>.claude/commands/commit.md</code>를 만들고 <code>/commit</code>으로 실행해봤다</li>
+          <li><span class="check-box"></span><code>.claude/skills/</code> 안에 Skill 하나를 만들어봤다</li>
+          <li><span class="check-box"></span>명령어 없이 요청했는데 Skill이 자동으로 적용되는 걸 확인했다</li>
         </ul>
+
+        <details>
+          <summary>📎 선택 심화 — 기성 Skill 설치해서 쓰기</summary>
+          <p>직접 만들지 않고 남이 만든 Skill을 설치해서 쓸 수도 있습니다.</p>
+          <pre><code>npx skills find "design"
+npx skills add anthropics/skills@frontend-design</code></pre>
+          <p>설치 후 "frontend-design Skill로 내 페이지 다시 디자인해줘"라고 요청하면, 방금 직접 만든 Skill과 똑같은 방식으로 자동 적용됩니다.</p>
+        </details>
+      </section>
+
+      <!-- ── 16단계: Sub-Agent ── -->
+      <section class="step-section" id="step16">
+        <div class="step-header">
+          <div class="step-badge">16</div>
+          <div class="step-header-text">
+            <h2>Sub-Agent — 도우미 하나 더 부르기</h2>
+            <p class="step-sub">메인 Claude 안에서 도우미를 하나 더 띄우는 것</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>지금까지는 Claude 하나와만 대화했습니다. Sub-Agent는 "이 작업만 전담하는 도우미를 하나 더 불러서 시키는 것"입니다. 예를 들어 코드 검토처럼 결과물이 길게 나오는 작업을 Sub-Agent에게 맡기면, 그 긴 결과가 메인 대화창을 어지럽히지 않고 요약만 돌아옵니다.</p>
+        <p>처음에는 "이미 만들어져 있는 Sub-Agent를 불러 쓰는 법"만 알면 충분합니다. 직접 만드는 건 선택 심화로 뒤에 있습니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <h3>그냥 자연어로 요청하기 (가장 쉬움)</h3>
+        <pre><code>&gt; 서브에이전트로 최근 변경사항 코드 리뷰해줘</code></pre>
+        <p>"서브에이전트로"라는 말만 넣어도 충분합니다. 어떤 도우미를 쓸지는 Claude가 알아서 고릅니다.</p>
+
+        <h3>기본으로 내장된 도우미 5종 (이미 있으니 만들 필요 없음)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>이름</th><th>용도</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Explore</strong></td><td>코드/파일 탐색, 구조 파악</td></tr>
+              <tr><td><strong>Plan</strong></td><td>Plan Mode에서 계획 세울 때 조사</td></tr>
+              <tr><td><strong>General-purpose</strong></td><td>탐색+수정이 같이 필요한 복잡한 작업</td></tr>
+              <tr><td><strong>Bash</strong></td><td>터미널 명령만 따로 실행</td></tr>
+              <tr><td><strong>Claude Code Guide</strong></td><td>Claude Code 사용법 질문 답변</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>확인해보기</h3>
+        <pre><code>&gt; 서브에이전트로 이 프로젝트 폴더 구조 파악해서 알려줘</code></pre>
+        <p>실행하면 잠깐 별도로 작업하는 표시가 뜨고, 끝나면 요약된 결과만 메인 대화에 나타납니다. 그게 Sub-Agent가 작동한 것입니다.</p>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>"서브에이전트로 ~해줘" 형태로 한 번 요청해봤다</li>
+          <li><span class="check-box"></span>결과가 요약되어서 돌아오는 걸 확인했다</li>
+        </ul>
+
+        <details>
+          <summary>📎 선택 심화 — 내 전용 Sub-Agent 직접 만들기</summary>
+          <p>직접 파일을 쓰는 대신, 그냥 Claude에게 만들어달라고 요청하는 게 제일 쉽습니다.</p>
+          <pre><code>&gt; code-reviewer라는 서브에이전트를 만들어줘.
+  코드 품질/보안 검토 역할,
+  Read/Grep/Glob/Bash 도구만 쓰게 해줘.</code></pre>
+          <p>Claude가 <code>.claude/agents/code-reviewer.md</code> 파일을 아래와 같은 형식으로 자동 생성해줍니다. 직접 쓸 경우 형식은 이렇습니다.</p>
+          <pre><code>---
+name: code-reviewer
+description: "코드 리뷰 전문가. 품질, 보안, 모범 사례를 검토."
+tools: Read, Grep, Glob, Bash
+model: sonnet
+---
+
+호출되면:
+1. git diff로 최근 변경 확인
+2. 수정된 파일에 집중하여 리뷰</code></pre>
+          <p>만든 뒤에는 <code>@code-reviewer</code>처럼 이름 앞에 <code>@</code>을 붙여서 확실하게 지정 호출할 수도 있습니다.</p>
+          <div class="warn" style="margin-top:12px;">
+            <span class="warn-icon">⚠️</span>
+            <div>예전 버전에서는 <code>/agents</code>로 마법사 UI가 떴지만, 최신 버전에서는 파일 기반으로만 만듭니다. <code>/agents</code>는 지금 실행 중인 서브에이전트를 보는 모니터링 화면입니다.</div>
+          </div>
+        </details>
+      </section>
+
+      <!-- ── 17단계: MCP ── -->
+      <section class="step-section" id="step17">
+        <div class="step-header">
+          <div class="step-badge">17</div>
+          <div class="step-header-text">
+            <h2>MCP — 외부 서비스와 연결하기</h2>
+            <p class="step-sub">Claude가 외부 도구를 표준화된 방식으로 쓰게 해주는 프로토콜</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>Claude가 내 컴퓨터 파일뿐 아니라 Slack, Notion 같은 외부 서비스도 다룰 수 있게 해주는 연결 방식입니다. "코드를 직접 짜지 않아도 되는 플러그인을 꽂는 것"이라고 생각하면 됩니다.</p>
+        <p>오늘은 <strong>이미 존재하는 서버를 연결해서 써보는 것</strong>까지만 합니다. 커스텀 서버를 직접 만드는 건 나중에 필요할 때 해도 늦지 않습니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">연결하기</div>
+              <pre><code># 내 컴퓨터에서 실행되는 도구를 연결할 때
+claude mcp add &lt;이름&gt; -- npx -y &lt;패키지이름&gt;
+
+# 인터넷 너머 서버에 연결할 때
+claude mcp add --transport http &lt;이름&gt; &lt;서버주소&gt;</code></pre>
+              <p style="color:var(--text2); font-size:14px;"><code>&lt;이름&gt;</code>, <code>&lt;패키지이름&gt;</code>, <code>&lt;서버주소&gt;</code>는 실제 값으로 바꿔서 입력합니다. 예를 들어 파일시스템 도구를 연결한다면 이렇게 됩니다.</p>
+              <pre><code>claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem</code></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">잘 연결됐는지 확인</div>
+              <pre><code>claude mcp list</code></pre>
+              <p style="color:var(--text2); font-size:14px;">방금 연결한 이름이 목록에 뜨면 성공입니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">사용해보기</div>
+              <p style="color:var(--text2); font-size:14px;">연결만 하면 별도로 부르지 않아도, 관련된 요청을 할 때 Claude가 알아서 그 도구를 씁니다.</p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>claude mcp add</code>로 서버 하나를 연결해봤다</li>
+          <li><span class="check-box"></span><code>claude mcp list</code>로 연결 상태를 확인했다</li>
+        </ul>
+
+        <details>
+          <summary>📎 선택 심화 — MCP 대신 간단한 Bash 스크립트로 충분한 경우</summary>
+          <p>작업이 단순하면 MCP 연결 없이 로컬 스크립트만으로 충분합니다. 연결 과정도 없고 대화창 공간도 아낄 수 있습니다.</p>
+          <pre><code>#!/bin/bash
+# scripts/check-db.sh
+psql -h localhost -U dev -d mydb -c "SELECT count(*) FROM users;"</code></pre>
+          <pre><code>&gt; check-db.sh 실행해줘</code></pre>
+          <p>MCP는 "매 대화마다 도구 설명이 자동으로 포함되는" 방식이라, 정말 반복적으로 외부 서비스와 연동해야 할 때만 쓰는 게 맞습니다. 간단한 일회성 작업은 그냥 Bash가 더 가볍습니다.</p>
+          <p>커스텀 MCP 서버가 필요해지면, 이렇게 요청만 하면 Claude가 코드 작성부터 등록까지 도와줍니다.</p>
+          <pre><code>&gt; Gemini API를 사용하는 plan-review MCP 서버를 만들어줘.
+  review_plan 도구 하나만 있으면 돼.</code></pre>
+        </details>
       </section>
     </div><!-- /part-d -->
+
+    <!-- ════════════════════════════════
+         PART E — 자동화 & 마무리
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-e">
+      <div class="part-header">
+        <div class="part-badge">E</div>
+        <div class="part-title">자동화 &amp; 마무리</div>
+        <div class="part-duration">⏱ 75분</div>
+      </div>
+
+      <!-- ── 18단계: Hooks ── -->
+      <section class="step-section" id="step18">
+        <div class="step-header">
+          <div class="step-badge">18</div>
+          <div class="step-header-text">
+            <h2>Hooks — 자동화 엔진</h2>
+            <p class="step-sub">특정 상황이 되면 자동으로 실행되는 규칙</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>"파일을 저장할 때마다 자동으로 정리해줘" 같은, <strong>특정 상황이 되면 자동으로 실행되는 규칙</strong>입니다. 오늘은 가장 흔히 쓰는 예시 하나(작업 끝나면 알림 보내기)만 직접 만들어봅니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <pre><code>&gt; 알림 Hook 만들어줘.
+  작업이 끝나면 소리랑 알림 띄워줘.</code></pre>
+        <p>이렇게 요청하면 Claude가 알아서 설정 파일(<code>settings.json</code>)에 필요한 내용을 추가해줍니다. 직접 파일을 열어서 수정할 필요는 없습니다.</p>
+
+        <h3>실행해서 확인하기</h3>
+        <p>아무 작업이나 하나 시켜본 뒤, 끝났을 때 알림이 뜨는지 확인합니다.</p>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>Hook이 실행되는 동안 Claude는 멈춰서 기다립니다. 만든 뒤 반응이 없다면 "Hook이 멈춰있는 것 같아, timeout 설정해줘"라고 요청하세요.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>알림 Hook을 만들어봤다</li>
+          <li><span class="check-box"></span>작업이 끝났을 때 알림이 뜨는 걸 확인했다</li>
+        </ul>
+
+        <details>
+          <summary>📎 선택 심화 — Hook이 반응하는 4가지 시점</summary>
+          <p>지금 만든 알림 Hook은 아래 표에서 <code>Stop</code> 시점에 해당합니다. 필요할 때 아래 표를 참고해서 다른 시점의 Hook도 만들 수 있습니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>시점</th><th>언제</th><th>예시</th></tr></thead>
+              <tbody>
+                <tr><td>PreToolUse</td><td>도구를 실행하기 직전</td><td>위험한 명령어 실행 전에 승인 요청</td></tr>
+                <tr><td>PostToolUse</td><td>도구 실행 직후</td><td>코드 저장 직후 자동 포맷팅</td></tr>
+                <tr><td>Notification</td><td>사용자 응답을 기다릴 때</td><td>알림 전송</td></tr>
+                <tr><td>Stop</td><td>Claude의 턴이 끝났을 때</td><td>완료 알림, 최종 정리</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <!-- ── 19단계: 보이스 입력 ── -->
+      <section class="step-section" id="step19">
+        <div class="step-header">
+          <div class="step-badge">19</div>
+          <div class="step-header-text">
+            <h2>보이스 입력 — <code>/voice</code></h2>
+            <p class="step-sub">한 번쯤 재미로 켜보는 기능</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>한 번쯤 재미로 켜보는 기능입니다. 부담 없이 시도해보세요.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <pre><code>&gt; /voice</code></pre>
+        <p>스페이스바를 누르고 있는 동안 말하고, 떼면 텍스트로 바뀝니다. 한국어를 포함해 20개 이상 언어를 지원하고, 코딩 용어도 잘 알아듣습니다. 이 방식으로 쓴 트랜스크립션은 사용량에 잡히지 않습니다.</p>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>/voice</code>를 켜서 복잡한 요구사항을 한 번 말로 전달해봤다</li>
+        </ul>
+      </section>
+
+      <!-- ── 20단계: 한국어 설정 ── -->
+      <section class="step-section" id="step20">
+        <div class="step-header">
+          <div class="step-badge">20</div>
+          <div class="step-header-text">
+            <h2>한국어 설정</h2>
+            <p class="step-sub">Claude 응답을 한국어로 고정하는 법</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>Claude의 답변을 한국어로 고정하고 싶다면, <code>CLAUDE.md</code> 맨 위에 이 한 줄만 추가하면 됩니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <pre><code>&gt; 항상 한국어로 답변해줘.</code></pre>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div><code>/config</code>에도 language 설정이 있지만, 재시작하면 초기화되는 알려진 버그가 있습니다. <code>CLAUDE.md</code>에 문장으로 넣는 방식이 훨씬 안정적입니다.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>CLAUDE.md</code>에 한국어 답변 지침을 추가했다</li>
+        </ul>
+      </section>
+
+      <!-- ── 21단계: 에러 대응하기 ── -->
+      <section class="step-section" id="step21">
+        <div class="step-header">
+          <div class="step-badge">21</div>
+          <div class="step-header-text">
+            <h2>에러 대응하기</h2>
+            <p class="step-sub">기억할 건 딱 두 가지</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>에러가 나거나 Claude가 이상한 방향으로 가고 있을 때, 필요한 건 딱 두 가지입니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <h3>① 에러는 해석하지 말고 그대로 복사해서 붙여넣기</h3>
+        <div class="compare">
+          <div class="compare-bad">
+            <div class="compare-label">❌</div>
+            <p style="margin:0; font-size:15px; color:var(--text2);">"버튼 클릭이 안 돼"</p>
+          </div>
+          <div class="compare-good">
+            <div class="compare-label">✅</div>
+            <p style="margin:0; font-size:15px; color:var(--text2);">브라우저 콘솔(F12)에 뜬 빨간 글씨를 그대로 복사해서 붙여넣기</p>
+          </div>
+        </div>
+        <p>예시:</p>
+        <pre><code>토글 버튼 추가한 후에 에러 나. 콘솔에 이렇게 떠:
+
+Uncaught TypeError: Cannot read properties of
+null (reading 'addEventListener')
+    at script.js:12:23
+
+확인해줘.</code></pre>
+
+        <h3>② Claude가 이상한 방향으로 가면 즉시 Escape</h3>
+        <p>끝까지 지켜보지 말고, "어? 이건 아닌데" 싶은 순간 바로 Escape를 눌러 중단하세요. 30초면 잡을 걸 30분 헤맬 수 있습니다.</p>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>에러 메시지를 통째로 복사해서 붙여넣어봤다</li>
+          <li><span class="check-box"></span>Escape로 중단해봤다</li>
+        </ul>
+      </section>
+
+      <!-- ── 22단계: 종합 실습 ── -->
+      <section class="step-section" id="step22">
+        <div class="step-header">
+          <div class="step-badge">22</div>
+          <div class="step-header-text">
+            <h2>Day 2 종합 실습</h2>
+            <p class="step-sub">오늘 배운 걸 한 번에 이어서 해보기</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">왜 하는지</span>
+        <p>오늘 배운 걸 다음 순서로 한 번에 이어서 해봅니다. 순서만 따라가면 됩니다.</p>
+
+        <span class="section-label label-practice">그대로 따라하기</span>
+        <ol class="step-list">
+          <li>
+            <div>
+              <div class="step-list-title">Plan Mode로 설계</div>
+              <p style="color:var(--text2); font-size:14px;"><code>Shift + Tab</code> → "index.html을 멀티 파일 구조로 분리하고 싶다" 요청 → 계획 확인 후 <code>Shift + Tab</code>으로 Accept Mode</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">분리 실행</div>
+              <p style="color:var(--text2); font-size:14px;">CSS는 <code>assets/style.css</code>, JS는 <code>assets/script.js</code>로 분리 요청 → 결과 확인</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">슬래시 커맨드 만들기</div>
+              <p style="color:var(--text2); font-size:14px;">15단계에서 만든 <code>/commit</code> 준비해두기</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">새 페이지 추가</div>
+              <p style="color:var(--text2); font-size:14px;">15단계에서 만든 Skill 또는 기성 <code>frontend-design</code> Skill로 <code>portfolio.html</code> 추가</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">Sub-Agent로 검토</div>
+              <p style="color:var(--text2); font-size:14px;">"서브에이전트로 지금까지 만든 코드 리뷰해줘" 요청</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="step-list-title">GitHub에 올리기</div>
+              <p style="color:var(--text2); font-size:14px;"><code>/commit</code> 실행 → GitHub Desktop에서 <code>Push origin</code></p>
+            </div>
+          </li>
+        </ol>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>여러 페이지가 서로 링크로 연결되어 있다</li>
+          <li><span class="check-box"></span>CSS/JS가 별도 파일로 분리되어 있다</li>
+          <li><span class="check-box"></span>Skill 또는 슬래시 커맨드를 하나 이상 실제로 써봤다</li>
+          <li><span class="check-box"></span>Sub-Agent 리뷰를 받아봤다</li>
+          <li><span class="check-box"></span>GitHub에 코드가 올라가 있는 걸 브라우저로 확인했다</li>
+        </ul>
+      </section>
+    </div><!-- /part-e -->
 
     <hr class="divider">
 
@@ -889,12 +1215,13 @@ null (reading 'addEventListener')
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>한 세션 = 한 피처</strong></li>
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Plan Mode 먼저, Accept Mode 나중</strong></li>
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>CLAUDE.md = 프로젝트 규칙 / /memory = 나의 정보</strong></li>
-            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>멀티 파일 + Skills로 반복 작업 자동화</strong></li>
-            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>에러는 통째로 던지고, Claude의 생각을 읽어라</strong></li>
-            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>작은 변경 → 확인 → 반복</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Git으로 버전 관리 &amp; GitHub에 업로드</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Skills · 슬래시 커맨드 · Sub-Agent · MCP로 반복 작업 자동화</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Hooks · 보이스 입력 · 한국어 설정까지 내 손에 맞게</strong></li>
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>에러는 통째로 던지고, 이상하면 Esc로 중단</strong></li>
           </ul>
         </div>
-        <p style="margin-top: 20px; font-size: 15px; color: var(--text2);"><strong>내일(Day 3)은</strong> 처음부터 새 웹앱을 만들고, Vercel로 배포하고, 데모데이로 마무리합니다.</p>
+        <p style="margin-top: 20px; font-size: 15px; color: var(--text2);"><strong>내일(Day 3)은</strong> 처음부터 새 웹앱을 만들고, Vercel로 실제 배포하고, 데모데이로 마무리합니다.</p>
       </div>
     </section>
 
@@ -915,18 +1242,39 @@ null (reading 'addEventListener')
 /compact   대화 압축 (맥락 유지)
 /context   토큰 사용량 확인
 /memory    개인 메모리 열기/확인
-/skills    설치된 Skills 목록</code></pre>
+/skills    설치된 Skills 목록
+/voice     보이스 입력 켜기
+/config    환경설정 (언어 등)</code></pre>
 
           <h3>워크플로우 핵심 원칙</h3>
           <pre><code>1. 한 세션 = 한 피처  끝나면 /clear
 2. Plan Mode 먼저     큰 작업은 무조건
 3. 작은 변경 → 확인 → 반복
 4. 에러는 그대로 던지기
-5. Thinking 로그 읽기  잘못된 가정이면 Esc
+5. 이상하면 Esc로 중단
 6. /context 자주 확인  80% 넘으면 정리</code></pre>
+
+          <h3>Git / GitHub 명령어</h3>
+          <pre><code># 초기 설정 (한 번만)
+git config --global user.name "이름"
+git config --global user.email "이메일"
+
+# 새 저장소 올리기
+git init && git add .
+git commit -m "첫 커밋"
+git branch -M main
+git remote add origin https://github.com/아이디/저장소.git
+git push -u origin main
+
+# 이후 업데이트
+git add . && git commit -m "내용" && git push</code></pre>
+
+          <h3>한국어 설정</h3>
+          <pre><code># CLAUDE.md에 한 줄 추가
+&gt; 항상 한국어로 답변해줘.</code></pre>
         </div>
         <div>
-          <h3>SKILL.md 템플릿</h3>
+          <h3>SKILL.md 템플릿 (→ 15단계 참고)</h3>
           <pre><code>---
 name: 영-소문자-하이픈
 description: 사용자가 ~할 때 사용.
@@ -942,19 +1290,47 @@ description: 사용자가 ~할 때 사용.
 ## 주의사항
 - 흔히 하는 실수</code></pre>
 
-          <h3>파일 구조</h3>
-          <pre><code>project/
-├── CLAUDE.md       ← 규칙 (300줄 이하)
-├── TODO.md         ← 할 일 목록
-├── assets/
-│   ├── style.css
-│   └── script.js
-└── .claude/
-    ├── skills/     ← 자동 트리거 Skill
-    └── commands/   ← 명시 호출 명령어
+          <h3>기성 Skill 설치</h3>
+          <pre><code>npx skills find "키워드"
+npx skills add owner/repo@skill-name</code></pre>
 
-~/.claude/skills/   ← 개인용 Skills</code></pre>
+          <h3>슬래시 커맨드 템플릿</h3>
+          <pre><code>.claude/commands/commit.md
+
+1. git status/git diff로 변경사항 확인
+2. 한국어 커밋 메시지 초안 작성
+3. 사용자 확인 요청
+4. 승인되면 git add -A && git commit</code></pre>
+
+          <h3>MCP 명령어</h3>
+          <pre><code>claude mcp add &lt;name&gt; -- npx -y &lt;package&gt;
+claude mcp add --transport http &lt;name&gt; &lt;url&gt;
+claude mcp list
+claude mcp remove &lt;name&gt;
+# --scope local|project|user</code></pre>
+
+          <h3>Hook 이벤트 타입</h3>
+          <pre><code>PreToolUse   도구 호출 직전 (검증/차단)
+PostToolUse  도구 실행 직후 (린트/포맷)
+Notification 사용자 응답 대기 시 (알림)
+Stop         에이전트 턴 종료 시 (정리)</code></pre>
         </div>
+      </div>
+
+      <h3>도구 선택 기준 — 4가지 확장 방식 + α</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>도구</th><th>평소 공간</th><th>언제</th></tr></thead>
+          <tbody>
+            <tr><td><strong>CLAUDE.md</strong></td><td>전체 내용 매번 로드</td><td>항상 적용되는 핵심 규칙</td></tr>
+            <tr><td><strong>Skills</strong></td><td>설명만 (~50-100B)</td><td>특정 작업할 때만 필요한 매뉴얼</td></tr>
+            <tr><td><strong>슬래시 커맨드</strong></td><td>설명만 (~50-100B)</td><td>사용자가 직접 호출하는 반복 작업</td></tr>
+            <tr><td><strong>Sub-Agent</strong></td><td>에이전트 설명 매번</td><td>대량 탐색 / 격리된 작업</td></tr>
+            <tr><td><strong>MCP</strong></td><td>전체 설명 매번</td><td>외부 서비스 연동</td></tr>
+            <tr><td><strong>Hooks</strong></td><td>—</td><td>이벤트 기반 자동 실행</td></tr>
+            <tr><td><strong>로컬 Bash</strong></td><td>—</td><td>MCP 불필요한 간단한 도구</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <h3>막혔을 때 비상 매뉴얼</h3>
@@ -964,7 +1340,6 @@ description: 사용자가 ~할 때 사용.
           <tbody>
             <tr><td>Claude가 헷갈려해요</td><td><code>/clear</code> 후 재시작</td></tr>
             <tr><td>잘못된 방향 같아요</td><td><code>Esc</code> 즉시 중단</td></tr>
-            <tr><td>어디까지 했는지 모름</td><td>TODO.md 확인</td></tr>
             <tr><td>갑자기 화면 깨졌어요</td><td><code>Esc Esc</code>로 직전 상태 복원</td></tr>
             <tr><td>터미널 닫아버렸어요</td><td><code>claude</code> 실행 후 <code>/resume</code></td></tr>
           </tbody>

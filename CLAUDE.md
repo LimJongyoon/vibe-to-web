@@ -21,8 +21,8 @@ python3 -m http.server   # 로컬 서버로 열기
 ### HTML (강의자료 — 직접 수정 대상)
 
 - **`index.html`** — Day 1 (Steps 0-7, Part A-D)
-- **`day2.html`** — Day 2 (Steps 8-18, Part A-D)
-- **`day3.html`** — Day 3 (Steps 19-27, Part A-D)
+- **`day2.html`** — Day 2 (Steps 8-22, Part A-E)
+- **`day3.html`** — Day 3 (Steps 23-25, Part A-C)
 - **`style.css`** — 공통 CSS 디자인 시스템
 - **`script.js`** — 탭 전환(`switchTab`) + Intersection Observer 사이드바 하이라이트
 
@@ -40,7 +40,7 @@ python3 -m http.server   # 로컬 서버로 열기
 ```
 Hero → 목표 카드 → 시간표
 → Part A (part-section + part-header + step-section들)
-→ Part B / C / D
+→ Part B / C / ... (Day마다 파트 개수 다름 — day2.html은 E까지, day3.html은 C까지)
 → 완료 카드 → 치트시트 Appendix
 ```
 

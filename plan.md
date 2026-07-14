@@ -11,8 +11,8 @@
 | 날짜 | 주제 | 핵심 결과물 |
 |------|------|------------|
 | Day 1 | Claude Code 입문 & 첫 웹페이지 | 로컬에서 동작하는 자기소개 페이지 |
-| Day 2 | 컨텍스트 관리 & 완성도 높이기 | 멀티 파일 포트폴리오 사이트 |
-| Day 3 | 혼자 만들기 · Git · 배포 · 데모데이 | 인터넷에 배포된 나만의 웹 앱 |
+| Day 2 | 컨텍스트 관리 · Git · 자동화 도구(Skills·슬래시·Sub-Agent·MCP·Hooks) | GitHub에 올라간 멀티 파일 포트폴리오 사이트 |
+| Day 3 | Vercel 배포 · Worktree 심화 · 데모데이 | 인터넷에 배포된 나만의 웹 앱 |
 
 ---
 
@@ -21,8 +21,8 @@
 ```
 vibe-to-web/
 ├── index.html      # Day 1 강의자료 (Steps 0-7, Part A-D)
-├── day2.html       # Day 2 강의자료 (Steps 8-18, Part A-D)
-├── day3.html       # Day 3 강의자료 (Steps 19-27, Part A-D)
+├── day2.html       # Day 2 강의자료 (Steps 8-22, Part A-E)
+├── day3.html       # Day 3 강의자료 (Steps 23-25, Part A-C)
 ├── style.css       # 공통 CSS (다크모드 디자인 시스템)
 ├── script.js       # 탭 전환 + 사이드바 하이라이트
 │
@@ -40,7 +40,7 @@ vibe-to-web/
 
 ```
 [Hero] 제목 + 날짜/시간
-[오늘의 목표] 4개 이하
+[오늘의 목표] 보통 4개 안팎 (콘텐츠 양에 따라 유동적)
 [시간표] 파트별 소요시간
 
 [Part A] 제목  ⏱ XX분
@@ -49,7 +49,7 @@ vibe-to-web/
   [확인] 체크리스트
   💡 팁
 
-[Part B / C / D] 동일 구조
+[Part B / C / ...] 동일 구조 (파트 개수는 그날 스텝 수에 맞춰 A-D를 넘어갈 수 있음, 예: Day2는 Part E까지)
 ...
 [마무리 체크리스트]
 [치트시트 (Appendix)]

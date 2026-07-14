@@ -797,6 +797,86 @@ footer {
 .tt-title { color: var(--text); }
 .tt-dur  { color: var(--text3); text-align: right; }
 
+/* ── Collapsible (선택 심화) ── */
+details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px 20px 0;
+  margin-bottom: 20px;
+}
+
+details[open] { padding-bottom: 20px; }
+
+summary {
+  cursor: pointer;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent2);
+  list-style: none;
+  user-select: none;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 11px;
+  transition: transform .15s;
+}
+
+details[open] summary::before { transform: rotate(90deg); }
+
+details > *:not(summary):first-of-type { margin-top: 4px; }
+details h3:first-of-type { margin-top: 4px; }
+
+/* ── Guide note (이 문서를 보는 법) ── */
+.guide-note {
+  background: var(--card);
+  border: 1px solid rgba(124,109,240,.25);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+
+.guide-note h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.guide-note p { margin-bottom: 10px; }
+.guide-note ul { list-style: none; margin-bottom: 10px; }
+.guide-note li { margin-bottom: 8px; color: var(--text2); }
+
+/* ── Term table (용어 정리) ── */
+.term-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.term-list .term {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.term-list .term-name {
+  flex-shrink: 0;
+  min-width: 90px;
+  font-weight: 700;
+  color: var(--accent2);
+  font-size: 15px;
+}
+
+.term-list .term-desc { color: var(--text2); font-size: 15px; }
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
