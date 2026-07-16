@@ -25,6 +25,7 @@
     <nav>
       <div class="nav-section">
         <span class="nav-title">A · 배포</span>
+        <a class="nav-link" href="#step-statusline"><span class="step-num">✦</span>상태줄 꾸미기</a>
         <a class="nav-link" href="#step23"><span class="step-num">23</span>Vercel 배포</a>
       </div>
       <div class="nav-section">
@@ -107,6 +108,51 @@
         <div class="part-title">배포</div>
         <div class="part-duration">⏱ 30분</div>
       </div>
+
+      <!-- ── 상태줄 꾸미기 (워밍업) ── -->
+      <section class="step-section" id="step-statusline">
+        <div class="step-header">
+          <div class="step-badge">✦</div>
+          <div class="step-header-text">
+            <h2>상태줄(Status Line) 꾸미기</h2>
+            <p class="step-sub">배포 전 워밍업 — 터미널 하단에 내 정보를 항상 표시</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>Claude Code 창 하단의 <strong>상태줄(Status Line)</strong>은 현재 모델·작업 폴더·컨텍스트 사용량 같은 정보를 항상 보여주는 영역입니다. <code>/statusline</code> 명령으로 원하는 내용을 표시하도록 직접 꾸밀 수 있습니다.</p>
+
+        <span class="section-label label-practice">실습</span>
+        <ol class="step-list">
+          <li><div><div class="step-list-title">Claude Code에서 <code>/statusline</code> 입력</div></div></li>
+          <li>
+            <div>
+              <div class="step-list-title">원하는 내용을 자연어로 요청</div>
+              <p style="color:var(--text2); font-size:14px;">예) “모델 이름이랑 컨텍스트 사용량을 프로그레스 바로 보여줘”</p>
+            </div>
+          </li>
+          <li><div><div class="step-list-title">Claude가 <code>~/.claude/statusline-command.sh</code> 스크립트와 <code>~/.claude/settings.json</code>을 자동으로 설정해 줌</div></div></li>
+        </ol>
+
+        <p>설정이 끝나면 상태줄이 이렇게 표시됩니다:</p>
+        <pre><code>Claude Opus 4.8  ███████████░░░░░░░░░  55%</code></pre>
+
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>표시할 수 있는 값은 상태줄이 실제로 제공하는 데이터로 한정됩니다. “실행 중인 작업 진행률 %” 같은 값은 제공되지 않아 만들 수 없고, <strong>모델·컨텍스트 사용량·사용 한도</strong> 등은 표시할 수 있습니다.</div>
+        </div>
+
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div>스크립트가 <code>jq</code>를 사용한다면 <code>brew install jq</code>로 먼저 설치해야 상태줄이 제대로 표시됩니다. (Mac 기준)</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span>창 하단 상태줄에 모델 이름이 보임</li>
+          <li><span class="check-box"></span>컨텍스트 사용량 프로그레스 바가 표시됨</li>
+        </ul>
+      </section>
 
       <!-- ── Step 23: Vercel ── -->
       <section class="step-section" id="step23">
