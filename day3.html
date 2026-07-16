@@ -24,16 +24,22 @@
     </div>
     <nav>
       <div class="nav-section">
-        <span class="nav-title">A · 배포</span>
+        <span class="nav-title">A · 제어 &amp; 설정</span>
         <a class="nav-link" href="#step-statusline"><span class="step-num">✦</span>상태줄 꾸미기</a>
+        <a class="nav-link" href="#step-effort"><span class="step-num">✦</span>Effort 다이얼</a>
+        <a class="nav-link" href="#step-mode"><span class="step-num">✦</span>워크플로우 모드</a>
+        <a class="nav-link" href="#step-thinking"><span class="step-num">✦</span>딥띵킹 &amp; ultrathink</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-title">B · 배포</span>
         <a class="nav-link" href="#step23"><span class="step-num">23</span>Vercel 배포</a>
       </div>
       <div class="nav-section">
-        <span class="nav-title">B · 운영 심화</span>
+        <span class="nav-title">C · 운영 심화</span>
         <a class="nav-link" href="#step24"><span class="step-num">24</span>멀티인스턴스 &amp; Worktree</a>
       </div>
       <div class="nav-section">
-        <span class="nav-title">C · 데모데이</span>
+        <span class="nav-title">D · 데모데이</span>
         <a class="nav-link" href="#step25"><span class="step-num">25</span>종합실습 &amp; 데모데이</a>
       </div>
       <div class="nav-section">
@@ -76,37 +82,43 @@
       <div class="timetable-row">
         <span class="tt-time">13:00</span>
         <span class="tt-part">A</span>
-        <span class="tt-title">배포 — Vercel</span>
-        <span class="tt-dur">30분</span>
+        <span class="tt-title">제어 &amp; 설정 — Effort · 모드 · 딥띵킹</span>
+        <span class="tt-dur">35분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">13:30</span>
+        <span class="tt-time">13:35</span>
         <span class="tt-part">B</span>
+        <span class="tt-title">배포 — Vercel</span>
+        <span class="tt-dur">25분</span>
+      </div>
+      <div class="timetable-row">
+        <span class="tt-time">14:00</span>
+        <span class="tt-part">C</span>
         <span class="tt-title">운영 심화 — 멀티인스턴스 &amp; Git Worktree</span>
         <span class="tt-dur">45분</span>
       </div>
       <div class="timetable-row" style="opacity:.6;">
-        <span class="tt-time">14:15</span>
+        <span class="tt-time">14:45</span>
         <span class="tt-part">—</span>
         <span class="tt-title">휴식</span>
         <span class="tt-dur">15분</span>
       </div>
       <div class="timetable-row">
-        <span class="tt-time">14:30</span>
-        <span class="tt-part">C</span>
+        <span class="tt-time">15:00</span>
+        <span class="tt-part">D</span>
         <span class="tt-title">종합 실습 &amp; 데모데이</span>
-        <span class="tt-dur">150분</span>
+        <span class="tt-dur">120분</span>
       </div>
     </div>
 
     <!-- ════════════════════════════════
-         PART A — 배포
+         PART A — 제어 & 설정
     ═════════════════════════════════ -->
     <div class="part-section" id="part-a">
       <div class="part-header">
         <div class="part-badge">A</div>
-        <div class="part-title">배포</div>
-        <div class="part-duration">⏱ 30분</div>
+        <div class="part-title">제어 &amp; 설정</div>
+        <div class="part-duration">⏱ 35분</div>
       </div>
 
       <!-- ── 상태줄 꾸미기 (워밍업) ── -->
@@ -115,7 +127,7 @@
           <div class="step-badge">✦</div>
           <div class="step-header-text">
             <h2>상태줄(Status Line) 꾸미기</h2>
-            <p class="step-sub">배포 전 워밍업 — 터미널 하단에 내 정보를 항상 표시</p>
+            <p class="step-sub">가장 쉬운 커스터마이즈 — 터미널 하단에 내 정보를 항상 표시</p>
           </div>
         </div>
 
@@ -153,6 +165,158 @@
           <li><span class="check-box"></span>컨텍스트 사용량 프로그레스 바가 표시됨</li>
         </ul>
       </section>
+
+      <!-- ── Effort ── -->
+      <section class="step-section" id="step-effort">
+        <div class="step-header">
+          <div class="step-badge">✦</div>
+          <div class="step-header-text">
+            <h2>Effort — Claude의 ‘생각 깊이’ 다이얼</h2>
+            <p class="step-sub"><code>/effort</code>로 한 세션 동안 얼마나 깊게 생각할지 조절</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p><strong>Effort(에포트)</strong>는 Claude가 답하기 전에 <strong>얼마나 깊게 생각(reasoning)할지</strong>를 정하는 세션 단위 설정입니다. 높일수록 더 꼼꼼히 생각해 품질이 올라가지만 토큰을 더 쓰고 느려지며, 낮추면 빠르고 저렴합니다.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>레벨</th><th>느낌</th><th>언제</th></tr></thead>
+            <tbody>
+              <tr><td><code>low</code></td><td>빠르고 저렴</td><td>간단한 수정·질문</td></tr>
+              <tr><td><code>medium</code></td><td>가벼운 균형</td><td>비용이 신경 쓰일 때</td></tr>
+              <tr><td><code>high</code> <strong>(기본)</strong></td><td>품질·속도 균형</td><td>대부분의 작업</td></tr>
+              <tr><td><code>xhigh</code></td><td>더 깊게</td><td>복잡한 설계·디버깅</td></tr>
+              <tr><td><code>max</code></td><td>가장 깊게 (토큰 많이)</td><td>정말 어려운 문제 하나</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text2); font-size:14px;">기본값은 대부분의 모델에서 <code>high</code>입니다. (일부 모델은 조금 다를 수 있어요.)</p>
+
+        <span class="section-label label-practice">실습</span>
+        <ol class="step-list">
+          <li><div><div class="step-list-title"><code>/effort</code>만 입력 → 슬라이더로 레벨 선택</div></div></li>
+          <li><div><div class="step-list-title">또는 바로 지정: <code>/effort low</code> · <code>/effort xhigh</code></div></div></li>
+          <li>
+            <div>
+              <div class="step-list-title"><code>/model</code>로 모델을 고를 때 좌우 화살표로 effort도 함께 조절</div>
+              <p style="color:var(--text2); font-size:14px;">모델(어떤 두뇌를 쓸지)과 effort(얼마나 깊게)는 세트로 생각하면 편해요.</p>
+            </div>
+          </li>
+          <li><div><div class="step-list-title">앞으로 계속 쓸 기본값은 <code>/config</code>에서 지정</div></div></li>
+        </ol>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>대화식으로 <code>/effort low</code>~<code>xhigh</code>를 설정하면 <strong>다음 세션에도 유지</strong>됩니다. 단 <code>max</code>는 <strong>그 세션에만</strong> 적용되고 저장되지 않아요.</div>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">⚡</span>
+          <div><code>/fast</code>를 켜면 같은 Opus 모델을 <strong>더 빠른 출력</strong>으로 씁니다. effort(생각 깊이)와는 다른 축이라, 빠르게 받아보고 싶을 때 함께 활용하세요.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>/effort</code>로 레벨을 바꿔봤다</li>
+          <li><span class="check-box"></span>기본값이 <code>high</code>라는 걸 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 워크플로우 모드 ── -->
+      <section class="step-section" id="step-mode">
+        <div class="step-header">
+          <div class="step-badge">✦</div>
+          <div class="step-header-text">
+            <h2>워크플로우 모드 — 승인 프롬프트 조절</h2>
+            <p class="step-sub"><code>Shift+Tab</code>으로 ‘얼마나 물어볼지’를 순환 전환</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p>Claude Code는 파일을 고치거나 명령을 실행하기 전에 <strong>“해도 될까요?”</strong>라고 물어봅니다. 이 <strong>승인 정도</strong>를 모드로 바꿀 수 있어요. 입력창에서 <code>Shift+Tab</code>을 누르면 모드가 순환합니다.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>모드</th><th>자동 승인 범위</th><th>언제</th></tr></thead>
+            <tbody>
+              <tr><td><strong>default</strong> (기본)</td><td>읽기만 자동, 수정·실행은 매번 확인</td><td>안전하게 하나씩 확인</td></tr>
+              <tr><td><strong>accept edits</strong></td><td>파일 수정까지 자동 승인</td><td>믿고 맡기며 빠르게</td></tr>
+              <tr><td><strong>plan</strong></td><td>읽기만 — 아무것도 바꾸지 않고 계획만</td><td>먼저 방향부터 잡을 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text2); font-size:14px;">기본은 <strong>default</strong>이고, <code>Shift+Tab</code> → default → accept edits → plan 순으로 돌아요. (auto 등 고급 모드는 별도 설정 시 순환에 추가됩니다.)</p>
+
+        <span class="section-label label-practice">실습</span>
+        <ol class="step-list">
+          <li><div><div class="step-list-title">입력창에서 <code>Shift+Tab</code>을 몇 번 눌러 모드가 바뀌는 걸 확인</div></div></li>
+          <li><div><div class="step-list-title">입력창 근처에 현재 모드가 표시되는지 보기</div></div></li>
+          <li><div><div class="step-list-title"><strong>plan</strong> 모드로 “이 기능 어떻게 만들지 계획만 세워줘” 시켜보기 (파일은 안 바뀜)</div></div></li>
+        </ol>
+        <div class="warn">
+          <span class="warn-icon">⚠️</span>
+          <div><strong>bypass permissions</strong>(전부 묻지 않음) 같은 모드는 확인 없이 실행하므로, 격리된 환경이 아니라면 쓰지 마세요.</div>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>Shift+Tab</code>으로 모드를 바꿔봤다</li>
+          <li><span class="check-box"></span>plan / accept edits가 각각 뭘 하는지 안다</li>
+        </ul>
+      </section>
+
+      <!-- ── 딥띵킹 & ultrathink ── -->
+      <section class="step-section" id="step-thinking">
+        <div class="step-header">
+          <div class="step-badge">✦</div>
+          <div class="step-header-text">
+            <h2>딥띵킹 &amp; ultrathink — ‘생각’ 켜고 끄기</h2>
+            <p class="step-sub">Effort와 헷갈리기 쉬운 사고 과정 제어</p>
+          </div>
+        </div>
+
+        <span class="section-label label-theory">이론</span>
+        <p><strong>딥띵킹(Extended Thinking)</strong>은 Claude가 답하기 전에 하는 <strong>사고 과정</strong>입니다. <code>Alt+T</code>(맥은 <code>Option+T</code>)로 켜고 끌 수 있어요. Effort가 “얼마나 깊게”라면 딥띵킹 토글은 “사고 과정을 쓸지·보여줄지”를 다룹니다 — 둘은 별개예요.</p>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <div>딥띵킹의 기본 상태(켜짐/꺼짐)는 공식 문서에 딱 정해져 있지 않습니다. 지금 켜져 있는지와 앞으로의 기본값은 <code>/config</code>에서 확인·변경할 수 있어요.</div>
+        </div>
+
+        <h3>ultrathink — 이번 한 번만 더 깊게</h3>
+        <p>프롬프트 아무 곳에나 <code>ultrathink</code>라는 단어를 넣으면 <strong>그 턴에만</strong> 더 깊이 생각하도록 요청합니다. (세션 effort 설정은 그대로예요.)</p>
+        <pre><code>이 버그의 근본 원인을 ultrathink 로 찾아줘</code></pre>
+        <div class="info">
+          <span class="info-icon">ℹ️</span>
+          <div>현재 인식되는 사고 키워드는 <code>ultrathink</code> 하나입니다. <code>think</code> · <code>think hard</code> · <code>think more</code> 같은 단어는 특별한 효과 없이 일반 텍스트로 처리돼요. 평소의 생각 깊이는 <code>ultrathink</code>보다 <code>/effort</code>로 조절하는 게 기본입니다.</div>
+        </div>
+
+        <h3>세 가지 한눈에</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>무엇</th><th>조작</th><th>한 줄 요약</th></tr></thead>
+            <tbody>
+              <tr><td><code>/effort</code></td><td>세션 전역</td><td>평소 <strong>얼마나 깊게</strong> 생각할지</td></tr>
+              <tr><td><code>Alt+T</code></td><td>세션 토글</td><td>딥띵킹을 <strong>켤지 끌지</strong></td></tr>
+              <tr><td><code>ultrathink</code></td><td>프롬프트에 추가</td><td><strong>이번 턴만</strong> 더 깊게</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <span class="section-label label-verify">확인</span>
+        <ul class="checklist">
+          <li><span class="check-box"></span><code>Alt+T</code>(<code>Option+T</code>)로 딥띵킹을 토글해봤다</li>
+          <li><span class="check-box"></span>effort / 딥띵킹 / ultrathink가 각각 뭘 하는지 구분한다</li>
+          <li><span class="check-box"></span>인식되는 키워드는 <code>ultrathink</code>뿐임을 안다</li>
+        </ul>
+      </section>
+    </div><!-- /part-a -->
+
+    <!-- ════════════════════════════════
+         PART B — 배포
+    ═════════════════════════════════ -->
+    <div class="part-section" id="part-b">
+      <div class="part-header">
+        <div class="part-badge">B</div>
+        <div class="part-title">배포</div>
+        <div class="part-duration">⏱ 25분</div>
+      </div>
 
       <!-- ── Step 23: Vercel ── -->
       <section class="step-section" id="step23">
@@ -218,14 +382,14 @@
           <li><span class="check-box"></span>코드 수정 → git push → 자동 반영 확인</li>
         </ul>
       </section>
-    </div><!-- /part-a -->
+    </div><!-- /part-b -->
 
     <!-- ════════════════════════════════
-         PART B — 운영 심화
+         PART C — 운영 심화
     ═════════════════════════════════ -->
-    <div class="part-section" id="part-b">
+    <div class="part-section" id="part-c">
       <div class="part-header">
-        <div class="part-badge">B</div>
+        <div class="part-badge">C</div>
         <div class="part-title">운영 심화 — 멀티인스턴스 &amp; Git Worktree</div>
         <div class="part-duration">⏱ 45분</div>
       </div>
@@ -301,16 +465,16 @@ git worktree remove ../feature-auth</code></pre>
           <li><span class="check-box"></span>워크트리 여러 개를 동시에 운영하는 법을 안다</li>
         </ul>
       </section>
-    </div><!-- /part-b -->
+    </div><!-- /part-c -->
 
     <!-- ════════════════════════════════
-         PART C — 데모데이
+         PART D — 데모데이
     ═════════════════════════════════ -->
-    <div class="part-section" id="part-c">
+    <div class="part-section" id="part-d">
       <div class="part-header">
-        <div class="part-badge">C</div>
+        <div class="part-badge">D</div>
         <div class="part-title">종합 실습 &amp; 데모데이</div>
-        <div class="part-duration">⏱ 150분</div>
+        <div class="part-duration">⏱ 120분</div>
       </div>
 
       <!-- ── Step 25: 종합 실습 & 데모데이 ── -->
@@ -369,7 +533,7 @@ git worktree remove ../feature-auth</code></pre>
           <li><span class="check-box"></span>발표를 마쳤다 🎉</li>
         </ul>
       </section>
-    </div><!-- /part-c -->
+    </div><!-- /part-d -->
 
     <hr class="divider">
 
@@ -380,6 +544,7 @@ git worktree remove ../feature-auth</code></pre>
         <h2 style="font-size: 22px; margin-bottom: 16px;">Day 3 완료! 그리고 워크샵 전체 완료!</h2>
         <div style="text-align:left; max-width: 540px; margin: 0 auto;">
           <ul class="checklist">
+            <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Effort · 워크플로우 모드 · 딥띵킹으로 Claude를 내 손에 맞춤</strong></li>
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Git + GitHub으로 버전 관리 &amp; 업로드 (Day 2)</strong></li>
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Vercel로 실제 인터넷에 배포</strong></li>
             <li><span style="color:var(--green); font-size:16px;">✓</span> <strong>Skills · 슬래시 커맨드 · Sub-Agent · MCP · Hooks로 자동화 (Day 2)</strong></li>
@@ -403,6 +568,13 @@ git worktree remove ../feature-auth</code></pre>
 
       <div class="cheat-grid">
         <div>
+          <h3>제어 &amp; 설정</h3>
+          <pre><code>/effort high     # 생각 깊이 (low~max · 기본 high)
+Shift+Tab        # 워크플로우 모드 순환
+Alt+T            # 딥띵킹 켜고 끄기 (맥: Option+T)
+ultrathink       # 이번 턴만 더 깊게 (프롬프트에 추가)
+/model  /fast    # 모델 전환 / 패스트 모드</code></pre>
+
           <h3>Vercel 배포</h3>
           <pre><code>vercel.com → Sign up with GitHub
 → Add New Project → Import → Deploy
@@ -424,8 +596,8 @@ git worktree remove ../feature-auth   # 정리</code></pre>
           <pre><code>Day 1: 첫 웹페이지, Claude Code 기본기
 Day 2: 기억 관리 + Git + Skills/슬래시/
        Sub-Agent/MCP/Hooks 자동화
-Day 3: Vercel 배포 + Worktree 심화 +
-       데모데이</code></pre>
+Day 3: Effort·모드·딥띵킹 제어 +
+       Vercel 배포 + Worktree + 데모데이</code></pre>
         </div>
       </div>
     </section>
